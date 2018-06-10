@@ -49,6 +49,10 @@
 		color: #333;
 	}
 
+	/* #section0 {
+		background-size: cover;
+	} */
+
 	</style>
 
 	<!--[if IE]>
@@ -70,7 +74,8 @@
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
 				anchors: ['firstPage', 'secondPage', '3rdPage'],
-				sectionsColor: ['#8FB98B', '#DE564B', '#EAE1C0'],
+				sectionsColor: ['url("https://images.unsplash.com/photo-1525671709955-39bada940cc2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a32b4ad949c8d08e1ef96ce81c156e37&auto=format&fit=crop&w=1500&q=80")', '#DE564B', '#EAE1C0'],
+				bgSize: ['cover', 'cover', 'cover'],
 				slidesNavigation: true,
 			});
 		});

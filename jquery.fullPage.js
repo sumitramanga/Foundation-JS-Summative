@@ -151,6 +151,7 @@
             controlArrowColor: '#fff',
             verticalCentered: true,
             sectionsColor : [],
+            bgSize : [],
             paddingTop: 0,
             paddingBottom: 0,
             fixedElements: null,
@@ -752,8 +753,13 @@
                 section.css('padding-bottom', options.paddingBottom);
             }
 
+            // THIS HAS BEEN REPLACED WITH background (from background-color)
             if (typeof options.sectionsColor[index] !==  'undefined') {
-                section.css('background-color', options.sectionsColor[index]);
+                section.css('background', options.sectionsColor[index]);
+            }
+
+            if (typeof options.bgSize[index] !==  'undefined') {
+                section.css('background-size', options.bgSize[index]);
             }
 
             if (typeof options.anchors[index] !== 'undefined') {

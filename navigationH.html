@@ -2,16 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Vertical navigation dots - fullPage.js</title>
-	<meta name="author" content="Alvaro Trigo Lopez" />
-	<meta name="description" content="fullPage full-screen sliders navigation widh dots." />
-	<meta name="keywords"  content="fullpage,jquery,demo,screen,fullscreen,sliders navigation, horizontal navigation,horizontal,navigation,dots" />
-	<meta name="Resource-type" content="Document" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Travel Companion - Auckland Accommodation finder</title>
+	<link href="https://fonts.googleapis.com/css?family=Pacifico|Raleway" rel="stylesheet">
+	<!-- font-family: 'Pacifico', cursive;
+	font-family: 'Raleway', sans-serif; -->
 
 	<!-- Page Piling css -->
-	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
-	<link rel="stylesheet" type="text/css" href="examples.css" />
+	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css">
+	<!-- <link rel="stylesheet" type="text/css" href="examples.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<style>
 
 	/* Style for our header texts
@@ -22,9 +22,9 @@
 		color: #fff;
 		margin:0;
 	}
-	.intro p{
+	/* .intro p{
 		color: #fff;
-	}
+	} */
 
 	/* Centered texts in each section
 	* --------------------------------------- */
@@ -49,10 +49,6 @@
 		color: #333;
 	}
 
-	/* #section0 {
-		background-size: cover;
-	} */
-
 	</style>
 
 	<!--[if IE]>
@@ -74,9 +70,14 @@
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
 				anchors: ['firstPage', 'secondPage', '3rdPage'],
-				sectionsColor: ['url("https://images.unsplash.com/photo-1525671709955-39bada940cc2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a32b4ad949c8d08e1ef96ce81c156e37&auto=format&fit=crop&w=1500&q=80")', '#DE564B', '#EAE1C0'],
+				sectionsColor: ['url("https://images.unsplash.com/photo-1501664201380-78af13a2783e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7d36f36ada892ad2ae98a63300974be8&auto=format&fit=crop&w=1950&q=80") no-repeat fixed center center', '#DE564B', '#EAE1C0'],
 				bgSize: ['cover', 'cover', 'cover'],
 				slidesNavigation: true,
+			});
+			$('.exploreBtn').click(function(){
+				$('html, body').animate({
+					scrollTop: $("#section1").offset().top
+				}, 2000);
 			});
 		});
 	</script>
@@ -86,12 +87,15 @@
 
 	<div id="fullpage">
 
-
+<!-- add confirmation -->
 		<div class="section " id="section0">
 			<div class="intro">
-				<!-- <img src="imgs/1.png"  alt="1"/> -->
-				<h1>Sliders navigation dots</h1>
-				<p>Create a navigation for your landscape sliders</p>
+				<img class="tourismNzLogo" src="img/tourismNewZealandLogo.png"  alt="Tourism New Zealand Logo">
+				<p class="travelCompanionLogo">Travel <br> Companion</p>
+				<p class="subText">Your go to app for finding accommodation within Auckland</p>
+				<div class="exploreBtn">
+					<a href="#">Start Exploring</a>
+				</div>
 			</div>
 		</div>
 

@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.intro {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.tourismNzLogo {
+    margin-bottom: 3%;
+    width:15%;
+    height: auto;
+}
+
+/* LOGO ---------------------------------------------------------------------  */
+.travelCompanionLogo {
+  padding: 19px 0 71px 0px;
+  font-family: 'Pacifico', cursive;
+  font-size: 9em;
+  text-align: center;
+  background: -webkit-linear-gradient(#FC5C7D, #efc125);
+  line-height: 80%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subText {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-family: sans-serif;
+  font-size: 30px;
+  color: white;
+}
+
+.exploreBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+a {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  filter: blur(0px);
+}
+
+.exploreBtn:active {
+  color: pink;
+  transform: translateY(3px);
+}
+
+
+@media only screen and (min-width: 1281px) {
+  .tourismNzLogo {
+      width:5%;
+  }
+}

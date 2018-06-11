@@ -49,6 +49,8 @@
 		color: #333;
 	}
 
+
+
 	</style>
 
 	<!--[if IE]>
@@ -69,8 +71,9 @@
 	// Page piling script
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
+				verticalCentered: true,
 				anchors: ['firstPage', 'secondPage', '3rdPage'],
-				sectionsColor: ['url("https://images.unsplash.com/photo-1501664201380-78af13a2783e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7d36f36ada892ad2ae98a63300974be8&auto=format&fit=crop&w=1950&q=80") no-repeat fixed center center', '#DE564B', '#EAE1C0'],
+				sectionsColor: ['#EAE1C0', '#DE564B', '#EAE1C0'],
 				bgSize: ['cover', 'cover', 'cover'],
 				slidesNavigation: true,
 			});
@@ -89,14 +92,21 @@
 
 <!-- add confirmation -->
 		<div class="section " id="section0">
-			<div class="intro">
-				<img class="tourismNzLogo" src="img/tourismNewZealandLogo.png"  alt="Tourism New Zealand Logo">
-				<p class="travelCompanionLogo">Travel <br> Companion</p>
-				<p class="subText">Your go to app for finding accommodation within Auckland</p>
-				<div class="exploreBtn">
-					<a href="#">Start Exploring</a>
+			<!-- <div class="intro"> -->
+
+				<video id="myVideo" loop muted data-autoplay>
+					<source src="media/Runner.mp4" type="video/mp4">
+				</video>
+				<div class="layer">
+					<img class="tourismNzLogo" src="img/tourismNewZealandLogo.png"  alt="Tourism New Zealand Logo">
+					<p class="travelCompanionLogo">Travel <br> Companion</p>
+					<p class="subText">Your go to app for finding accommodation within Auckland</p>
+					<div class="exploreBtn">
+						<a href="#">Start Exploring</a>
+					</div>
 				</div>
-			</div>
+
+			<!-- </div> -->
 		</div>
 
 

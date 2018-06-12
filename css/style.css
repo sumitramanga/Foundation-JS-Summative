@@ -5,10 +5,10 @@
   font-family: sans-serif;
 }
 
-.intro {
+/* .wrapper {
   width: 75%;
   margin: 0 auto;
-}
+} */
 
 .tourismNzLogo {
     margin-bottom: 3%;
@@ -28,28 +28,24 @@
   -webkit-text-fill-color: transparent;
 }
 
+/* MAIN PAGE */
+
 .subText {
   margin-top: 40px;
   margin-bottom: 40px;
-  font-family: sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 30px;
   color: white;
 }
 
+/* SPALASH PAGE BUTTON */
 .exploreBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
-}
-
-
-a {
+  background-color: pink;
   font-size: 20px;
   text-align: center;
   color: white;
   text-decoration: none;
-  filter: blur(0px);
 }
 
 .exploreBtn:active {
@@ -57,6 +53,7 @@ a {
   transform: translateY(3px);
 }
 
+/* BACKGROUND VIDEO */
 #myVideo{
   position: absolute;
   right: 0;
@@ -79,27 +76,36 @@ a {
   left: 0;
   top: 25%;
   overflow: hidden;
-
-  /*
-  * Preventing flicker on some browsers
-  * See http://stackoverflow.com/a/36671466/1081396  or issue #183
-  */
+  /* Preventing flicker on some browsers*/
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
 
+/*VIDEO OVERFLOW*/
 #section0{
   overflow: hidden;
 }
 
 
+/* NAV */
+.fp-slidesNav.bottom{
+  bottom: 25px;
+}
+
+/* OPTIONAL MUST REMOVE LATER */
+.section {
+  text-align:center;
+}
+
+
 @media only screen and (min-width: 1281px) {
   .tourismNzLogo {
-      width:5%;
+    margin-bottom: 1%;
+    width:5%;
   }
 
   #section0 .layer{
 /* NOT WORKING */
-		top: 13%;
+		top: 19%;
 }

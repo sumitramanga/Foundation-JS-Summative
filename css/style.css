@@ -10,47 +10,68 @@
   margin: 0 auto;
 } */
 
+/* ----------------------------- MAIN PAGE ---------------------------------  */
+
+/* COMPANY LOGO */
 .tourismNzLogo {
     margin-bottom: 3%;
     width:15%;
     height: auto;
 }
 
-/* LOGO ---------------------------------------------------------------------  */
+/* APP LOGO */
 .travelCompanionLogo {
   padding: 19px 0 71px 0px;
   font-family: 'Pacifico', cursive;
-  font-size: 9em;
+  font-size: 8em;
   text-align: center;
-  background: -webkit-linear-gradient(#FC5C7D, #efc125);
+  background: -webkit-linear-gradient(#abecd6, #fbed96); /*#FC5C7D, #efc125*/
   line-height: 80%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* MAIN PAGE */
-
 .subText {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 0.6em;
+  margin-bottom: 1.5em;
   font-family: 'Raleway', sans-serif;
   font-size: 30px;
+  font-weight: 300;
   color: white;
 }
 
 /* SPALASH PAGE BUTTON */
 .exploreBtn {
-  cursor: pointer;
-  background-color: pink;
-  font-size: 20px;
+  padding: 0.8em 1.7em;
+  margin-bottom: 5px;
+  font-size: 1.5em;
+  font-weight: 600;
   text-align: center;
-  color: white;
   text-decoration: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid white;
+  border-radius: 2.1em;
+  cursor: pointer;
+
+  /* Transition effect */
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.exploreBtn:hover, .exploreBtn:focus {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .exploreBtn:active {
-  color: pink;
-  transform: translateY(3px);
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
 }
 
 /* BACKGROUND VIDEO */
@@ -74,9 +95,9 @@
   z-index: 4;
   width: 100%;
   left: 0;
-  top: 25%;
+  top: 16%;
   overflow: hidden;
-  /* Preventing flicker on some browsers*/
+  /* Preventing video flicker on some browsers*/
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
@@ -87,8 +108,7 @@
   overflow: hidden;
 }
 
-
-/* NAV */
+/* BOTTOM NAV */
 .fp-slidesNav.bottom{
   bottom: 25px;
 }
@@ -106,6 +126,5 @@
   }
 
   #section0 .layer{
-/* NOT WORKING */
-		top: 19%;
+	  top: 13%;
 }

@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Travel Companion - Auckland Accommodation finder</title>
 	<link href="https://fonts.googleapis.com/css?family=Pacifico|Raleway:300,400,700,800" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 	<!-- Page Piling css -->
 	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
@@ -19,22 +20,19 @@
 <body>
 
 	<div id="fullpage">
-
-<!-- add confirmation -->
 		<div class="section " id="section0">
-			<!-- <div class="intro"> -->
-
+			<div class="wrapper">
 				<video id="myVideo" loop muted data-autoplay>
 					<source src="media/Runner.mp4" type="video/mp4">
 				</video>
 				<div class="layer">
 					<img class="tourismNzLogo" src="img/tourismNewZealandLogo.png"  alt="Tourism New Zealand Logo">
+					<span class="helpIcon" id="helpIcon"><i class="far fa-question-circle"></i></span>
 					<p class="travelCompanionLogo">Travel <br> Companion</p>
 					<p class="subText">Your go to app for finding accommodation within Auckland</p>
-					<button type="button" name="button" class="exploreBtn">Start Exploring</button>
+					<button type="button" name="button" class="exploreBtn" id="exploreBtn">Start Exploring</button>
 				</div>
-
-			<!-- </div> -->
+			</div>
 		</div>
 
 
@@ -91,10 +89,10 @@
 				slidesNavigation: true,
 			});
 
-			$('.exploreBtn').click(function(){
-				$('html, body').animate({
-					scrollTop: $("#section1").offset().top
-				}, 2000);
+			$('#exploreBtn').click(function(e){
+				e.preventDefault();
+				$.fn.fullpage.setScrollingSpeed(2100);
+				$.fn.fullpage.moveSectionDown();
 			});
 
 		});

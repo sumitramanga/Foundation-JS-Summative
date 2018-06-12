@@ -9,6 +9,7 @@
 
 	<!-- Page Piling css -->
 	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
+
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
 	<!--[if IE]>
@@ -22,18 +23,21 @@
 	<div id="fullpage">
 		<div class="section " id="section0">
 			<div class="wrapper">
+
 				<video id="myVideo" loop muted data-autoplay>
 					<source src="media/Runner.mp4" type="video/mp4">
 				</video>
+
 				<div class="layer">
-					<img class="tourismNzLogo" src="img/tourismNewZealandLogo.png"  alt="Tourism New Zealand Logo">
 					<span class="helpIcon" id="helpIcon"><i class="far fa-question-circle"></i></span>
-					<p class="travelCompanionLogo">Travel <br> Companion</p>
+					<img class="tourismNzLogo" src="img/tourismNewZealandLogo.png"  alt="Tourism New Zealand Logo">
+					<p class="travelCompanionLogo">Travel<br>Companion</p>
 					<p class="subText">Your go to app for finding accommodation within Auckland</p>
 					<button type="button" name="button" class="exploreBtn" id="exploreBtn">Start Exploring</button>
 				</div>
-			</div>
-		</div>
+
+			</div> <!-- wrapper ENDS -->
+		</div> <!-- section0 ENDS -->
 
 
 		<div class="section" id="section1">
@@ -71,32 +75,14 @@
 			</div>
 		</div>
 
-	</div>
+	</div> <!-- FULL PAGE ENDS -->
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/scrolloverflow.js"></script>
 	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
 
-	<script type="text/javascript">
-	// Page piling script
-		$(document).ready(function() {
-			$('#fullpage').fullpage({
-				verticalCentered: true,
-				anchors: ['firstPage', 'secondPage', '3rdPage'],
-				sectionsColor: ['#EAE1C0', '#DE564B', '#EAE1C0'],
-				bgSize: ['cover', 'cover', 'cover'],
-				slidesNavigation: true,
-			});
-
-			$('#exploreBtn').click(function(e){
-				e.preventDefault();
-				$.fn.fullpage.setScrollingSpeed(2100);
-				$.fn.fullpage.moveSectionDown();
-			});
-
-		});
-	</script>
-
+	<!-- Custom JS -->
+	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

@@ -19,14 +19,22 @@
 
 /* ----------------------------- MAIN PAGE ---------------------------------  */
 
-/* COMPANY LOGO */
+// HELP ICON
+
+.helpIcon {
+  float: right;
+}
+
+
+
+// COMPANY LOGO
 .tourismNzLogo {
     margin-bottom: 3%;
     width:15%;
     height: auto;
 }
 
-/* APP LOGO */
+// APP LOGO
 .travelCompanionLogo {
   padding: 19px 0 71px 0px;
   font-family: 'Pacifico', cursive;
@@ -47,7 +55,7 @@
   color: white;
 }
 
-/* SPALASH PAGE BUTTON */
+// SPALASH PAGE BUTTON
 .exploreBtn {
   padding: 0.8em 1.7em;
   margin-bottom: 5px;
@@ -61,7 +69,7 @@
   border-radius: 2.1em;
   cursor: pointer;
 
-  /* Transition effect */
+   // Transition effect
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -81,7 +89,7 @@
   transform: scale(0.9);
 }
 
-/* BACKGROUND VIDEO */
+// BACKGROUND VIDEO
 #myVideo{
   position: absolute;
   right: 0;
@@ -110,17 +118,17 @@
   transform: translate3d(0,0,0);
 }
 
-/*VIDEO OVERFLOW*/
+// VIDEO OVERFLOW
 #section0{
   overflow: hidden;
 }
 
-/* BOTTOM NAV */
+// BOTTOM NAV
 .fp-slidesNav.bottom{
   bottom: 25px;
 }
 
-/* OPTIONAL MUST REMOVE LATER */
+// OPTIONAL MUST REMOVE LATER
 .section {
   text-align:center;
 }

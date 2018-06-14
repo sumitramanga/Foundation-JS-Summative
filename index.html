@@ -39,7 +39,7 @@
 				<div class="layer">
 					<img class="tourismNzLogo" src="img/tourismNewZealandLogo.png"  alt="Tourism New Zealand Logo">
 					<p class="travelCompanionLogo">Travel<br>Companion</p>
-					<p class="subText">Your go to app for finding accommodation within Auckland</p>
+					<p class="subText">Your go to app for finding accommodation within Auckland, New Zealand</p>
 					<button type="button" name="button" class="exploreBtn" id="exploreBtn">Start Exploring</button>
 				</div>
 
@@ -49,31 +49,62 @@
 
 		<div class="section" id="section1">
 		  <div class="slide" id="slide1" data-anchor="slide1">
-				<div class="wrapper">
-					<h1>Clickable</h1>
-					<p>
-						You can even click on the navigation and jump directly to another section.
-					</p>
+				<div class="container slideContainer">
+					<p class="travelCompanionLogo travelCompanionLogo2nd">Travel<br>Companion</p>
+					<h2 class="question">How many guests are staying?</h2>
+					<form class="needs-validation" action="#" method="post" novalidate>
+						<select class="form-control form-control-lg dropDownOption">
+						  <option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+						</select>
+
 				</div>
 			</div>
 
 		  <div class="slide" id="slide2" data-anchor="slide2">
-				<h1>Slide 2</h1>
+				<div class="container slideContainer">
+					<p class="travelCompanionLogo travelCompanionLogo2nd">Travel<br>Companion</p>
+					<h2 class="question">Select your check in and<br>check out dates.</h2>
+
+					<div class="checkInOut">
+						<div class="col-md-4 mb-3 label">
+							<label for="validationCustom01">Check in*</label>
+				      <input type="text" class="form-control checkIn" id="checkOut" required>
+				      <div class="invalid-feedback">
+				        Please enter a date.
+				      </div>
+						</div>
+
+						<div class="col-md-4 mb-3 label">
+							<label for="validationCustom01">Check out*</label>
+							<input type="text" class="form-control checkOut" id="checkIn" required>
+							<div class="invalid-feedback">
+								Please enter a date.
+							</div>
+						</div>
+					</div>
+
+					<p>You have selected</p>
+					<div class="daysSelected">5 Days</div>
+					<div class="note">A minimum of 1 night is required. The mix is 15 nights. <br> *Required Field</div>
+
+					</form>
+				</div>
 			</div>
 
 			<div class="slide" id="slide3" data-anchor="slide3">
 				<h1>Slide 3</h1>
 			</div>
 
-			<div class="slide" id="slide3" data-anchor="slide3">
+			<div class="slide" id="slide4" data-anchor="slide4">
 				<h1>Slide 4</h1>
 			</div>
 
-			<div class="slide" id="slide3" data-anchor="slide3">
-				<h1>Slide 5</h1>
-
-			</div>
-		</div>
+		</div> <!-- SECTION1 ENDS -->
 
 		<div class="section" id="section2">
 			<div class="wrapper">
@@ -94,15 +125,15 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<hr>
-					Kia ora and welcome to Travel Companion! The app which helps you in find and book Auckland, NZ accommodation which fit within your needs.
+					<hr class="hr">
+					Kia ora and welcome to Travel Companion! The app which helps you in find and book accommdation within Auckland, New Zealand that fit within your desired needs.
 					<br><br>
-					You will be asked the question:
+					You will be asked the questions:
 					<br>
 					- How many guests you plan to take with you<br>
 					- The check in and check out dates
 					<br><br>
-					Once these steps are complete, you will be able to view accommodation which best suits your needs.
+					Once these steps are complete, you will be able to view accommodation which best suits you.
 					<br><br>
 					Having trouble? Call us on <strong>+64 4 462 8001</strong> and we'll give you a hand.
 				</div>

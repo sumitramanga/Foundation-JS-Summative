@@ -140,9 +140,11 @@
   border-color: transparent transparent transparent #384059; }
 
 #slide1, #slide3 {
+  color: #384059;
   background-color: white; }
 
 #slide2, #slide4 {
+  color: white;
   background-color: #D66761; }
 
 .slideContainer {
@@ -153,8 +155,7 @@
 
 .slideTitle {
   font-weight: 600;
-  font-size: 2.250em;
-  color: #384059; }
+  font-size: 2.250em; }
 
 .dropDownOption {
   border: 1px solid #384059;
@@ -176,8 +177,7 @@
 .optionsFont {
   margin-bottom: 0;
   font-size: 2.250rem;
-  font-weight: 300;
-  color: white; }
+  font-weight: 300; }
 
 .daySelectedTitle {
   margin-top: 1.5em; }
@@ -186,8 +186,24 @@
   margin-top: 3.5em; }
 
 .tick {
-  font-size: 8em;
-  color: white; }
+  font-size: 8em; }
+
+.submitBtn {
+  padding: 0.6em 1.3em;
+  margin-bottom: 0.1em;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 2.1em;
+  cursor: pointer;
+  color: #EFC125;
+  border: 2px solid #EFC125; }
+
+.successNote {
+  font-size: 1.2em;
+  margin-bottom: 3em; }
 
 .fp-slidesNav.bottom {
   bottom: 25px; }

@@ -4,11 +4,18 @@ $secondaryColor: white;
 $tertiaryColor: #384059;
 $quaternaryColor: #EFC125;
 //
-// // Create mixin for buttons
-// @mixin tabletImgSize{
-//   height: 379px;
-//   width: 379px;
-// }
+// Create mixin for buttons
+@mixin button{
+  padding: 0.6em 1.3em;
+  margin-bottom: 0.1em;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 2.1em;
+  cursor: pointer;
+}
 
 * {
   padding: 0;
@@ -172,7 +179,7 @@ $quaternaryColor: #EFC125;
   }
 }
 
-// SLIDES OPTIONS
+// SLIDES OPTIONS --------------------------------------------------------------
 
 .fp-controlArrow.fp-prev {
   border-color: transparent $tertiaryColor transparent transparent;
@@ -183,15 +190,17 @@ $quaternaryColor: #EFC125;
 }
 
 #slide1, #slide3 {
+  color: $tertiaryColor;
   background-color: white;
 }
 
 #slide2, #slide4 {
+  color: $secondaryColor;
   background-color: $primaryColor;
 }
 
 
-// OPTIONS PAGE ------------------------------------------------------------------
+// GUESTS SLIDE--------------------------------------------------
 
 .slideContainer {
   margin-bottom: 15em;
@@ -204,7 +213,6 @@ $quaternaryColor: #EFC125;
 .slideTitle {
   font-weight: 600;
   font-size: 2.250em;
-  color: $tertiaryColor;
 }
 
 .dropDownOption {
@@ -214,12 +222,12 @@ $quaternaryColor: #EFC125;
   color: $tertiaryColor;
 }
 
-//------------------------------------------------------------------------------
+// CHECK IN AND OUT SLIDE ------------------------------------------------------
 
 .checkInOut {
   display: flex;
   justify-content: center;
-      margin-top: 2.5em;
+  margin-top: 2.5em;
 }
 
 .dropDownOption, .checkIn, .checkOut {
@@ -234,7 +242,6 @@ $quaternaryColor: #EFC125;
   margin-bottom: 0;
   font-size: 2.250rem;
   font-weight: 300;
-  color: $secondaryColor;
 }
 
 .daySelectedTitle {
@@ -245,11 +252,21 @@ $quaternaryColor: #EFC125;
   margin-top: 3.5em;
 }
 
-//------------------------------------------------------------------------------
+// SUCCESS SLIDE ---------------------------------------------------------------
 
 .tick {
   font-size: 8em;
-  color: white;
+}
+
+.submitBtn {
+  @include button;
+  color: $quaternaryColor;
+  border: 2px solid $quaternaryColor;
+}
+
+.successNote {
+  font-size: 1.2em;
+  margin-bottom: 3em;
 }
 
 //------------------------------------------------------------------------------

@@ -1,8 +1,8 @@
-// $mainFont-Family: 'Raleway', sans-serif;
-// $primaryColor: #517A52;
-// $secondaryColor: #FF5109;
-// $tertiaryColor: #629462;
-// $quaternaryColor: white;
+$mainFont-Family: 'Raleway', sans-serif;
+$primaryColor: #D66761;
+$secondaryColor: white;
+$tertiaryColor: #384059;
+$quaternaryColor: #EFC125;
 //
 // // Create mixin for buttons
 // @mixin tabletImgSize{
@@ -14,27 +14,36 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
 }
 
 /* ----------------------------- MAIN PAGE ---------------------------------  */
 
-// HELP ICON
-
-.helpIcon {
-  float: right;
+.body {
+  font-family: $mainFont-Family;
 }
 
+// HELP ICON -------------------------------------------------------------------
+#helpLayer {
+  top: 3%;
+  right: 2%;
+}
 
+.helpIcon {
+  margin-right: 1em;
+  float: right;
+  font-size: 2.5em;
+  color: white;
+  background-color: transparent;
+}
 
-// COMPANY LOGO
+// COMPANY LOGO ----------------------------------------------------------------
 .tourismNzLogo {
     margin-bottom: 3%;
     width:15%;
     height: auto;
 }
 
-// APP LOGO
+// APP LOGO --------------------------------------------------------------------
 .travelCompanionLogo {
   padding: 19px 0 71px 0px;
   font-family: 'Pacifico', cursive;
@@ -55,7 +64,7 @@
   color: white;
 }
 
-// SPALASH PAGE BUTTON
+// SPALASH PAGE BUTTON ---------------------------------------------------------
 .exploreBtn {
   padding: 0.8em 1.7em;
   margin-bottom: 5px;
@@ -89,7 +98,7 @@
   transform: scale(0.9);
 }
 
-// BACKGROUND VIDEO
+// BACKGROUND VIDEO ------------------------------------------------------------
 #myVideo{
   position: absolute;
   right: 0;
@@ -105,7 +114,7 @@
   z-index:3;
 }
 
-#section0 .layer{
+ .layer {
   position: absolute;
   z-index: 4;
   width: 100%;
@@ -118,17 +127,56 @@
   transform: translate3d(0,0,0);
 }
 
-// VIDEO OVERFLOW
-#section0{
+#section0 {
   overflow: hidden;
 }
 
-// BOTTOM NAV
-.fp-slidesNav.bottom{
+// HELP MODAL ------------------------------------------------------------------
+
+.modal-dialog {
+  margin: 12em auto;
+  max-width: 589px;
+}
+
+.modal-content {
+  border-radius: 2em;
+}
+
+hr {
+  border-top: 0.1em solid $tertiaryColor;
+  opacity: 0.7;
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+.modal-body {
+  padding: 0em 2.5em 2.5em;
+  font-size: 1.250em;
+  color: $tertiaryColor;
+}
+
+.travelCompanionLogoModal {
+  padding: 0.6em 0;
+  margin: 0em auto;
+  font-size: 2.5em;
+}
+
+.modal-header {
+  border:none;
+  .close {
+    padding: 0.5em 0.6em 0.5em 0;
+    margin: 0;
+    font-size: 2.5em;
+    color: $tertiaryColor;
+    opacity: 1;
+  }
+}
+
+// BOTTOM NAV ------------------------------------------------------------------
+.fp-slidesNav.bottom {
   bottom: 25px;
 }
 
-// OPTIONAL MUST REMOVE LATER
+// OPTIONAL MUST REMOVE LATER --------------------------------------------------
 .section {
   text-align:center;
 }
@@ -140,7 +188,7 @@
     width:5%;
   }
 
-  #section0 .layer{
+  .layer{
 	  top: 13%;
   }
 }

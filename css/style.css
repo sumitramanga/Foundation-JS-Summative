@@ -1,12 +1,22 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
-  font-family: sans-serif; }
+  box-sizing: border-box; }
 
 /* ----------------------------- MAIN PAGE ---------------------------------  */
+.body {
+  font-family: "Raleway", sans-serif; }
+
+#helpLayer {
+  top: 3%;
+  right: 2%; }
+
 .helpIcon {
-  float: right; }
+  margin-right: 1em;
+  float: right;
+  font-size: 2.5em;
+  color: white;
+  background-color: transparent; }
 
 .tourismNzLogo {
   margin-bottom: 3%;
@@ -75,7 +85,7 @@
   /*cover video background */
   z-index: 3; }
 
-#section0 .layer {
+.layer {
   position: absolute;
   z-index: 4;
   width: 100%;
@@ -90,6 +100,38 @@
 #section0 {
   overflow: hidden; }
 
+.modal-dialog {
+  margin: 12em auto;
+  max-width: 589px; }
+
+.modal-content {
+  border-radius: 2em; }
+
+hr {
+  border-top: 0.1em solid #384059;
+  opacity: 0.7;
+  margin-top: 0;
+  margin-bottom: 1.5em; }
+
+.modal-body {
+  padding: 0em 2.5em 2.5em;
+  font-size: 1.250em;
+  color: #384059; }
+
+.travelCompanionLogoModal {
+  padding: 0.6em 0;
+  margin: 0em auto;
+  font-size: 2.5em; }
+
+.modal-header {
+  border: none; }
+  .modal-header .close {
+    padding: 0.5em 0.6em 0.5em 0;
+    margin: 0;
+    font-size: 2.5em;
+    color: #384059;
+    opacity: 1; }
+
 .fp-slidesNav.bottom {
   bottom: 25px; }
 
@@ -101,7 +143,7 @@
     margin-bottom: 1%;
     width: 5%; }
 
-  #section0 .layer {
+  .layer {
     top: 13%; } }
 
 /*# sourceMappingURL=style.css.map */

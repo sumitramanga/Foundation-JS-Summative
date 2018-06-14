@@ -20,7 +20,7 @@
 		</script>
 	<![endif]-->
 </head>
-<body>
+<body class="body">
 
 	<div id="fullpage">
 		<div class="section " id="section0">
@@ -30,8 +30,13 @@
 					<source src="media/Runner.mp4" type="video/mp4">
 				</video>
 
+					<div class="layer" id="helpLayer">
+						<button type="button" class="btn helpIcon" id="helpIcon" data-toggle="modal" data-target="#exampleModal">
+							<i class="far fa-question-circle"></i>
+						</button>
+					</div>
+
 				<div class="layer">
-					<span class="helpIcon" id="helpIcon"><i class="far fa-question-circle"></i></span>
 					<img class="tourismNzLogo" src="img/tourismNewZealandLogo.png"  alt="Tourism New Zealand Logo">
 					<p class="travelCompanionLogo">Travel<br>Companion</p>
 					<p class="subText">Your go to app for finding accommodation within Auckland</p>
@@ -78,6 +83,32 @@
 
 	</div> <!-- FULL PAGE ENDS -->
 
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<p class="modal-title travelCompanionLogo travelCompanionLogoModal" id="exampleModalLabel">Travel<br>Companion</p>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<i class="fas fa-times"></i>
+					</button>
+				</div>
+				<div class="modal-body">
+					<hr>
+					Kia ora and welcome to Travel Companion! The app which helps you in find and book Auckland, NZ accommodation which fit within your needs.
+					<br><br>
+					You will be asked the question:
+					<br>
+					- How many guests you plan to take with you<br>
+					- The check in and check out dates
+					<br><br>
+					Once these steps are complete, you will be able to view accommodation which best suits your needs.
+					<br><br>
+					Having trouble? Call us on <strong>+64 4 462 8001</strong> and we'll give you a hand.
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 

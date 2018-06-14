@@ -20,6 +20,7 @@ $quaternaryColor: #EFC125;
 
 .body {
   font-family: $mainFont-Family;
+  font-size: 1.250em;
 }
 
 // HELP ICON -------------------------------------------------------------------
@@ -200,7 +201,7 @@ $quaternaryColor: #EFC125;
   font-size: 2.5em;
 }
 
-.question {
+.slideTitle {
   font-weight: 600;
   font-size: 2.250em;
   color: $tertiaryColor;
@@ -212,14 +213,47 @@ $quaternaryColor: #EFC125;
   width: 50%;
   color: $tertiaryColor;
 }
+
+//------------------------------------------------------------------------------
+
 .checkInOut {
   display: flex;
   justify-content: center;
+      margin-top: 2.5em;
+}
+
+.dropDownOption, .checkIn, .checkOut {
+  box-shadow: rgba(0, 0, 0, 0.2) -6px 7px 2px 0px;
 }
 
 .label {
   text-align: left;
 }
+
+.optionsFont {
+  margin-bottom: 0;
+  font-size: 2.250rem;
+  font-weight: 300;
+  color: $secondaryColor;
+}
+
+.daySelectedTitle {
+  margin-top: 1.5em;
+}
+
+.note {
+  margin-top: 3.5em;
+}
+
+//------------------------------------------------------------------------------
+
+.tick {
+  font-size: 8em;
+  color: white;
+}
+
+//------------------------------------------------------------------------------
+
 
 // BOTTOM NAV ------------------------------------------------------------------
 .fp-slidesNav.bottom {

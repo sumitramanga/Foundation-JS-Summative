@@ -27,7 +27,7 @@
 .travelCompanionLogo {
   padding: 19px 0 71px 0px;
   font-family: 'Pacifico', cursive;
-  font-size: 8em;
+  font-size: 7em;
   text-align: center;
   background: -webkit-linear-gradient(#abecd6, #fbed96);
   /*#FC5C7D, #efc125*/
@@ -44,17 +44,17 @@
   color: white; }
 
 .exploreBtn {
-  padding: 0.8em 1.7em;
-  margin-bottom: 5px;
-  font-size: 1.5em;
+  margin-bottom: 0.1em;
+  font-size: 1.2em;
   font-weight: 600;
   text-align: center;
   text-decoration: none;
-  color: white;
   background-color: rgba(0, 0, 0, 0);
-  border: 1px solid white;
   border-radius: 2.1em;
   cursor: pointer;
+  padding: 0.7em 1.4em;
+  color: white;
+  border: 1px solid white;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -102,7 +102,7 @@
   overflow: hidden; }
 
 .modal-dialog {
-  margin: 10.4em auto;
+  margin: 8em auto;
   max-width: 589px; }
 
 .modal-content {
@@ -116,13 +116,13 @@
 
 .modal-body {
   padding: 0em 2.5em 2.5em;
-  font-size: 1.250em;
+  font-size: 20px;
   color: #384059; }
 
 .travelCompanionLogoModal {
-  padding: 1em 0;
-  margin: 0em 2em 0em 4.7em;
-  font-size: 2.5em; }
+  padding: 1em 0 0.6em 0;
+  margin: 0em 1em 0em 4em;
+  font-size: 2.2em; }
 
 .modal-header {
   border: none; }
@@ -139,13 +139,12 @@
 .fp-controlArrow.fp-next {
   border-color: transparent transparent transparent #384059; }
 
-#slide1, #slide3 {
+#slide1, #slide3, #section2 {
   color: #384059;
   background-color: white; }
 
-#slide2, #slide4 {
-  color: white;
-  background-color: #D66761; }
+#slide2, #slide4, #section3 {
+  color: white; }
 
 .slideContainer {
   margin-bottom: 15em; }
@@ -153,7 +152,7 @@
 .travelCompanionLogo2nd {
   font-size: 2.5em; }
 
-.slideTitle {
+.mainTitle {
   font-weight: 600;
   font-size: 2.250em; }
 
@@ -188,8 +187,7 @@
 .tick {
   font-size: 8em; }
 
-.submitBtn {
-  padding: 0.6em 1.3em;
+.submitBtn, .viewResultsBtn {
   margin-bottom: 0.1em;
   font-size: 1.2em;
   font-weight: 600;
@@ -198,12 +196,29 @@
   background-color: rgba(0, 0, 0, 0);
   border-radius: 2.1em;
   cursor: pointer;
+  padding: 0.6em 1.3em;
   color: #EFC125;
   border: 2px solid #EFC125; }
+
+.check {
+  height: 18%;
+  width: auto;
+  margin-top: 1em;
+  margin-bottom: 2em; }
 
 .successNote {
   font-size: 1.2em;
   margin-bottom: 3em; }
+
+.map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.mapboxgl-canvas {
+  position: static; }
 
 .fp-slidesNav.bottom {
   bottom: 25px; }

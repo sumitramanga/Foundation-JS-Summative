@@ -8,6 +8,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'></script>
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet'/>
+
 	<!-- Page Piling css -->
 	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
 
@@ -48,10 +51,11 @@
 
 
 		<div class="section" id="section1">
+
 		  <div class="slide" id="slide1" data-anchor="slide1">
 				<div class="container slideContainer">
 					<p class="travelCompanionLogo travelCompanionLogo2nd">Travel<br>Companion</p>
-					<h2 class="slideTitle">How many guests are staying?</h2>
+					<h2 class="mainTitle">How many guests are staying?</h2>
 					<form class="needs-validation" action="#" method="post" novalidate>
 						<select class="form-control form-control-lg dropDownOption">
 						  <option>1</option>
@@ -67,7 +71,7 @@
 		  <div class="slide" id="slide2" data-anchor="slide2">
 				<div class="container">
 					<p class="travelCompanionLogo travelCompanionLogo2nd">Travel<br>Companion</p>
-					<h2 class="slideTitle">Select your check in and<br>check out dates.</h2>
+					<h2 class="mainTitle">Select your check in and<br>check out dates.</h2>
 
 					<div class="checkInOut">
 						<div class="col-md-4 mb-3 label">
@@ -97,7 +101,7 @@
 			<div class="slide" id="slide3" data-anchor="slide3">
 				<div class="container slideContainer">
 					<p class="travelCompanionLogo travelCompanionLogo2nd">Travel<br>Companion</p>
-					<h2 class="slideTitle">Select your meal options</h2>
+					<h2 class="mainTitle">Select your meal options</h2>
 					<select class="form-control form-control-lg dropDownOption">
 						<option>Breakfast - $30</option>
 						<option>Lunch - $30</option>
@@ -105,22 +109,52 @@
 						<option>All meals - $90</option>
 					</select>
 				</div>
-
 			</div>
 
 			<div class="slide" id="slide4" data-anchor="slide4">
 				<p class="travelCompanionLogo travelCompanionLogo2nd">Travel<br>Companion</p>
-				<h2 class="slideTitle">All Set!</h2>
-				<span class="tick"><i class="fas fa-check"></i></span>
+				<h2 class="mainTitle">All Set!</h2>
+				<img src="img/check-symbol.svg" alt="check" class="check">
 				<p class="successNote">You can now explore your accommodation<br>options</p>
-				<button class="submitBtn" type="submit" name="button">Browse Accommodation</button>
+				<button class="submitBtn" id="submitBtn" type="submit" name="button">Browse Accommodation</button>
 			</div>
 
 		</div> <!-- SECTION1 ENDS -->
 
+
 		<div class="section" id="section2">
 			<div class="wrapper">
-				<h1>Enjoy it</h1>
+				<!-- <p class="travelCompanionLogo travelCompanionLogo2nd">Travel<br>Companion</p> -->
+				<!-- <h2 class="mainTitle">Browse your accommodation</h2> -->
+				<div class="map" id="map"></div>
+				<!-- <button type="button" name="button" class="viewResultsBtn" id="viewResultsBtn">View Results</button> -->
+			</div>
+		</div>
+
+		<div class="section" id="section3">
+			<div class="wrapper">
+
+				<p class="travelCompanionLogo travelCompanionLogo2nd">Travel<br>Companion</p>
+				<h2 class="mainTitle">Your Results</h2>
+				<div class="acomImg" id="acomImg"></div>
+
+				<div class="guestCount" id="guestCount"></div>
+				<div class="mealOption" id="mealOption"></div>
+				<div class="nights" id="nights"></div>
+
+				<hr>
+					<h3>Total Cost:</h3>
+					<div class="totalCost" id="totalCost"></div>
+				<hr>
+
+				<div class="note">
+					<p class="note">
+						Call us on to confirm your booking with us.
+						<br>Please refer us with your booking code
+						<strong>#12345</strong>
+					</p>
+				</div>
+
 			</div>
 		</div>
 
@@ -167,6 +201,7 @@
 	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
 
 	<!-- Custom JS -->
+	<script type="text/javascript" src="js/data.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

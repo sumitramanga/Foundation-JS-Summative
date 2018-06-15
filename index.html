@@ -8,8 +8,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
-	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'></script>
-	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet'/>
+	<!-- Mapbox -->
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet'>
 
 	<!-- Page Piling css -->
 	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
@@ -124,10 +124,15 @@
 
 		<div class="section" id="section2">
 			<div class="wrapper">
-				<!-- <p class="travelCompanionLogo travelCompanionLogo2nd">Travel<br>Companion</p> -->
-				<!-- <h2 class="mainTitle">Browse your accommodation</h2> -->
-				<div class="map" id="map"></div>
-				<!-- <button type="button" name="button" class="viewResultsBtn" id="viewResultsBtn">View Results</button> -->
+				<p class="travelCompanionLogo travelCompanionLogo2nd">Travel<br>Companion</p>
+
+				<h2 class="mainTitle">Browse your accommodation</h2>
+
+				<div class="mapWrapper">
+					<div class="map" id="map"></div>
+				</div>
+
+				<button type="button" name="button" class="viewResultsBtn" id="viewResultsBtn">View Results</button>
 			</div>
 		</div>
 
@@ -136,22 +141,36 @@
 
 				<p class="travelCompanionLogo travelCompanionLogo2nd">Travel<br>Companion</p>
 				<h2 class="mainTitle">Your Results</h2>
-				<div class="acomImg" id="acomImg"></div>
 
-				<div class="guestCount" id="guestCount"></div>
-				<div class="mealOption" id="mealOption"></div>
-				<div class="nights" id="nights"></div>
+				<div class="acomImgWrapper" id="acomImg">
+					<img class=acomImgsrc="" alt="">
+				</div>
+
+				<div class="wrapper">
+					<i class="fas fa-user"></i>
+					<span class="guestCount" id="guestCount">5 guests</span>
+				</div>
+
+				<div class="wrapper">
+					<i class="fas fa-utensils"></i>
+					<span class="mealOption" id="mealOption">Full meal</span>
+				</div>
+
+				<div class="wrapper">
+					<i class="fas fa-moon"></i>
+					<span class="nights" id="nights">5 nights</span>
+				</div>
 
 				<hr>
 					<h3>Total Cost:</h3>
-					<div class="totalCost" id="totalCost"></div>
+					<div class="totalCost" id="totalCost">$123NZD</div>
 				<hr>
 
 				<div class="note">
 					<p class="note">
 						Call us on to confirm your booking with us.
 						<br>Please refer us with your booking code
-						<strong>#12345</strong>
+						<span><strong>#12345</strong></span>
 					</p>
 				</div>
 
@@ -197,8 +216,13 @@
 
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'></script>
+
+
 	<script type="text/javascript" src="js/scrolloverflow.js"></script>
 	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+
+
 
 	<!-- Custom JS -->
 	<script type="text/javascript" src="js/data.js"></script>

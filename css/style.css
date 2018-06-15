@@ -210,15 +210,22 @@
   font-size: 1.2em;
   margin-bottom: 3em; }
 
+.mapWrapper {
+  margin: 1.9em auto;
+  width: 100%;
+  height: 50vh; }
+
 .map {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0; }
+  margin: 0 auto;
+  width: 100%;
+  height: 50vh; }
 
 .mapboxgl-canvas {
-  position: static; }
+  position: static !important; }
+
+i {
+  margin-right: 1em;
+  font-size: 1.250em; }
 
 .fp-slidesNav.bottom {
   bottom: 25px; }

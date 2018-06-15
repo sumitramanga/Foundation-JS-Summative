@@ -5,7 +5,7 @@
     $(document).ready(function() {
       $('#fullpage').fullpage({
         verticalCentered: true,
-        anchors: ['firstPage', 'secondPage', '3rdPage', 'fourthPage', 'fifthPage'],
+        anchors: ['firstPage', 'secondPage', '3rdPage', 'fourthPage'],
         sectionsColor: ['white', '#D66761', 'white', '#D66761'],
         bgSize: ['cover', 'cover', 'cover'],
         slidesNavigation: true,
@@ -21,11 +21,20 @@
         e.preventDefault();
         $.fn.fullpage.setScrollingSpeed(1000);
         $.fn.fullpage.moveSectionDown();
+        $.fn.fullpage.setAllowScrolling(false);
       });
+
+      $('#viewResultsBtn').click(function(e){
+        e.preventDefault();
+        $.fn.fullpage.setScrollingSpeed(1000);
+        $.fn.fullpage.moveSectionDown();
+      });
+
 
       $( function(){
         $( "#datepicker" ).datepicker();
       });
+
     }); // DOCUMENT READY ENDS
 
     // SETTING UP MAP ---------------------------------------------------------------
@@ -33,8 +42,8 @@
         var map = new mapboxgl.Map({
           container: 'map', // container id
           style: 'mapbox://styles/sumitram/cji3p2cwm0s6r2smz01nlidgc', // stylesheet location
-          center: [174.780651, -41.278932], // starting position [lng, lat]
-          zoom: 17 // starting zoom
+          center: [174.763222, -36.854191], // starting position [lng, lat]
+          zoom: 13 // starting zoom
         });
 
 // //FORM VALIDATOR

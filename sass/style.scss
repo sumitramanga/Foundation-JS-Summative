@@ -287,9 +287,19 @@ $quaternaryColor: #EFC125;
   position: static !important;
 }
 
+// SECTION 4 - RESULTS ---------------------------------------------------------
+
 i {
   margin-right: 1em;
   font-size: 1.250em;
+}
+
+.acomImgWrapper {
+  width: 300px;
+  height: 300px;
+  .acomImg {
+
+  }
 }
 
 // BOTTOM NAV ------------------------------------------------------------------

@@ -227,6 +227,10 @@ i {
   margin-right: 1em;
   font-size: 1.250em; }
 
+.acomImgWrapper {
+  width: 300px;
+  height: 300px; }
+
 .fp-slidesNav.bottom {
   bottom: 25px; }
 

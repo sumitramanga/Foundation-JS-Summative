@@ -15,6 +15,7 @@
         e.preventDefault();
         $.fn.fullpage.setScrollingSpeed(1000);
         $.fn.fullpage.moveSectionDown();
+        // $.fn.fullpage.setAllowScrolling(false);
       });
 
       $('#submitBtn').click(function(e){

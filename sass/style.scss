@@ -4,6 +4,16 @@ $secondaryColor: white;
 $tertiaryColor: #384059;
 $quaternaryColor: #EFC125;
 
+@mixin logo {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  background: -webkit-linear-gradient(#abecd6, #fbed96); /*#FC5C7D, #efc125*/
+  line-height: 80%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 // Create mixin for buttons
 @mixin button{
   margin-bottom: 0.1em;
@@ -45,21 +55,17 @@ $quaternaryColor: #EFC125;
 
 // COMPANY LOGO ----------------------------------------------------------------
 .tourismNzLogo {
-    margin-bottom: 3%;
-    width:15%;
-    height: auto;
+  margin-bottom: 3%;
+  width:15%;
+  height: auto;
 }
 
 // APP LOGO --------------------------------------------------------------------
 .travelCompanionLogo {
+  @include logo;
   padding: 19px 0 71px 0px;
-  font-family: 'Pacifico', cursive;
   font-size: 7em;
-  text-align: center;
-  background: -webkit-linear-gradient(#abecd6, #fbed96); /*#FC5C7D, #efc125*/
-  line-height: 80%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+
 }
 
 .subText {
@@ -197,7 +203,9 @@ $quaternaryColor: #EFC125;
   margin-bottom: 15em;
 }
 
-.travelCompanionLogo2nd {
+.smallLogo {
+  @include logo;
+  padding: 19px 0 71px 0px;
   font-size: 2.5em;
 }
 
@@ -271,7 +279,6 @@ $quaternaryColor: #EFC125;
 // SECTION 3 - MAP -------------------------------------------------------------
 
 .mapWrapper {
-  // background-color: pink;
   margin: 1.9em auto;
   width: 100%;
   height: 50vh;
@@ -289,17 +296,66 @@ $quaternaryColor: #EFC125;
 
 // SECTION 4 - RESULTS ---------------------------------------------------------
 
-i {
-  margin-right: 1em;
-  font-size: 1.250em;
+.row {
+  margin-top: 2.3em;
+}
+
+.smallLogoResults {
+  @include logo;
+  // margin-top: 71px;
+  // margin-bottom: 0;
+  padding: 10px 20px 34px 0px;
+  font-size: 2em;
+  float: right;
+}
+
+.restart {
+  @include button;
+  font-size: 0.6em;
+  padding: 0.6em 1.3em;
+  color: $quaternaryColor;
+  border: 2px solid $quaternaryColor;
 }
 
 .acomImgWrapper {
-  width: 300px;
-  height: 300px;
+  margin: 0.9em auto;
+  width: 573px;
+  height: 302px;
+  background-color: pink;
   .acomImg {
 
   }
+}
+
+.subtitle {
+  font-size: 1em;
+}
+
+#summary {
+  text-align: left;
+  width: 28em;
+  margin: 0 auto;
+}
+
+.resultsIcons {
+  margin-right: 0.6em;
+  margin-bottom: 0.7em;
+  font-size: 1.7em;
+}
+
+.resultsHR {
+  border-top: 0.1em solid $secondaryColor;
+  opacity: 0.7;
+  width: 74%;
+  margin:1em auto;
+}
+
+.total {
+  margin: 37px 0;
+}
+
+.bookingInstructions {
+  margin-top: 30px;
 }
 
 // BOTTOM NAV ------------------------------------------------------------------

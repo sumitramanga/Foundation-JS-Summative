@@ -25,15 +25,15 @@
   height: auto; }
 
 .travelCompanionLogo {
-  padding: 19px 0 71px 0px;
   font-family: 'Pacifico', cursive;
-  font-size: 7em;
   text-align: center;
   background: -webkit-linear-gradient(#abecd6, #fbed96);
   /*#FC5C7D, #efc125*/
   line-height: 80%;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; }
+  -webkit-text-fill-color: transparent;
+  padding: 19px 0 71px 0px;
+  font-size: 7em; }
 
 .subText {
   margin-top: 0.6em;
@@ -149,7 +149,15 @@
 .slideContainer {
   margin-bottom: 15em; }
 
-.travelCompanionLogo2nd {
+.smallLogo {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  background: -webkit-linear-gradient(#abecd6, #fbed96);
+  /*#FC5C7D, #efc125*/
+  line-height: 80%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 19px 0 71px 0px;
   font-size: 2.5em; }
 
 .mainTitle {
@@ -223,13 +231,65 @@
 .mapboxgl-canvas {
   position: static !important; }
 
-i {
-  margin-right: 1em;
-  font-size: 1.250em; }
+.row {
+  margin-top: 2.3em; }
+
+.smallLogoResults {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  background: -webkit-linear-gradient(#abecd6, #fbed96);
+  /*#FC5C7D, #efc125*/
+  line-height: 80%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 10px 20px 34px 0px;
+  font-size: 2em;
+  float: right; }
+
+.restart {
+  margin-bottom: 0.1em;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 2.1em;
+  cursor: pointer;
+  font-size: 0.6em;
+  padding: 0.6em 1.3em;
+  color: #EFC125;
+  border: 2px solid #EFC125; }
 
 .acomImgWrapper {
-  width: 300px;
-  height: 300px; }
+  margin: 0.9em auto;
+  width: 573px;
+  height: 302px;
+  background-color: pink; }
+
+.subtitle {
+  font-size: 1em; }
+
+#summary {
+  text-align: left;
+  width: 28em;
+  margin: 0 auto; }
+
+.resultsIcons {
+  margin-right: 0.6em;
+  margin-bottom: 0.7em;
+  font-size: 1.7em; }
+
+.resultsHR {
+  border-top: 0.1em solid white;
+  opacity: 0.7;
+  width: 74%;
+  margin: 1em auto; }
+
+.total {
+  margin: 37px 0; }
+
+.bookingInstructions {
+  margin-top: 30px; }
 
 .fp-slidesNav.bottom {
   bottom: 25px; }

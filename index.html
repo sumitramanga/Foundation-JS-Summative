@@ -54,7 +54,7 @@
 
 		  <div class="slide" id="slide1" data-anchor="slide1">
 				<div class="container slideContainer">
-					<p class="travelCompanionLogo travelCompanionLogo2nd">Travel<br>Companion</p>
+					<p class="smallLogo">Travel<br>Companion</p>
 					<h2 class="mainTitle">How many guests are staying?</h2>
 					<form class="needs-validation" action="#" method="post" novalidate>
 						<select class="form-control form-control-lg dropDownOption">
@@ -70,7 +70,7 @@
 
 		  <div class="slide" id="slide2" data-anchor="slide2">
 				<div class="container">
-					<p class="travelCompanionLogo travelCompanionLogo2nd">Travel<br>Companion</p>
+					<p class="smallLogo">Travel<br>Companion</p>
 					<h2 class="mainTitle">Select your check in and<br>check out dates.</h2>
 
 					<div class="checkInOut">
@@ -100,7 +100,7 @@
 
 			<div class="slide" id="slide3" data-anchor="slide3">
 				<div class="container slideContainer">
-					<p class="travelCompanionLogo travelCompanionLogo2nd">Travel<br>Companion</p>
+					<p class="smallLogo">Travel<br>Companion</p>
 					<h2 class="mainTitle">Select your meal options</h2>
 					<select class="form-control form-control-lg dropDownOption">
 						<option>Breakfast - $30</option>
@@ -112,7 +112,7 @@
 			</div>
 
 			<div class="slide" id="slide4" data-anchor="slide4">
-				<p class="travelCompanionLogo travelCompanionLogo2nd">Travel<br>Companion</p>
+				<p class="smallLogo">Travel<br>Companion</p>
 				<h2 class="mainTitle">All Set!</h2>
 				<img src="img/checkSymbol.svg" alt="check" class="check">
 				<p class="successNote">You can now explore your accommodation<br>options</p>
@@ -124,7 +124,7 @@
 
 		<div class="section" id="section2">
 			<div class="wrapper">
-				<p class="travelCompanionLogo travelCompanionLogo2nd">Travel<br>Companion</p>
+				<p class="smallLogo">Travel<br>Companion</p>
 
 				<h2 class="mainTitle">Browse your accommodation</h2>
 
@@ -139,38 +139,52 @@
 		<div class="section" id="section3">
 			<div class="wrapper">
 
-				<p class="travelCompanionLogo travelCompanionLogo2nd">Travel<br>Companion</p>
+
+				<div class="row">
+					<div class="col-8">
+						<p class="smallLogoResults" id="travelCompanionLogo3rd">Travel<br>Companion</p>
+					</div>
+					<div class="col-4">
+						<form action="file:///Users/sumitramanga/Desktop/Foundation-JS/Travel-Companion/Website/index.html#firstPage">
+							<button type="submit" name="submit" class="restart">Start over</button>
+						</form>
+					</div>
+
+				</div>
+
 				<h2 class="mainTitle">Your Results</h2>
+				<h3 class="subTitle">Grand Milliennium - $199 per night</h3>
 
 				<div class="acomImgWrapper" id="acomImg">
-					<img class="acomImg" src="img/grandMillennium.jpg" alt="">
+					<!-- <img class="acomImg" src="img/grandMillennium.jpg" alt=""> -->
 				</div>
 
-				<div class="wrapper">
-					<i class="fas fa-user"></i>
-					<span class="guestCount" id="guestCount">5 guests</span>
+				<div id="summary">
+					<div class="wrapper">
+						<i class="fas fa-user resultsIcons"></i>
+						<span class="guestCount" id="guestCount">5 guests</span>
+					</div>
+
+					<div class="wrapper">
+						<i class="fas fa-utensils resultsIcons"></i>
+						<span class="mealOption" id="mealOption">Full meal</span>
+					</div>
+
+					<div class="wrapper">
+						<i class="far fa-calendar-alt resultsIcons"></i>
+						<span class="nights" id="nights">5 nights (12/07/2018 - 16/07/2018)</span>
+					</div>
 				</div>
 
-				<div class="wrapper">
-					<i class="fas fa-utensils"></i>
-					<span class="mealOption" id="mealOption">Full meal</span>
-				</div>
+				<hr class="resultsHR">
+					<h3 class="total">Total Cost: <span class="totalCost" id="totalCost">$123NZD</span></h3>
+				<hr class="resultsHR">
 
-				<div class="wrapper">
-					<i class="fas fa-moon"></i>
-					<span class="nights" id="nights">5 nights</span>
-				</div>
-
-				<hr>
-					<h3>Total Cost:</h3>
-					<div class="totalCost" id="totalCost">$123NZD</div>
-				<hr>
-
-				<div class="note">
-					<p class="note">
+				<div class="">
+					<p class="bookingInstructions">
 						Call us on to confirm your booking with us.
 						<br>Please refer us with your booking code
-						<span><strong>#12345</strong></span>
+						<span id="refNum"><strong>#12345</strong></span>
 					</p>
 				</div>
 
@@ -184,7 +198,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<p class="modal-title travelCompanionLogo travelCompanionLogoModal" id="exampleModalLabel">Travel<br>Companion</p>
+					<p class="modal-title travelCompanionLogoModal" id="exampleModalLabel">Travel<br>Companion</p>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<i class="fas fa-times"></i>
 					</button>

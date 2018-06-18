@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Travel Companion - Auckland Accommodation finder</title>
@@ -51,13 +50,13 @@
 
 
 		<div class="section" id="section1">
-
-		  <div class="slide" id="slide1" data-anchor="slide1">
-				<div class="container slideContainer">
-					<p class="smallLogo">Travel<br>Companion</p>
-					<h2 class="mainTitle">How many guests are staying?</h2>
-					<form class="needs-validation" action="#" method="post" novalidate>
-						<select class="form-control form-control-lg dropDownOption">
+			<form class="needs-validation" action="#" method="post" novalidate>
+			  <div class="slide" id="slide1" data-anchor="slide1">
+					<div class="container slideContainer">
+						<p class="smallLogo">Travel<br>Companion</p>
+						<h2 class="mainTitle">How many guests are <br>staying?</h2>
+						<select class="form-control form-control-lg dropDownOption" id="getGuests" required>
+							<option disabled selected value>Select an option</option>
 						  <option>1</option>
 							<option>2</option>
 							<option>3</option>
@@ -65,64 +64,75 @@
 							<option>5</option>
 							<option>6</option>
 						</select>
-				</div>
-			</div>
-
-		  <div class="slide" id="slide2" data-anchor="slide2">
-				<div class="container">
-					<p class="smallLogo">Travel<br>Companion</p>
-					<h2 class="mainTitle">Select your check in and<br>check out dates.</h2>
-
-					<div class="checkInOut">
-						<div class="col-md-4 mb-3 label">
-							<label for="validationCustom01">Check in*</label>
-				      <input type="text" class="form-control checkIn" id="checkOut" required>
-				      <div class="invalid-feedback">
-				        Please enter a date.
-				      </div>
+						<div class="invalid-feedback">
+							Please selects the amount of guests.
 						</div>
+					</div> <!-- container Ends-->
+				</div> <!-- slide1 Ends -->
 
-						<div class="col-md-4 mb-3 label">
-							<label for="validationCustom01">Check out*</label>
-							<input type="text" class="form-control checkOut" id="checkIn" required>
-							<div class="invalid-feedback">
-								Please enter a date.
+			  <div class="slide" id="slide2" data-anchor="slide2">
+					<div class="container">
+						<p class="smallLogo">Travel<br>Companion</p>
+						<h2 class="mainTitle">Select your check in and<br>check out dates.</h2>
+
+						<div class="checkInOut">
+							<div class="col-md-4 mb-3 labelAlign">
+								<label for="validationCustom01">Check in*</label>
+					      <input type="text" class="form-control checkIn" id="checkOut" required>
+					      <div class="invalid-feedback">
+					        Please enter a date.
+					      </div>
+							</div>
+
+							<div class="col-md-4 mb-3 labelAlign">
+								<label for="validationCustom01">Check out*</label>
+								<input type="text" class="form-control checkOut" id="checkIn" required>
+								<div class="invalid-feedback">
+									Please enter a date.
+								</div>
 							</div>
 						</div>
+
+						<p class="optionsFont daySelectedTitle">You have selected</p>
+						<div class="optionsFont daysSelected">5 Days</div>
+						<div class="note"><p>A minimum of 1 night is required. The mix is 15 nights. <br> *Required Field<p></div>
 					</div>
-
-					<p class="optionsFont daySelectedTitle">You have selected</p>
-					<div class="optionsFont daysSelected">5 Days</div>
-					<div class="note"><p>A minimum of 1 night is required. The mix is 15 nights. <br> *Required Field<p></div>
-					</form>
 				</div>
-			</div>
 
-			<div class="slide" id="slide3" data-anchor="slide3">
-				<div class="container slideContainer">
-					<p class="smallLogo">Travel<br>Companion</p>
-					<h2 class="mainTitle">Select your meal options</h2>
-					<select class="form-control form-control-lg dropDownOption">
-						<option>Breakfast - $30</option>
-						<option>Lunch - $30</option>
-						<option>Dinner - $30</option>
-						<option>All meals - $90</option>
-					</select>
+				<div class="slide" id="slide3" data-anchor="slide3">
+					<div class="container slideContainer">
+						<p class="smallLogo">Travel<br>Companion</p>
+						<h2 class="mainTitle">Select your meal options</h2>
+						<select class="form-control form-control-lg dropDownOption" id="mealOption" required>
+							<option disabled selected value>Select an option</option>
+							<option value="Breakfast">Breakfast - $30</option>
+							<option value="Lunch">Lunch - $30</option>
+							<option value="Dinner">Dinner - $30</option>
+							<option value="All meals">All meals - $90</option>
+							<option value="None">none</option>
+						</select>
+						<div class="invalid-feedback">
+							Please select your meal option.
+						</div>
+						<button class="submitBtn" id="submitBtn" type="submit" name="button">Next</button>
+					</div>
 				</div>
-			</div>
-
-			<div class="slide" id="slide4" data-anchor="slide4">
-				<p class="smallLogo">Travel<br>Companion</p>
-				<h2 class="mainTitle">All Set!</h2>
-				<img src="img/checkSymbol.svg" alt="check" class="check">
-				<p class="successNote">You can now explore your accommodation<br>options</p>
-				<button class="submitBtn" id="submitBtn" type="submit" name="button">Browse Accommodation</button>
-			</div>
-
+			</form>
 		</div> <!-- SECTION1 ENDS -->
 
 
 		<div class="section" id="section2">
+			<div class="container successContainer">
+				<p class="smallLogo">Travel<br>Companion</p>
+				<h2 class="mainTitle">All Set!</h2>
+				<img src="img/checkSymbol.svg" alt="check" class="check">
+				<p class="successNote">You can now explore your accommodation<br>options</p>
+				<button class="viewResultsBtn" id="viewResultsBtn" name="button">Browse Accommodation</button>
+			</div>
+		</div>
+
+
+		<div class="section" id="section3">
 			<div class="wrapper">
 				<p class="smallLogo">Travel<br>Companion</p>
 
@@ -136,9 +146,9 @@
 			</div>
 		</div>
 
-		<div class="section" id="section3">
-			<div class="wrapper">
 
+		<div class="section" id="section4">
+			<div class="wrapper">
 
 				<div class="row">
 					<div class="col-8">
@@ -149,7 +159,6 @@
 							<button type="submit" name="submit" class="restart">Start over</button>
 						</form>
 					</div>
-
 				</div>
 
 				<h2 class="mainTitle">Your Results</h2>
@@ -188,8 +197,8 @@
 					</p>
 				</div>
 
-			</div>
-		</div>
+			</div> <!-- wrapper ends -->
+		</div> <!-- section4 ends -->
 
 	</div> <!-- FULL PAGE ENDS -->
 
@@ -215,31 +224,34 @@
 					Once these steps are complete, you will be able to view accommodation which best suits you.
 					<br><br>
 					Having trouble? Call us on <strong>+64 4 462 8001</strong> and we'll give you a hand.
-				</div>
-			</div>
-		</div>
-	</div>
+				</div> <!-- modal-body ends -->
+			</div> <!-- modal-content ends -->
+		</div>	<!-- modal-dialog ends -->
+	</div> <!-- Modal ends -->
 
+	<!-- jQuery Scripts -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-	<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
-	<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+	<!-- Bootstrap Script -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+	<!-- Mapbox Script -->
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'></script>
 
-<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'></script>
-
-
+	<!-- ScrollMe Scripts -->
 	<script type="text/javascript" src="js/scrolloverflow.js"></script>
 	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
-
-
 
 	<!-- Custom JS -->
 	<script type="text/javascript" src="js/data.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
+
+	<script type="text/javascript">
+		var getMeals = document.getElementById('mealOption');
+		var getGuests = document.getElementById('getGuests');
+
+
+	</script>
 </body>
 </html>

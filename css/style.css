@@ -53,6 +53,7 @@
   border-radius: 2.1em;
   cursor: pointer;
   padding: 0.7em 1.4em;
+  margin: 0.4em;
   color: white;
   border: 1px solid white;
   -webkit-transform: perspective(1px) translateZ(0);
@@ -120,6 +121,13 @@
   color: #384059; }
 
 .travelCompanionLogoModal {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  background: -webkit-linear-gradient(#abecd6, #fbed96);
+  /*#FC5C7D, #efc125*/
+  line-height: 80%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   padding: 1em 0 0.6em 0;
   margin: 0em 1em 0em 4em;
   font-size: 2.2em; }
@@ -139,15 +147,15 @@
 .fp-controlArrow.fp-next {
   border-color: transparent transparent transparent #384059; }
 
-#slide1, #slide3, #section2 {
+#slide1, #slide3, #section3 {
   color: #384059;
   background-color: white; }
 
-#slide2, #slide4, #section3 {
+#slide2, #slide4 {
   color: white; }
 
 .slideContainer {
-  margin-bottom: 15em; }
+  margin-bottom: 8em; }
 
 .smallLogo {
   font-family: 'Pacifico', cursive;
@@ -178,7 +186,7 @@
 .dropDownOption, .checkIn, .checkOut {
   box-shadow: rgba(0, 0, 0, 0.2) -6px 7px 2px 0px; }
 
-.label {
+.labelAlign {
   text-align: left; }
 
 .optionsFont {
@@ -192,9 +200,6 @@
 .note {
   margin-top: 3.5em; }
 
-.tick {
-  font-size: 8em; }
-
 .submitBtn, .viewResultsBtn {
   margin-bottom: 0.1em;
   font-size: 1.2em;
@@ -205,18 +210,19 @@
   border-radius: 2.1em;
   cursor: pointer;
   padding: 0.6em 1.3em;
+  margin-top: 1.5em;
+  bottom: -3em;
   color: #EFC125;
   border: 2px solid #EFC125; }
 
+.invalid-feedback {
+  margin-top: 1em; }
+
 .check {
-  height: 18%;
+  height: 18vh;
   width: auto;
   margin-top: 1em;
   margin-bottom: 2em; }
-
-.successNote {
-  font-size: 1.2em;
-  margin-bottom: 3em; }
 
 .mapWrapper {
   margin: 1.9em auto;

@@ -41,7 +41,11 @@
 
     // Date picker plugin
     $( function(){
-      $( "#datepicker" ).datepicker();
+      $('.datepicker1').datepicker();
+    });
+
+    $( function(){
+      $('.datepicker2').datepicker();
     });
 
     // Form doesn't refresh the page
@@ -85,9 +89,6 @@
     }
 
 //----------------------------------------------------------------------------
-
-
-  }); // DOCUMENT READY ENDS
 
 
   // FORM VALIDATION
@@ -135,6 +136,8 @@ var token = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9
   var geojson = {
       "type": "FeatureCollection",
       "features": [
+
+        // HOUSE -------------------------
           {
               "type": "Feature",
               "properties": {
@@ -149,6 +152,8 @@ var token = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9
                   ]
               }
           },
+
+          // HOTEL -------------------------
           {
               "type": "Feature",
               "properties": {
@@ -163,6 +168,9 @@ var token = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9
                   ]
               }
           },
+
+          // MOTEL -------------------------
+
           {
               "type": "Feature",
               "properties": {
@@ -178,6 +186,8 @@ var token = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9
                   ]
               }
           },
+
+          // HOSTEL -------------------------
           {
               "type": "Feature",
               "properties": {
@@ -194,13 +204,6 @@ var token = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9
           }
       ]
   };
-
-  var map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v9',
-      center: [-65.017, -16.457],
-      zoom: 5
-  });
 
   // add markers to map
   geojson.features.forEach(function(marker) {
@@ -231,5 +234,5 @@ var token = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9
   }
 
   createRefNum();
-
+  }); // DOCUMENT READY ENDS
 }()); // IIFE ENDS

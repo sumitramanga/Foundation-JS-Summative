@@ -6,7 +6,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Pacifico|Raleway:300,400,700,800" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
 	<!-- Mapbox -->
 	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet'>
 
@@ -78,7 +78,7 @@
 						<div class="checkInOut">
 							<div class="col-md-4 mb-3 labelAlign">
 								<label for="validationCustom01">Check in*</label>
-					      <input type="text" class="form-control checkIn" id="getCheckOut" required>
+					      <input type="text" class="form-control checkIn datepicker1" id="getCheckOut" required>
 					      <div class="invalid-feedback">
 					        Please enter a date.
 					      </div>
@@ -86,7 +86,7 @@
 
 							<div class="col-md-4 mb-3 labelAlign">
 								<label for="validationCustom01">Check out*</label>
-								<input type="text" class="form-control checkOut" id="getCheckIn" required>
+								<input type="text" class="form-control checkOut datepicker2" id="getCheckIn" required>
 								<div class="invalid-feedback">
 									Please enter a date.
 								</div>
@@ -142,7 +142,9 @@
 					<div class="map" id="map"></div>
 				</div>
 
-				<button type="button" name="button" class="viewResultsBtn" id="viewResultsBtn">View Results</button>
+				<div class="btnWrapper">
+					<button type="button" name="button" class="viewResultsBtn" id="viewResultsBtn">View Results</button>
+				</div>
 			</div>
 		</div>
 

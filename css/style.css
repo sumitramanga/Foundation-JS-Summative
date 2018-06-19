@@ -3,6 +3,11 @@
   margin: 0;
   box-sizing: border-box; }
 
+/* ----------------------------- MAIN PAGE ---------------------------------  */
+.body {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.250em; }
+
 .loader {
   position: fixed;
   left: 0px;
@@ -10,12 +15,15 @@
   width: 100%;
   height: 100%;
   z-index: 9999;
-  background: url("http://www.downgraf.com/wp-content/uploads/2014/09/01-progress.gif?e44397") 50% 50% no-repeat #f9f9f9; }
+  background-color: white; }
 
-/* ----------------------------- MAIN PAGE ---------------------------------  */
-.body {
-  font-family: "Raleway", sans-serif;
-  font-size: 1.250em; }
+.fa-spinner {
+  position: absolute;
+  top: 45%;
+  left: 43%;
+  font-size: 7em;
+  text-align: center;
+  color: #D66761; }
 
 #helpLayer {
   top: 3%;
@@ -328,6 +336,9 @@
   text-align: center; }
 
 @media only screen and (min-width: 1281px) {
+  .fa-spinner {
+    left: 45%; }
+
   .tourismNzLogo {
     margin-bottom: 1%;
     width: 5%; }

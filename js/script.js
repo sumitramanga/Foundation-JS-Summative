@@ -18,11 +18,14 @@
 
   var refNum = document.getElementById('refNum');
 
+
+  $(window).load(function(){
+    $('.loader').fadeOut();
+  });
+
+
   $(document).ready(function() {
 
-    $(window).load(function(){
-     $('.loader').fadeOut();
-});
     // Page piling script
     $('#fullpage').fullpage({
 

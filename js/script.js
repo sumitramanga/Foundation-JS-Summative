@@ -19,6 +19,10 @@
   var refNum = document.getElementById('refNum');
 
   $(document).ready(function() {
+
+    $(window).load(function(){
+     $('.loader').fadeOut();
+});
     // Page piling script
     $('#fullpage').fullpage({
 

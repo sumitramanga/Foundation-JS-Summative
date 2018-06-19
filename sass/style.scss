@@ -96,12 +96,12 @@ $quaternaryColor: #EFC125;
   transition-property: transform;
 }
 
-.exploreBtn:hover, .exploreBtn:focus {
+.exploreBtn:hover, .exploreBtn:focus, .submitBtn:hover, .submitBtn:focus, .viewResultsBtn:hover, .viewResultsBtn:focus {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
 
-.exploreBtn:active {
+.exploreBtn:active, .submitBtn:active, .viewResultsBtn:active {
   -webkit-transform: scale(0.9);
   transform: scale(0.9);
 }
@@ -262,10 +262,22 @@ $quaternaryColor: #EFC125;
   bottom: -3em;
   color: $quaternaryColor;
   border: 2px solid $quaternaryColor;
+
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
 }
 
 // VALIDATION ------------------------------------------------------------------
 .invalid-feedback {
+  margin-top: 1em;
+}
+
+.errorMessage {
   margin-top: 1em;
 }
 
@@ -299,7 +311,7 @@ $quaternaryColor: #EFC125;
 }
 
 .mapboxgl-canvas {
-  position: static !important;
+  // position: static !important;
 }
 
 // SECTION 4 - RESULTS ---------------------------------------------------------
@@ -312,9 +324,12 @@ $quaternaryColor: #EFC125;
   @include logo;
   // margin-top: 71px;
   // margin-bottom: 0;
-  padding: 10px 20px 34px 0px;
+  padding: 10px 0px 34px 0px;
   font-size: 2em;
   float: right;
+
+  position: relative;
+  right: 0.7em
 }
 
 .restart {
@@ -385,6 +400,11 @@ $quaternaryColor: #EFC125;
 
   .layer{
 	  top: 13%;
+  }
+
+  .smallLogoResults {
+    position: relative;
+    right: 2.7em;
   }
 
 }

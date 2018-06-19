@@ -78,7 +78,7 @@
 						<div class="checkInOut">
 							<div class="col-md-4 mb-3 labelAlign">
 								<label for="validationCustom01">Check in*</label>
-					      <input type="text" class="form-control checkIn" id="checkOut" required>
+					      <input type="text" class="form-control checkIn" id="getCheckOut" required>
 					      <div class="invalid-feedback">
 					        Please enter a date.
 					      </div>
@@ -86,7 +86,7 @@
 
 							<div class="col-md-4 mb-3 labelAlign">
 								<label for="validationCustom01">Check out*</label>
-								<input type="text" class="form-control checkOut" id="checkIn" required>
+								<input type="text" class="form-control checkOut" id="getCheckIn" required>
 								<div class="invalid-feedback">
 									Please enter a date.
 								</div>
@@ -103,7 +103,7 @@
 					<div class="container slideContainer">
 						<p class="smallLogo">Travel<br>Companion</p>
 						<h2 class="mainTitle">Select your meal options</h2>
-						<select class="form-control form-control-lg dropDownOption" id="mealOption" required>
+						<select class="form-control form-control-lg dropDownOption" id="getMealOption" required>
 							<option disabled selected value>Select an option</option>
 							<option value="Breakfast">Breakfast - $30</option>
 							<option value="Lunch">Lunch - $30</option>
@@ -156,7 +156,7 @@
 					</div>
 					<div class="col-4">
 						<form action="file:///Users/sumitramanga/Desktop/Foundation-JS/Travel-Companion/Website/index.html#firstPage">
-							<button type="submit" name="submit" class="restart">Start over</button>
+							<button type="button" name="submit" class="restart">Start over</button>
 						</form>
 					</div>
 				</div>
@@ -171,17 +171,17 @@
 				<div id="summary">
 					<div class="wrapper">
 						<i class="fas fa-user resultsIcons"></i>
-						<span class="guestCount" id="guestCount">5 guests</span>
+						<span class="guestCount" id="guestsCount">5 guests</span>
 					</div>
 
 					<div class="wrapper">
 						<i class="fas fa-utensils resultsIcons"></i>
-						<span class="mealOption" id="mealOption">Full meal</span>
+						<span class="mealOption" id="mealsOption">Full meal</span>
 					</div>
 
 					<div class="wrapper">
 						<i class="far fa-calendar-alt resultsIcons"></i>
-						<span class="nights" id="nights">5 nights (12/07/2018 - 16/07/2018)</span>
+						<span class="nights" id="nightsCount">5 nights (12/07/2018 - 16/07/2018)</span>
 					</div>
 				</div>
 
@@ -191,9 +191,9 @@
 
 				<div class="">
 					<p class="bookingInstructions">
-						Call us on to confirm your booking with us.
+						Call us on <strong>+64 4 462 8001</strong> to confirm your booking with us.
 						<br>Please refer us with your booking code
-						<span id="refNum"><strong>#12345</strong></span>
+						<strong><span id="refNum"></span></strong>
 					</p>
 				</div>
 
@@ -219,7 +219,8 @@
 					You will be asked the questions:
 					<br>
 					- How many guests you plan to take with you<br>
-					- The check in and check out dates
+					- The check in and check out dates<br>
+					- Your meal options
 					<br><br>
 					Once these steps are complete, you will be able to view accommodation which best suits you.
 					<br><br>

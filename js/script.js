@@ -1,26 +1,37 @@
 (function() {
   var controlArrows = document.getElementsByClassName('fp-controlArrow');
 
-  var getSubBtn = document.getElementById('submitBtn');
-
+  // Getting the users options from the SECOND section
   var getGuests = document.getElementById('getGuests');
   var getCheckInDate = document.getElementById('getCheckIn');
   var getCheckOutDate = document.getElementById('getCheckOut');
-  var getMeals = document.getElementById('mealOption');
+  var getMeals = document.getElementById('getMealOption');
 
+  var errorMessage = document.createElement('div');
+  var getSubBtn = document.getElementById('submitBtn');
 
-  // Page piling script
+  // Getting the results elements from the FIFTH section
+  var finalGuest = document.getElementById('guestsCount');
+  var finalMealsOption = document.getElementById('mealsOption');
+  var finalNights = document.getElementById('nightCount');
+  var totalCost = document.getElementById('totalCost');
+
+  var refNum = document.getElementById('refNum');
+
   $(document).ready(function() {
+    // Page piling script
     $('#fullpage').fullpage({
+
       verticalCentered: true,
       anchors: ['firstPage', 'secondPage', '3rdPage', 'fourthPage', 'fifthPage'],
-      sectionsColor: ['white', '#D66761', '#D66761', 'white', '#D66761'],
+      sectionsColor: ['white', '#D66761', '#D66761', 'transparent', '#D66761'],
       bgSize: ['cover', 'cover', 'cover', 'cover', 'cover'],
       slidesNavigation: true,
+
     });
 
 
-    //Splash screen button
+    // Splash screen button
     $('#exploreBtn').click(function(e){
       e.preventDefault();
       $.fn.fullpage.setScrollingSpeed(1000);
@@ -28,12 +39,12 @@
     });
 
 
-    // Date picker
+    // Date picker plugin
     $( function(){
       $( "#datepicker" ).datepicker();
     });
 
-
+    // Form doesn't refresh the page
     $("form").submit(function() {
        return false;
     });
@@ -58,25 +69,20 @@
 
 
 //------------------------------------------------------------------------------
+
+
 // Scroll section down on click when validation is complete
-
-
 
     getSubBtn.addEventListener('click', scrollDown , false);
 
     function scrollDown() {
-      if (getMeals.validity.valueMissing && getGuests.validity.valueMissing && getCheckIn.validity.valueMissing && getCheckOut.validity.valueMissing === false) {
-        // $('#submitBtn').click(function(e){
-          console.log('aliveeeee g');
-          // e.preventDefault();
-          $.fn.fullpage.setScrollingSpeed(1000);
-          $.fn.fullpage.moveSectionDown();
-          $.fn.fullpage.setAllowScrolling(false);
-        // });
-
+      if (getGuests.validity.valueMissing === false && getCheckInDate.validity.valueMissing === false && getCheckOutDate.validity.valueMissing === false && getMeals.validity.valueMissing === false) {
+        console.log('aliveeeee g');
+        $.fn.fullpage.setScrollingSpeed(1000);
+        $.fn.fullpage.moveSectionDown();
+        $.fn.fullpage.setAllowScrolling(false);
       }
     }
-
 
 //----------------------------------------------------------------------------
 
@@ -96,6 +102,16 @@
         if (form.checkValidity() === false) {
           event.preventDefault();
           event.stopPropagation();
+
+          // Show an error message which is created here along with fadeOut and removes from code.
+          errorMessage.className = 'errorMessage';
+          errorMessage.innerText = "Hold up! Look like something's missing. Please check to see if you've entered your details correctly.";
+          getSubBtn.after(errorMessage);
+
+          $('.errorMessage').fadeOut(6000, function(){
+            $('.errorMessage').remove();
+          });
+
         }
         form.classList.add('was-validated');
       }, false);
@@ -103,11 +119,12 @@
   }, false);
 
 
-
 // SETTING UP MAP ---------------------------------------------------------------
 
+var token = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9.4K0zZ6PO_bnYu76JJUOmoQ';
 
-  mapboxgl.accessToken = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppM240OTk2MDBhbTNxbzQyeXQ3NjcxNCJ9.AI-7xSWsKG5uHfGk9jFJkA';
+  mapboxgl.accessToken = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9.4K0zZ6PO_bnYu76JJUOmoQ';
+
   var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/sumitram/cji3p2cwm0s6r2smz01nlidgc', // stylesheet location
@@ -115,5 +132,104 @@
     zoom: 13 // starting zoom
   });
 
+  var geojson = {
+      "type": "FeatureCollection",
+      "features": [
+          {
+              "type": "Feature",
+              "properties": {
+                  "message": "Foo",
+                  "iconSize": [60, 60]
+              },
+              "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                      -66.324462890625,
+                      -16.024695711685304
+                  ]
+              }
+          },
+          {
+              "type": "Feature",
+              "properties": {
+                  "message": "Bar",
+                  "iconSize": [50, 50]
+              },
+              "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                      -61.2158203125,
+                      -15.97189158092897
+                  ]
+              }
+          },
+          {
+              "type": "Feature",
+              "properties": {
+                  "message": "Baz",
+                  "iconSize": [40, 40]
+                  // "marker-color": 'pink'
+              },
+              "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                      -63.29223632812499,
+                      -18.28151823530889
+                  ]
+              }
+          },
+          {
+              "type": "Feature",
+              "properties": {
+                  "message": "Bar",
+                  "iconSize": [50, 50]
+              },
+              "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                      -174.771945,
+                      -36.835333
+                  ]
+              }
+          }
+      ]
+  };
+
+  var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v9',
+      center: [-65.017, -16.457],
+      zoom: 5
+  });
+
+  // add markers to map
+  geojson.features.forEach(function(marker) {
+    // create a DOM element for the marker
+    var el = document.createElement('div');
+    el.className = 'marker';
+    el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
+    el.style.width = marker.properties.iconSize[0] + 'px';
+    el.style.height = marker.properties.iconSize[1] + 'px';
+
+    el.addEventListener('click', function() {
+      window.alert(marker.properties.message);
+    });
+
+    // add marker to map
+    new mapboxgl.Marker(el)
+    .setLngLat(marker.geometry.coordinates)
+    .addTo(map);
+  });
+
+// -----------------------------------------------------------------------------
+
+  // Reference number on summary
+
+  function createRefNum() {
+    var randomNum = Math.floor((Math.random() * 1000000) + 1);
+    refNum.innerText = '#' + randomNum;
+  }
+
+  createRefNum();
 
 }()); // IIFE ENDS

@@ -3,12 +3,19 @@
 
   // Getting the users options from the SECOND section
   var getGuests = document.getElementById('getGuests');
+
   var getCheckInDate = document.getElementById('getCheckIn');
   var getCheckOutDate = document.getElementById('getCheckOut');
+  var daysText = document.getElementById('daysText');
+  var displayDays = document.getElementById('daysSelected');
+
   var getMeals = document.getElementById('getMealOption');
 
   var errorMessage = document.createElement('div');
   var getSubBtn = document.getElementById('submitBtn');
+
+  // The button which pushes the details entered into an array
+  var browseBtn = document.getElementById('browseBtn');
 
   // Getting the results elements from the FIFTH section
   var finalGuest = document.getElementById('guestsCount');
@@ -28,13 +35,11 @@
 
     // Page piling script
     $('#fullpage').fullpage({
-
       verticalCentered: true,
       anchors: ['firstPage', 'secondPage', '3rdPage', 'fourthPage', 'fifthPage'],
       sectionsColor: ['white', '#D66761', '#D66761', 'transparent', '#D66761'],
       bgSize: ['cover', 'cover', 'cover', 'cover', 'cover'],
       slidesNavigation: true,
-
     });
 
 
@@ -87,8 +92,9 @@
     getSubBtn.addEventListener('click', scrollDown , false);
 
     function scrollDown() {
+      console.dir(getCheckInDate);
       if (getGuests.validity.valueMissing === false && getCheckInDate.validity.valueMissing === false && getCheckOutDate.validity.valueMissing === false && getMeals.validity.valueMissing === false) {
-        console.log('aliveeeee g');
+
         $.fn.fullpage.setScrollingSpeed(1000);
         $.fn.fullpage.moveSectionDown();
         $.fn.fullpage.setAllowScrolling(false);
@@ -125,6 +131,29 @@
       }, false);
     });
   }, false);
+
+// -----------------------------------------------------------------------------
+
+// DATES CALCULATIONS
+
+getSubBtn.addEventListener('click', pushDetails , false);
+
+function pushDetails() {
+
+  // Calculate how many days in between the chosen dates
+  var startDate = Date.parse(getCheckIn.value);
+  var endDate = Date.parse(getCheckOut.value);
+  var timeDiff = endDate - startDate;
+  daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+  // Push the date to view on the slide
+  daysSelected.innerText = daysDiff;
+  daysText.innerText = ' days';
+
+  console.log(daysDiff);
+}
+
+
 
 
 // SETTING UP MAP ---------------------------------------------------------------

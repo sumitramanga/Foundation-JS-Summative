@@ -84,7 +84,7 @@
 						<div class="checkInOut">
 							<div class="col-md-4 mb-3 labelAlign">
 								<label for="validationCustom01">Check in*</label>
-					      <input type="text" class="form-control checkIn datepicker1" id="getCheckOut" required>
+					      <input type="text" class="form-control checkIn datepicker1" id="getCheckIn" required>
 					      <div class="invalid-feedback">
 					        Please enter a date.
 					      </div>
@@ -92,15 +92,16 @@
 
 							<div class="col-md-4 mb-3 labelAlign">
 								<label for="validationCustom01">Check out*</label>
-								<input type="text" class="form-control checkOut datepicker2" id="getCheckIn" required>
+								<input type="text" class="form-control checkOut datepicker2" id="getCheckOut" required>
 								<div class="invalid-feedback">
 									Please enter a date.
 								</div>
 							</div>
 						</div>
 
-						<p class="optionsFont daySelectedTitle">You have selected</p>
-						<div class="optionsFont daysSelected">5 Days</div>
+						<p class="optionsFont daySelectedTitle">You have selected...</p>
+						<div id="daysSelected"></div>
+						<div class="optionsFont daysSelected" id="daysText"></div>
 						<div class="note"><p>A minimum of 1 night is required. The mix is 15 nights. <br> *Required Field<p></div>
 					</div>
 				</div>

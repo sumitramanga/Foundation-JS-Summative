@@ -146,11 +146,14 @@ function pushDetails() {
   var timeDiff = endDate - startDate;
   daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
 
-  // Push the date to view on the slide
+  // Push the date to view on the slide WORKING ON TURNING THIS TO A NUMBER NOT STRING
   daysSelected.innerText = daysDiff;
   daysText.innerText = ' days';
 
+  parseInt(daysSelected, 10);
+
   console.log(daysDiff);
+  console.dir(typeof daysSelected);
 }
 
 

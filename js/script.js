@@ -50,7 +50,20 @@
     });
 
 
+// -----------------------------------------------------------------------------
+
+
+    // getSubBtn.addEventListener('click', turnStringToNumber, false);
+    //
+    // // Guest Input turning string into number
+    // function turnStringToNumber () {
+    //
+    // }
+
+// -----------------------------------------------------------------------------
+
     // Date picker plugin
+
       $('.datepicker1').pickadate({
         clear: '',
         min: new Date()
@@ -67,14 +80,16 @@
           var timeDiff = endDate - startDate;
           daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
 
-          // Push the date to view on the slide WORKING ON TURNING THIS TO A NUMBER NOT STRING
+          // Push the date to view on the slide
           daysSelected.innerText = daysDiff;
           daysText.innerText = ' Days';
 
-          console.log(daysDiff);
           console.dir(daysSelected);
         }
       });
+
+
+// -----------------------------------------------------------------------------
 
 
     // Form doesn't refresh the page
@@ -82,8 +97,7 @@
        return false;
     });
 
-
-    // View the final results Button
+    // Auto scroll on click the View Results button
     $('#viewResultsBtn').click(function(e){
       e.preventDefault();
       $.fn.fullpage.setScrollingSpeed(1000);
@@ -92,7 +106,7 @@
     });
 
 
-    // Browse Accomodation Button
+    // Auto scroll on click the Browse Accomodation button
     $('#browseBtn').click(function(e){
       e.preventDefault();
       $.fn.fullpage.setScrollingSpeed(1000);
@@ -100,23 +114,6 @@
       $.fn.fullpage.setAllowScrolling(false);
     });
 
-
-//------------------------------------------------------------------------------
-
-
-// Scroll section down on click when validation is complete
-
-    getSubBtn.addEventListener('click', scrollDown , false);
-
-    function scrollDown() {
-      console.dir(getCheckInDate);
-      if (getGuests.validity.valueMissing === false && getCheckInDate.validity.valueMissing === false && getCheckOutDate.validity.valueMissing === false && getMeals.validity.valueMissing === false) {
-
-        $.fn.fullpage.setScrollingSpeed(1000);
-        $.fn.fullpage.moveSectionDown();
-        $.fn.fullpage.setAllowScrolling(false);
-      }
-    }
 
 //----------------------------------------------------------------------------
 
@@ -151,29 +148,25 @@
 
 // -----------------------------------------------------------------------------
 
-// DATES CALCULATIONS
 
-// getSubBtn.addEventListener('click', pushDetails , false);
-//
-// function pushDetails() {
-//
-//   // Calculate how many days in between the chosen dates
-//   var startDate = Date.parse(getCheckIn.value);
-//   var endDate = Date.parse(getCheckOut.value);
-//   var timeDiff = endDate - startDate;
-//   daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-//
-//   // Push the date to view on the slide WORKING ON TURNING THIS TO A NUMBER NOT STRING
-//   daysSelected.innerText = daysDiff;
-//   daysText.innerText = ' days';
-//
-//   // parseInt(daysSelected, 10);
-//
-//   console.log(daysDiff);
-//   console.dir(typeof daysSelected);
-// }
+// Scroll section down on click when validation is complete
 
+    getSubBtn.addEventListener('click', scrollDown , false);
 
+    function scrollDown() {
+      console.dir(getCheckInDate);
+      if (getGuests.validity.valueMissing === false && getCheckInDate.validity.valueMissing === false && getCheckOutDate.validity.valueMissing === false && getMeals.validity.valueMissing === false ) {
+
+        $.fn.fullpage.setScrollingSpeed(1000);
+        $.fn.fullpage.moveSectionDown();
+        $.fn.fullpage.setAllowScrolling(false);
+      }
+
+      // Turn guests input from string to number
+      var guestsStringToNum = parseInt(getGuests.value);
+      var mealStringToNum = parseInt(getMealOptions.value);
+      console.log(typeof guestsStringToNum);
+    }
 
 
 // SETTING UP MAP ---------------------------------------------------------------

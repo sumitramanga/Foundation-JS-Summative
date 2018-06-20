@@ -10,7 +10,8 @@
 	<!-- Mapbox -->
 	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet'>
 
-	<link rel="stylesheet" href="https://spin.js.org/spin.css">
+	<link rel="stylesheet" type="text/css" href="css/classic.css">
+	<link rel="stylesheet" type="text/css" href="css/classic.date.css">
 
 	<!-- Page Piling css -->
 	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
@@ -57,6 +58,7 @@
 
 		<div class="section" id="section1">
 			<form class="needs-validation" action="#" method="post" novalidate>
+
 			  <div class="slide" id="slide1" data-anchor="slide1">
 					<div class="container slideContainer">
 						<p class="smallLogo">Travel<br>Companion</p>
@@ -97,12 +99,12 @@
 									Please enter a date.
 								</div>
 							</div>
-						</div>
+						</div><!-- slide2 Ends -->
 
 						<p class="optionsFont daySelectedTitle">You have selected...</p>
-						<div id="daysSelected"></div>
-						<div class="optionsFont daysSelected" id="daysText"></div>
-						<div class="note"><p>A minimum of 1 night is required. The mix is 15 nights. <br> *Required Field<p></div>
+						<div class="optionsFont hello" id="daysSelected">0</div>
+						<div class="optionsFont hello" id="daysText">Days</div>
+						<div class="note"><p>A minimum of 1 night is required. The max is 15 nights. <br> *Required Field<p></div>
 					</div>
 				</div>
 
@@ -123,24 +125,28 @@
 						</div>
 						<button class="submitBtn" id="submitBtn" type="submit" name="button">Next</button>
 					</div>
-				</div>
+
+				</div><!-- slide3 Ends -->
 			</form>
 		</div> <!-- SECTION1 ENDS -->
 
 
 		<div class="section" id="section2">
 			<div class="container successContainer">
+
 				<p class="smallLogo">Travel<br>Companion</p>
 				<h2 class="mainTitle">All Set!</h2>
 				<img src="img/checkSymbol.svg" alt="check" class="check">
 				<p class="successNote">You can now explore your accommodation<br>options</p>
 				<button class="viewResultsBtn browseBtn" id="browseBtn" name="button">Browse Accommodation</button>
+
 			</div>
-		</div>
+		</div><!-- SECTION2 ENDS -->
 
 
 		<div class="section" id="section3">
 			<div class="wrapper">
+
 				<p class="smallLogo">Travel<br>Companion</p>
 
 				<h2 class="mainTitle">Browse your accommodation</h2>
@@ -152,8 +158,9 @@
 				<div class="btnWrapper">
 					<button type="button" name="button" class="viewResultsBtn" id="viewResultsBtn">View Results</button>
 				</div>
+
 			</div>
-		</div>
+		</div><!-- SECTION3 ENDS -->
 
 
 		<div class="section" id="section4">
@@ -207,9 +214,11 @@
 				</div>
 
 			</div> <!-- wrapper ends -->
-		</div> <!-- section4 ends -->
+		</div> <!-- SECTION4 ENDS -->
 
 	</div> <!-- FULL PAGE ENDS -->
+
+
 
 	<!-- Modal -->
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -239,6 +248,8 @@
 		</div>	<!-- modal-dialog ends -->
 	</div> <!-- Modal ends -->
 
+
+
 	<!-- jQuery Scripts -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
@@ -253,15 +264,18 @@
 	<script type="text/javascript" src="js/scrolloverflow.js"></script>
 	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
 
+	<!-- Pick a date scripts -->
+	<script type="text/javascript" src="js/picker.js"></script>
+	<script type="text/javascript" src="js/picker.date.js"></script>
+
 	<!-- Custom JS -->
 	<script type="text/javascript" src="js/data.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 
-	<script type="text/javascript">
-		// var getMeals = document.getElementById('mealOption');
-		// var getGuests = document.getElementById('getGuests');
+	<!-- <script type="text/javascript">
+		var getMeals = document.getElementById('mealOption');
+		var getGuests = document.getElementById('getGuests');
+	</script> -->
 
-
-	</script>
 </body>
 </html>

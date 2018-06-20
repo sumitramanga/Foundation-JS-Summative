@@ -7,7 +7,6 @@
   var getCheckInDate = document.getElementById('getCheckIn');
   var getCheckOutDate = document.getElementById('getCheckOut');
   var daysText = document.getElementById('daysText');
-  var displayDays = document.getElementById('daysSelected');
 
   var getMeals = document.getElementById('getMealOption');
 
@@ -52,13 +51,31 @@
 
 
     // Date picker plugin
-    $( function(){
-      $('.datepicker1').datepicker();
-    });
+      $('.datepicker1').pickadate({
+        clear: '',
+        min: new Date()
+      });
 
-    $( function(){
-      $('.datepicker2').datepicker();
-    });
+
+      $('.datepicker2').pickadate({
+        clear: '',
+        min: new Date(),
+        onClose: function() {
+          // Calculate how many days in between the chosen dates
+          var startDate = Date.parse(getCheckIn.value);
+          var endDate = Date.parse(getCheckOut.value);
+          var timeDiff = endDate - startDate;
+          daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+          // Push the date to view on the slide WORKING ON TURNING THIS TO A NUMBER NOT STRING
+          daysSelected.innerText = daysDiff;
+          daysText.innerText = ' Days';
+
+          console.log(daysDiff);
+          console.dir(daysSelected);
+        }
+      });
+
 
     // Form doesn't refresh the page
     $("form").submit(function() {
@@ -136,25 +153,25 @@
 
 // DATES CALCULATIONS
 
-getSubBtn.addEventListener('click', pushDetails , false);
-
-function pushDetails() {
-
-  // Calculate how many days in between the chosen dates
-  var startDate = Date.parse(getCheckIn.value);
-  var endDate = Date.parse(getCheckOut.value);
-  var timeDiff = endDate - startDate;
-  daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-
-  // Push the date to view on the slide WORKING ON TURNING THIS TO A NUMBER NOT STRING
-  daysSelected.innerText = daysDiff;
-  daysText.innerText = ' days';
-
-  parseInt(daysSelected, 10);
-
-  console.log(daysDiff);
-  console.dir(typeof daysSelected);
-}
+// getSubBtn.addEventListener('click', pushDetails , false);
+//
+// function pushDetails() {
+//
+//   // Calculate how many days in between the chosen dates
+//   var startDate = Date.parse(getCheckIn.value);
+//   var endDate = Date.parse(getCheckOut.value);
+//   var timeDiff = endDate - startDate;
+//   daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+//
+//   // Push the date to view on the slide WORKING ON TURNING THIS TO A NUMBER NOT STRING
+//   daysSelected.innerText = daysDiff;
+//   daysText.innerText = ' days';
+//
+//   // parseInt(daysSelected, 10);
+//
+//   console.log(daysDiff);
+//   console.dir(typeof daysSelected);
+// }
 
 
 

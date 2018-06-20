@@ -203,6 +203,9 @@
 .dropDownOption, .checkIn, .checkOut {
   box-shadow: rgba(0, 0, 0, 0.2) -6px 7px 2px 0px; }
 
+.form-control[readonly] {
+  background-color: white; }
+
 .labelAlign {
   text-align: left; }
 
@@ -210,6 +213,9 @@
   margin-bottom: 0;
   font-size: 2.250rem;
   font-weight: 300; }
+
+.hello {
+  display: inline; }
 
 .daySelectedTitle {
   margin-top: 1.5em; }

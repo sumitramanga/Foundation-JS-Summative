@@ -25,6 +25,10 @@
   var refNum = document.getElementById('refNum');
 
 
+// -----------------------------------------------------------------------------
+
+  // LOADING ICON
+
   $(window).load(function(){
     $('.loader').fadeOut();
   });
@@ -53,16 +57,15 @@
 // -----------------------------------------------------------------------------
 
 
-    // getSubBtn.addEventListener('click', turnStringToNumber, false);
-    //
-    // // Guest Input turning string into number
-    // function turnStringToNumber () {
-    //
-    // }
+
+
+
+
 
 // -----------------------------------------------------------------------------
 
-    // Date picker plugin
+
+  // DATE PICKER PLUGIN
 
       $('.datepicker1').pickadate({
         clear: '',
@@ -140,6 +143,7 @@
             $('.errorMessage').remove();
           });
 
+          console.dir(getCheckOut);
         }
         form.classList.add('was-validated');
       }, false);
@@ -155,123 +159,140 @@
 
     function scrollDown() {
       console.dir(getCheckInDate);
+      console.dir(getMeals);
       if (getGuests.validity.valueMissing === false && getCheckInDate.validity.valueMissing === false && getCheckOutDate.validity.valueMissing === false && getMeals.validity.valueMissing === false ) {
 
         $.fn.fullpage.setScrollingSpeed(1000);
         $.fn.fullpage.moveSectionDown();
         $.fn.fullpage.setAllowScrolling(false);
+
       }
 
       // Turn guests input from string to number
       var guestsStringToNum = parseInt(getGuests.value);
-      var mealStringToNum = parseInt(getMealOptions.value);
+      var mealStringToNum = parseInt(getMeals.value);
       console.log(typeof guestsStringToNum);
+
+      console.dir(mealStringToNum);
+
+      console.dir(getCheckInDate);
     }
 
 
-// SETTING UP MAP ---------------------------------------------------------------
 
-var token = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9.4K0zZ6PO_bnYu76JJUOmoQ';
 
-  mapboxgl.accessToken = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9.4K0zZ6PO_bnYu76JJUOmoQ';
+// -----------------------------------------------------------------------------
 
-  var map = new mapboxgl.Map({
-    container: 'map', // container id
-    style: 'mapbox://styles/sumitram/cji3p2cwm0s6r2smz01nlidgc', // stylesheet location
-    center: [174.763222, -36.854191], // starting position [lng, lat]
-    zoom: 13 // starting zoom
-  });
+ // SETTING UP MAP
 
-  var geojson = {
-      "type": "FeatureCollection",
-      "features": [
+    var token = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9.4K0zZ6PO_bnYu76JJUOmoQ';
 
-        // HOUSE -------------------------
-          {
-              "type": "Feature",
-              "properties": {
-                  "message": "Foo",
-                  "iconSize": [60, 60]
-              },
-              "geometry": {
-                  "type": "Point",
-                  "coordinates": [
-                      -66.324462890625,
-                      -16.024695711685304
-                  ]
-              }
-          },
+    mapboxgl.accessToken = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9.4K0zZ6PO_bnYu76JJUOmoQ';
 
-          // HOTEL -------------------------
-          {
-              "type": "Feature",
-              "properties": {
-                  "message": "Bar",
-                  "iconSize": [50, 50]
-              },
-              "geometry": {
-                  "type": "Point",
-                  "coordinates": [
-                      -61.2158203125,
-                      -15.97189158092897
-                  ]
-              }
-          },
-
-          // MOTEL -------------------------
-
-          {
-              "type": "Feature",
-              "properties": {
-                  "message": "Baz",
-                  "iconSize": [40, 40]
-                  // "marker-color": 'pink'
-              },
-              "geometry": {
-                  "type": "Point",
-                  "coordinates": [
-                      -63.29223632812499,
-                      -18.28151823530889
-                  ]
-              }
-          },
-
-          // HOSTEL -------------------------
-          {
-              "type": "Feature",
-              "properties": {
-                  "message": "Bar",
-                  "iconSize": [50, 50]
-              },
-              "geometry": {
-                  "type": "Point",
-                  "coordinates": [
-                      -174.771945,
-                      -36.835333
-                  ]
-              }
-          }
-      ]
-  };
-
-  // add markers to map
-  geojson.features.forEach(function(marker) {
-    // create a DOM element for the marker
-    var el = document.createElement('div');
-    el.className = 'marker';
-    el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
-    el.style.width = marker.properties.iconSize[0] + 'px';
-    el.style.height = marker.properties.iconSize[1] + 'px';
-
-    el.addEventListener('click', function() {
-      window.alert(marker.properties.message);
+    var map = new mapboxgl.Map({
+      container: 'map', // container id
+      style: 'mapbox://styles/sumitram/cji3p2cwm0s6r2smz01nlidgc', // stylesheet location
+      center: [174.763222, -36.854191], // starting position [lng, lat]
+      zoom: 13 // starting zoom
     });
 
-    // add marker to map
-    new mapboxgl.Marker(el)
-    .setLngLat(marker.geometry.coordinates)
-    .addTo(map);
-  });
+    var geojson = {
+        "type": "FeatureCollection",
+        "features": [
+
+
+// HOUSE --------------------------------------------------
+            {
+                "type": "Feature",
+                "properties": {
+                    "message": "Foo",
+                    "iconSize": [60, 60]
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -66.324462890625,
+                        -16.024695711685304
+                    ]
+                }
+            },
+
+
+// HOTEL --------------------------------------------------
+            {
+                "type": "Feature",
+                "properties": {
+                    "message": "Bar",
+                    "iconSize": [50, 50]
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -61.2158203125,
+                        -15.97189158092897
+                    ]
+                }
+            },
+
+
+// MOTEL --------------------------------------------------
+            {
+                "type": "Feature",
+                "properties": {
+                    "message": "Baz",
+                    "iconSize": [40, 40]
+                    // "marker-color": 'pink'
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -63.29223632812499,
+                        -18.28151823530889
+                    ]
+                }
+            },
+
+
+// HOSTEL --------------------------------------------------
+            {
+                "type": "Feature",
+                "properties": {
+                    "message": "Bar",
+                    "iconSize": [50, 50]
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -174.771945,
+                        -36.835333
+                    ]
+                }
+            }
+
+// ----------------------------------------------------------
+
+        ] // Feature ends
+    }; // geojson ends
+
+    // Add markers to the map
+    geojson.features.forEach(function(marker) {
+
+      // Create a DOM element for the marker
+      var el = document.createElement('div');
+      el.className = 'marker';
+      el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
+      el.style.width = marker.properties.iconSize[0] + 'px';
+      el.style.height = marker.properties.iconSize[1] + 'px';
+
+      el.addEventListener('click', function() {
+        window.alert(marker.properties.message);
+      });
+
+      // Add marker to map
+      new mapboxgl.Marker(el)
+      .setLngLat(marker.geometry.coordinates)
+      .addTo(map);
+    });
 
 // -----------------------------------------------------------------------------
 
@@ -284,4 +305,5 @@ var token = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9
 
   createRefNum();
   }); // DOCUMENT READY ENDS
+
 }()); // IIFE ENDS

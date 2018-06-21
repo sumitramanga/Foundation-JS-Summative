@@ -24,6 +24,8 @@
 
   var refNum = document.getElementById('refNum');
 
+  var userResults = [];
+
 
 // -----------------------------------------------------------------------------
 
@@ -62,18 +64,33 @@
 
 
 
+
 // -----------------------------------------------------------------------------
 
 
   // DATE PICKER PLUGIN
 
+      // var $input =
       $('.datepicker1').pickadate({
+        // editable: true,
         clear: '',
         min: new Date()
+        // onClose: function() { $('.datepicker').focus(); }
       });
+
+      // var picker = $input.pickadate('picker');
+      // $input.on('click', function(event) {
+      //   if (picker.get('open')) {
+      //       picker.close();
+      //   } else {
+      //       picker.open();
+      //   }
+      //   event.stopPropagation();
+      // });
 
 
       $('.datepicker2').pickadate({
+        // editable: true,
         clear: '',
         min: new Date(),
         onClose: function() {
@@ -85,9 +102,7 @@
 
           // Push the date to view on the slide
           daysSelected.innerText = daysDiff;
-          daysText.innerText = ' Days';
-
-          console.dir(daysSelected);
+          daysText.innerText = ' Nights';
         }
       });
 
@@ -130,7 +145,7 @@
     // Loop over them and prevent submission
     var validation = Array.prototype.filter.call(forms, function(form) {
       form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
+        if (form.checkValidity() === false || daysDiff > 15 || daysDiff < 1 || daysDiff === NaN) {
           event.preventDefault();
           event.stopPropagation();
 
@@ -142,8 +157,6 @@
           $('.errorMessage').fadeOut(6000, function(){
             $('.errorMessage').remove();
           });
-
-          console.dir(getCheckOut);
         }
         form.classList.add('was-validated');
       }, false);
@@ -158,9 +171,10 @@
     getSubBtn.addEventListener('click', scrollDown , false);
 
     function scrollDown() {
-      console.dir(getCheckInDate);
-      console.dir(getMeals);
-      if (getGuests.validity.valueMissing === false && getCheckInDate.validity.valueMissing === false && getCheckOutDate.validity.valueMissing === false && getMeals.validity.valueMissing === false ) {
+
+      // If there is a value in the inputs the page and the nights staying is 1-15 will auto scroll
+      if (getGuests.validity.valueMissing === false && getMeals.validity.valueMissing === false
+      && daysDiff >= 1 && daysDiff <= 15) {
 
         $.fn.fullpage.setScrollingSpeed(1000);
         $.fn.fullpage.moveSectionDown();
@@ -171,11 +185,10 @@
       // Turn guests input from string to number
       var guestsStringToNum = parseInt(getGuests.value);
       var mealStringToNum = parseInt(getMeals.value);
-      console.log(typeof guestsStringToNum);
+      // console.log(typeof guestsStringToNum);
 
-      console.dir(mealStringToNum);
-
-      console.dir(getCheckInDate);
+      console.dir(typeof mealStringToNum);
+      console.dir(typeof guestsStringToNum);
     }
 
 

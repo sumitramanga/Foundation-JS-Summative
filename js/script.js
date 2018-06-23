@@ -107,13 +107,7 @@
 
 
 
-    // Auto scroll on click the Browse Accomodation button
-    $('#browseBtn').click(function(e){
-      e.preventDefault();
-      $.fn.fullpage.setScrollingSpeed(1000);
-      $.fn.fullpage.moveSectionDown();
-      $.fn.fullpage.setAllowScrolling(false);
-    });
+
 
     // Auto scroll on click the View Results button
     $('#viewResultsBtn').click(function(e){
@@ -214,6 +208,25 @@
       console.dir(typeof guestsStringToNum);
 
     }
+
+
+// -----------------------------------------------------------------------------
+
+// Success Page
+
+    // Auto scroll on click the Browse Accomodation button
+    $('#browseBtn').click(function(e){
+      e.preventDefault();
+      $.fn.fullpage.setScrollingSpeed(1000);
+      $.fn.fullpage.moveSectionDown();
+      $.fn.fullpage.setAllowScrolling(false);
+    });
+
+    // Pushing all results to an array
+    function pushResults() {
+      
+    }
+
 
 
 // -----------------------------------------------------------------------------

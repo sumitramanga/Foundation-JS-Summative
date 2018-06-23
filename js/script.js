@@ -11,6 +11,8 @@
 
   var getMeals = document.getElementById('getMealOption');
 
+
+
   var getSubBtn = document.getElementById('submitBtn');
   var errorMessage = document.createElement('div');
 
@@ -105,10 +107,6 @@
 // -----------------------------------------------------------------------------
 
 
-
-
-
-
     // Auto scroll on click the View Results button
     $('#viewResultsBtn').click(function(e){
       e.preventDefault();
@@ -197,22 +195,15 @@
         $.fn.fullpage.setScrollingSpeed(1000);
         $.fn.fullpage.moveSectionDown();
         $.fn.fullpage.setAllowScrolling(false);
-
       }
 
-      // Turn guests input from string to number
-      var guestsStringToNum = parseInt(getGuests.value);
-      var mealStringToNum = parseInt(getMeals.value);
-
-      console.dir(typeof mealStringToNum);
-      console.dir(typeof guestsStringToNum);
 
     }
 
 
 // -----------------------------------------------------------------------------
 
-// Success Page
+    // Success Page
 
     // Auto scroll on click the Browse Accomodation button
     $('#browseBtn').click(function(e){
@@ -220,13 +211,20 @@
       $.fn.fullpage.setScrollingSpeed(1000);
       $.fn.fullpage.moveSectionDown();
       $.fn.fullpage.setAllowScrolling(false);
+      pushResults();
     });
 
     // Pushing all results to an array
     function pushResults() {
-      
-    }
 
+      // Turn guests input from string to number
+      var guestsStringToNum = parseInt(getGuests.value);
+      var mealStringToNum = parseInt(getMeals.value);
+
+      userResults.push(guestsStringToNum, daysDiff, mealStringToNum);
+
+      console.log(userResults);
+    }
 
 
 // -----------------------------------------------------------------------------

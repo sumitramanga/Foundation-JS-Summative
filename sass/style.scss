@@ -278,8 +278,13 @@ $quaternaryColor: #EFC125;
   margin-top: 1.5em;
 }
 
+.nightsErrorMsg {
+  color: #DC1C0C;
+  font-weight: 400;
+}
+
 .note {
-  margin-top: 3.5em;
+  margin-top: 2.5em;
 }
 
 // MEAL OPTIONS ---------------------------------------------------------------
@@ -305,6 +310,7 @@ $quaternaryColor: #EFC125;
 
 .invalid-feedback {
   margin-top: 1em;
+  color: #DC1C0C;
 }
 
 .errorMessage {

@@ -219,10 +219,9 @@
       var mealStringToNum = parseInt(getMeals.value);
 
       userResults.push({guests: guestsStringToNum, nights: daysDiff, meals: mealStringToNum});
-// push meal name too
+      // push meal name too
       console.log(userResults);
     }
-
 
 // -----------------------------------------------------------------------------
 
@@ -236,8 +235,71 @@
       container: 'map', // container id
       style: 'mapbox://styles/sumitram/cji3p2cwm0s6r2smz01nlidgc', // stylesheet location
       center: [174.763222, -36.854191], // starting position [lng, lat]
-      zoom: 13 // starting zoom
+      zoom: 9 // starting zoom
     });
+
+
+    // ADDING A POP UP ---------------------------------------------------------------
+        map.on('load', function() {
+        // Add a layer showing the places.
+        map.addLayer({
+          "id": "places",
+          "type": "symbol",
+          "source": {
+            "type": "geojson",
+            "data": {
+              "type": "FeatureCollection",
+              "features": [{
+                "type": "Feature",
+                "properties": {
+                  "description": "<strong>Wellington Railway Station</strong><p>This is the main railway station in the Wellington Region.</p>",
+                  "icon": "star"
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [174.452166, -36.883217]
+                }
+              }]
+            }
+          },
+          "layout": {
+              "icon-image": "{icon}-15",
+              "icon-allow-overlap": true,
+              "icon-size": 1
+          }
+        });
+        // Create a popup, but don't add it to the map yet.
+        var popup = new mapboxgl.Popup({
+            closeButton: false,
+            closeOnClick: false
+        });
+        map.on('mouseenter', 'places', function(e) {
+            // Change the cursor style as a UI indicator.
+            map.getCanvas().style.cursor = 'pointer';
+            var coordinates = e.features[0].geometry.coordinates.slice();
+            var description = e.features[0].properties.description;
+            // Ensure that if the map is zoomed out such that multiple
+            // copies of the feature are visible, the popup appears
+            // over the copy being pointed to.
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+            // Populate the popup and set its coordinates
+            // based on the feature found.
+            popup.setLngLat(coordinates)
+                .setHTML(description)
+                .addTo(map);
+        });
+        map.on('mouseleave', 'places', function() {
+            map.getCanvas().style.cursor = '';
+            popup.remove();
+        });
+    });
+
+
+
+// -----------------------------------------------------------------------------
+
 
     var geojson = {
         "type": "FeatureCollection",
@@ -251,7 +313,7 @@
                 "type": "Feature",
                 "properties": {
                     "message": "Foo",
-                    "iconSize": [60, 60]
+                    "iconSize": [20, 20]
                 },
                 "geometry": {
                     "type": "Point",
@@ -382,6 +444,25 @@
                 }
             },
 
+// Auckland War Memorial Museum ------------------------------------------------
+            {
+                "type": "Feature",
+                "properties": {
+                    "message": "Auckland War Memorial Museum",
+                    // "icon": {
+                      "iconSize": [60, 60],
+                    //   "iconUrl": "../img/pin.svg",
+                    // }
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        174.767883,
+                        -36.850609
+                    ]
+                }
+            },
+
 // Hunua Falls ----------------------------------------------------------
             {
                 "type": "Feature",
@@ -399,22 +480,26 @@
             },
 
 // Te Henga Walkway. Bethells Beach to Muriwai ---------------------------------
-            {
-                "type": "Feature",
-                "properties": {
-                    "message": "Te Henga Walkway",
-                    "iconSize": [60, 60]
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                        174.452166,
-                        -36.883217
-                    ]
-                }
-            },
+            // {
+            //     "type": "Feature",
+            //     "properties": {
+            //         "title": "Hello World",
+            //         "message": "Te Henga Walkway",
+            //         "iconSize": [50, 50],
+            //
+            //     },
+            //     "geometry": {
+            //         "type": "Point",
+            //         "coordinates": [
+            //             174.452166,
+            //             -36.883217
+            //         ]
+            //     }
+            // },
+
 
 // -----------------------------------------------------------------------------
+
 
         ] // Feature ends
     }; // geojson ends
@@ -425,7 +510,8 @@
       // Create a DOM element for the marker
       var el = document.createElement('div');
       el.className = 'marker';
-      el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
+      el.style.backgroundImage = 'url("img/pin.svg")';
+      el.style.backgroundSize = 'contain';
       el.style.width = marker.properties.iconSize[0] + 'px';
       el.style.height = marker.properties.iconSize[1] + 'px';
 
@@ -438,6 +524,7 @@
       .setLngLat(marker.geometry.coordinates)
       .addTo(map);
     });
+
 
 // -----------------------------------------------------------------------------
 

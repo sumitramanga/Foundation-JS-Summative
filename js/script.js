@@ -12,7 +12,6 @@
   var getMeals = document.getElementById('getMealOption');
 
 
-
   var getSubBtn = document.getElementById('submitBtn');
   var errorMessage = document.createElement('div');
 
@@ -29,6 +28,7 @@
   var refNum = document.getElementById('refNum');
 
   var userResults = [];
+  var userAccomOption = [];
 
 
 // -----------------------------------------------------------------------------
@@ -197,7 +197,6 @@
         $.fn.fullpage.setAllowScrolling(false);
       }
 
-
     }
 
 
@@ -221,8 +220,8 @@
       var guestsStringToNum = parseInt(getGuests.value);
       var mealStringToNum = parseInt(getMeals.value);
 
-      userResults.push(guestsStringToNum, daysDiff, mealStringToNum);
-
+      userResults.push({guests: guestsStringToNum, nights: daysDiff, meals: mealStringToNum});
+// push meal name too
       console.log(userResults);
     }
 

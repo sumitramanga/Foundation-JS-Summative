@@ -1,4 +1,5 @@
 (function() {
+
   var controlArrows = document.getElementsByClassName('fp-controlArrow');
 
   // Getting the users options from the SECOND section -------------------------
@@ -10,7 +11,6 @@
   var nightsText = document.getElementById('nightsText');
 
   var getMeals = document.getElementById('getMealOption');
-
 
   var getSubBtn = document.getElementById('submitBtn');
   var errorMessage = document.createElement('div');
@@ -44,7 +44,7 @@
 
   $(document).ready(function() {
 
-    // Page piling script
+    // PAGE PILING PLUGIN
     $('#fullpage').fullpage({
       verticalCentered: true,
       anchors: ['firstPage', 'secondPage', '3rdPage', 'fourthPage', 'fifthPage'],
@@ -59,8 +59,6 @@
       $.fn.fullpage.setScrollingSpeed(1000);
       $.fn.fullpage.moveSectionDown();
     });
-
-
 
 
 // -----------------------------------------------------------------------------
@@ -87,7 +85,7 @@
 
     function calculateNights () {
 
-      // Calculate how many days in between the chosen dates
+      // Calculate how many nights in between the chosen dates
       var startDate = Date.parse(getCheckIn.value);
       var endDate = Date.parse(getCheckOut.value);
       var timeDiff = endDate - startDate;
@@ -202,7 +200,7 @@
 
 // -----------------------------------------------------------------------------
 
-    // Success Page
+    // SUCCESS PAGE
 
     // Auto scroll on click the Browse Accomodation button
     $('#browseBtn').click(function(e){
@@ -228,7 +226,7 @@
 
 // -----------------------------------------------------------------------------
 
-    // SETTING UP MAP
+    //SETTING UP MAP
 
     var token = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9.4K0zZ6PO_bnYu76JJUOmoQ';
 
@@ -246,7 +244,9 @@
         "features": [
 
 
-// HOUSE --------------------------------------------------
+// ------------------------------- ACCOMMODATION -------------------------------
+
+// House --------------------------------------------------
             {
                 "type": "Feature",
                 "properties": {
@@ -256,14 +256,15 @@
                 "geometry": {
                     "type": "Point",
                     "coordinates": [
-                        -66.324462890625,
-                        -16.024695711685304
+                        174.762191,
+                        -36.848414
+                        // -36.848414, 174.762191
                     ]
                 }
             },
 
 
-// HOTEL --------------------------------------------------
+// Hotel --------------------------------------------------
             {
                 "type": "Feature",
                 "properties": {
@@ -280,7 +281,7 @@
             },
 
 
-// MOTEL --------------------------------------------------
+// Motel --------------------------------------------------
             {
                 "type": "Feature",
                 "properties": {
@@ -298,7 +299,7 @@
             },
 
 
-// HOSTEL --------------------------------------------------
+// Hostel --------------------------------------------------
             {
                 "type": "Feature",
                 "properties": {
@@ -312,9 +313,108 @@
                         -36.835333
                     ]
                 }
-            }
+            },
 
-// ----------------------------------------------------------
+
+// -------------------------------- ATTRACTIONS --------------------------------
+
+// Sky Tower -------------------------------------------------------------------
+            {
+                "type": "Feature",
+                "properties": {
+                    "message": "Sky Tower",
+                    "iconSize": [60, 60]
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        174.762191,
+                        -36.848414
+                    ]
+                }
+            },
+
+// Queens Street ---------------------------------------------------------------
+            {
+                "type": "Feature",
+                "properties": {
+                    "message": " Queens Street",
+                    "iconSize": [60, 60]
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        174.764615,
+                        -36.850473
+                    ]
+                }
+            },
+
+// Stardome Observatory & Planetarium ------------------------------------------
+            {
+                "type": "Feature",
+                "properties": {
+                    "message": " Queens Street",
+                    "iconSize": [60, 60]
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        174.776985,
+                        -36.905937
+                    ]
+                }
+            },
+
+// Auckland War Memorial Museum ------------------------------------------------
+            {
+                "type": "Feature",
+                "properties": {
+                    "message": "Auckland War Memorial Museum",
+                    "iconSize": [60, 60]
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        174.777791,
+                        -36.860364
+                    ]
+                }
+            },
+
+// Hunua Falls ----------------------------------------------------------
+            {
+                "type": "Feature",
+                "properties": {
+                    "message": "Hunua Falls",
+                    "iconSize": [60, 60]
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        175.089838,
+                        -37.068550
+                    ]
+                }
+            },
+
+// Te Henga Walkway. Bethells Beach to Muriwai ---------------------------------
+            {
+                "type": "Feature",
+                "properties": {
+                    "message": "Te Henga Walkway",
+                    "iconSize": [60, 60]
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        174.452166,
+                        -36.883217
+                    ]
+                }
+            },
+
+// -----------------------------------------------------------------------------
 
         ] // Feature ends
     }; // geojson ends

@@ -1,32 +1,66 @@
 // Accommodation data
-var accommodation = {
-  amount: 4,
+var accom = {
 
   hostel: {
     cost: 30,
-    guests: [1, 2, 3, 4, 5, 6],
-    nights: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    meals: [30, 30, 0]
+    
+    guestsMin: 1,
+    guestsMax: 6,
+
+    nightsMin: 1,
+    nightsMax: 10,
+
+    breakfastMeal: 30,
+    noMeal: 0
   },
 
   motel: {
     cost: 90,
-    guests: [2, 3, 4],
-    nights: [3, 4, 5, 6, 7, 8, 9, 10],
-    meals: [30, 30, 0]
+
+    guestsMin: 2,
+    guestsMax: 4,
+
+    nightsMin: 3,
+    nightsMax: 10,
+
+    lunchMeal: 30,
+    noMeal: 0
   },
 
   hotel: {
     cost: 157,
-    guests: [1, 2],
-    nights: [1, 2, 3, 4, 5],
-    meals: [30, 30, 30, 90, 0]
+
+    guestsMin: 1,
+    guestsMax: 2,
+
+    nightsMin: 1,
+    nightsMax: 5,
+
+    breakfastMeal: 30,
+    lunchMeal: 30,
+    fullMeal: 90,
+    noMeal: 0
   },
 
   house: {
     cost: 240,
-    guests: [1, 2, 3, 4],
-    nights: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-    meals: [30, 30, 30, 90, 0]
-  },
-}
+
+    guestsMin: 1,
+    guestsMax: 4,
+
+    NightsMin: 2,
+    NightsMax: 15,
+
+    breakfastMeal: 30,
+    lunchMeal: 30,
+    dinnerMeal: 30,
+    fullMeal: 90,
+    noMeal: 0
+  }
+
+};
+
+// var newArr = [];
+
+// How to access object properties
+console.dir(accom.hostel.guestsMax);

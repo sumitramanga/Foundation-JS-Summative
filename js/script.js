@@ -368,6 +368,32 @@
                     }
                 },
 
+// MT Roskill Summit -------------------------------------------
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "description": "<strong>MT Roskill Summit</strong>",
+                    "icon": "park"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [174.737258, -36.912590]
+                    }
+                },
+
+// Alberton - 1860s mansion with original furnishings & other artifacts, plus a garden. -------------------------------------------
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "description": "<strong>Alberton</strong>",
+                    "icon": "museum"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [174.724686, -36.889934]
+                    }
+                },
+
 
 // Stardome Observatory & Planetarium ------------------------------------------
                 {
@@ -375,12 +401,6 @@
                   "properties": {
                     "description": "Stardome Observatory & Planetarium",
                     "icon": "star-stroked",
-                    "text-field": "hello",
-                    "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
-                    "text-size": 11,
-                    "text-transform": "uppercase",
-                    "text-letter-spacing": 0.05,
-                    // WORKING FROM HERE
                   },
 
                   "geometry": {
@@ -438,6 +458,25 @@
         });
     });
 
+
+// -----------------------------------------------------------------------------
+
+// Filtering accommodation to match users inputted details
+
+// console.log(accom.hostel.guestsMax);
+//
+// var dataTest = accom.hostel.guestsMax;
+//
+// var inputAmount = 10;
+//
+// // for(var i = 0; i < dataTest.length; i++){
+//   if (inputAmount < dataTest) {
+//     console.log("you can stay");
+//   } else {
+//     console.log("you cant use this");
+//   }
+//   console.log(dataTest[i]);
+// // }
 
 
 // ------------------------------- ACCOMMODATION -------------------------------

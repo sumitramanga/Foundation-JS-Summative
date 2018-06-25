@@ -75,7 +75,7 @@
       clear: '',
       min: new Date(),
       onClose: function () {
-        calculateNights()
+        calculateNights();
       }
     });
 
@@ -126,7 +126,7 @@
       // Loop over them and prevent submission
       var validation = Array.prototype.filter.call(forms, function(form) {
         form.addEventListener('submit', function(event) {
-          if (form.checkValidity() === false || nightsSelected.textContent > 15 || nightsSelected.textContent < 1 || nightsSelected.textContent === NaN) {
+          if (form.checkValidity() === false || nightsSelected.textContent > 15 || nightsSelected.textContent < 1) {
             event.preventDefault();
             event.stopPropagation();
 
@@ -187,8 +187,7 @@
 
       // If there is a value in the inputs the page and the nights staying is 1-15
       // the page will auto scroll
-      if (getGuests.validity.valueMissing === false && getMeals.validity.valueMissing === false
-      && nightsSelected.textContent >= 1 && nightsSelected.textContent <= 15) {
+      if (getGuests.validity.valueMissing === false && getMeals.validity.valueMissing === false && nightsSelected.textContent >= 1 && nightsSelected.textContent <= 15) {
 
         $.fn.fullpage.setScrollingSpeed(1000);
         $.fn.fullpage.moveSectionDown();
@@ -224,8 +223,9 @@
     }
 
 // -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 
-    //SETTING UP MAP
+    // SETTING UP MAP
 
     var token = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9.4K0zZ6PO_bnYu76JJUOmoQ';
 
@@ -239,7 +239,8 @@
     });
 
 
-    // ADDING A POP UP ---------------------------------------------------------------
+// -------------------------------- ATTRACTIONS --------------------------------
+
         map.on('load', function() {
         // Add a layer showing the places.
         map.addLayer({
@@ -249,47 +250,161 @@
             "type": "geojson",
             "data": {
               "type": "FeatureCollection",
-              "features": [{
-                "type": "Feature",
-                "properties": {
-                  "description": "<strong>Wellington Railway Station</strong><p>This is the main railway station in the Wellington Region.</p>",
-                  "icon": "star"
+              "features": [
+
+
+// Te Henga Walkway. Bethells Beach to Muriwai ---------------------------------
+
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "description": "<strong>Te Henga Walkway</strong><p>Bethells Beach to Muriwai.</p>",
+                    "icon": "star"
+                  },
+
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [174.452166, -36.883217]
+                  }
                 },
-                "geometry": {
-                  "type": "Point",
-                  "coordinates": [174.452166, -36.883217]
+
+
+// Hunua Falls -----------------------------------------------------------------
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "description": "<strong>Hunua Falls</strong><p>This is Hunua Falls.</p>",
+                    "icon": "star"
+                  },
+
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [175.089838, -37.068550]
+                  }
+                },
+
+
+// Albert Park -----------------------------------------------------------------
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "description": "<strong>Albert Park</strong><p>This is Hunua Falls.</p>",
+                    "icon": "star"
+                  },
+
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [174.767883, -36.850609]
+                  }
+                },
+
+
+// Auckland War Memorial Museum ------------------------------------------------
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "description": "<strong>Auckland War Memorial Museum</strong><p>This is Hunua Falls.</p>",
+                    "icon": "star"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [174.777791, -36.860364]
+                  }
+                },
+
+
+// Sky Tower -------------------------------------------------------------------
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "description": "<strong>Sky Tower</strong><p>This is Hunua Falls.</p>",
+                    "icon": "star"
+                  },
+
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [174.762191, -36.848414]
+                  }
+                },
+
+
+// Queens Street ---------------------------------------------------------------
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "description": "<strong>Queens Street</strong><p>This is Hunua Falls.</p>",
+                    "icon": "star"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [174.764615, -36.850473]
+                    }
+                },
+
+
+// Stardome Observatory & Planetarium ------------------------------------------
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "description": "Stardome Observatory & Planetarium",
+                    "icon": "star",
+                    "text-field": "hello",
+                    "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+                    "text-size": 11,
+                    "text-transform": "uppercase",
+                    "text-letter-spacing": 0.05,
+                    // WORKING FROM HERE
+                  },
+
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [174.776985, -36.905937]
+                  }
                 }
-              }]
+
+// -----------------------------------------------------------------------------
+
+              ]
             }
           },
+
           "layout": {
-              "icon-image": "{icon}-15",
-              "icon-allow-overlap": true,
-              "icon-size": 1
+            "icon-image": "{icon}-15",
+            "icon-allow-overlap": true,
+            "icon-size": 1
           }
         });
+
+
+// -----------------------------------------------------------------------------
+
+
         // Create a popup, but don't add it to the map yet.
         var popup = new mapboxgl.Popup({
             closeButton: false,
             closeOnClick: false
         });
         map.on('mouseenter', 'places', function(e) {
+
             // Change the cursor style as a UI indicator.
             map.getCanvas().style.cursor = 'pointer';
             var coordinates = e.features[0].geometry.coordinates.slice();
             var description = e.features[0].properties.description;
+
             // Ensure that if the map is zoomed out such that multiple
             // copies of the feature are visible, the popup appears
             // over the copy being pointed to.
             while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
                 coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
             }
+
             // Populate the popup and set its coordinates
             // based on the feature found.
             popup.setLngLat(coordinates)
                 .setHTML(description)
                 .addTo(map);
         });
+
         map.on('mouseleave', 'places', function() {
             map.getCanvas().style.cursor = '';
             popup.remove();
@@ -298,204 +413,71 @@
 
 
 
-// -----------------------------------------------------------------------------
-
+// ------------------------------- ACCOMMODATION -------------------------------
 
     var geojson = {
         "type": "FeatureCollection",
         "features": [
 
 
-// ------------------------------- ACCOMMODATION -------------------------------
-
-// House --------------------------------------------------
+// House -----------------------------------------------------------------------
             {
-                "type": "Feature",
-                "properties": {
-                    "message": "Foo",
-                    "iconSize": [20, 20]
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                        174.762191,
-                        -36.848414
-                        // -36.848414, 174.762191
-                    ]
-                }
+              "type": "Feature",
+              "properties": {
+                "message": "Contemporary inner city villa. Relax inside this beautiful contemporary inner city villa, filled with art, and tastefully decorated by Fran & Aaron, well known for creating some of Auckland's most popular eateries. Walking distance to Ponsonby and the City Centre & a stones throw to Sky City & Wynyard Quarter.",
+                "iconSize": [40, 40]
+              },
+
+              "geometry": {
+                "type": "Point",
+                "coordinates": [174.752126, -36.850371]
+              }
             },
 
 
-// Hotel --------------------------------------------------
+// Hotel  ----------------------------------------------------------------------
             {
-                "type": "Feature",
-                "properties": {
-                    "message": "Bar",
-                    "iconSize": [50, 50]
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                        -61.2158203125,
-                        -15.97189158092897
-                    ]
-                }
+              "type": "Feature",
+              "properties": {
+                "message": "Grand Millennium Hotel",
+                "iconSize": [40, 40]
+              },
+
+              "geometry": {
+                "type": "Point",
+                "coordinates": [174.760582, -36.852772 ]
+              }
             },
 
 
-// Motel --------------------------------------------------
+// Motel -----------------------------------------------------------------------
             {
-                "type": "Feature",
-                "properties": {
-                    "message": "Baz",
-                    "iconSize": [40, 40]
-                    // "marker-color": 'pink'
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                        -63.29223632812499,
-                        -18.28151823530889
-                    ]
-                }
+              "type": "Feature",
+              "properties": {
+                "message": "Papakura Motor Lodge & Motel",
+                "iconSize": [40, 40]
+              },
+
+              "geometry": {
+                "type": "Point",
+                "coordinates": [174.942296, -37.077487]
+              }
             },
 
 
-// Hostel --------------------------------------------------
+// Hostel ----------------------------------------------------------------------
             {
-                "type": "Feature",
-                "properties": {
-                    "message": "Bar",
-                    "iconSize": [50, 50]
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                        -174.771945,
-                        -36.835333
-                    ]
-                }
+              "type": "Feature",
+              "properties": {
+                "message": "Brown Kiwi Travellers Hostel",
+                "iconSize": [40, 40]
+              },
+
+              "geometry": {
+                "type": "Point",
+                "coordinates": [174.742576, -36.847083]
+              }
             },
-
-
-// -------------------------------- ATTRACTIONS --------------------------------
-
-// Sky Tower -------------------------------------------------------------------
-            {
-                "type": "Feature",
-                "properties": {
-                    "message": "Sky Tower",
-                    "iconSize": [60, 60]
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                        174.762191,
-                        -36.848414
-                    ]
-                }
-            },
-
-// Queens Street ---------------------------------------------------------------
-            {
-                "type": "Feature",
-                "properties": {
-                    "message": " Queens Street",
-                    "iconSize": [60, 60]
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                        174.764615,
-                        -36.850473
-                    ]
-                }
-            },
-
-// Stardome Observatory & Planetarium ------------------------------------------
-            {
-                "type": "Feature",
-                "properties": {
-                    "message": " Queens Street",
-                    "iconSize": [60, 60]
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                        174.776985,
-                        -36.905937
-                    ]
-                }
-            },
-
-// Auckland War Memorial Museum ------------------------------------------------
-            {
-                "type": "Feature",
-                "properties": {
-                    "message": "Auckland War Memorial Museum",
-                    "iconSize": [60, 60]
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                        174.777791,
-                        -36.860364
-                    ]
-                }
-            },
-
-// Auckland War Memorial Museum ------------------------------------------------
-            {
-                "type": "Feature",
-                "properties": {
-                    "message": "Auckland War Memorial Museum",
-                    // "icon": {
-                      "iconSize": [60, 60],
-                    //   "iconUrl": "../img/pin.svg",
-                    // }
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                        174.767883,
-                        -36.850609
-                    ]
-                }
-            },
-
-// Hunua Falls ----------------------------------------------------------
-            {
-                "type": "Feature",
-                "properties": {
-                    "message": "Hunua Falls",
-                    "iconSize": [60, 60]
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                        175.089838,
-                        -37.068550
-                    ]
-                }
-            },
-
-// Te Henga Walkway. Bethells Beach to Muriwai ---------------------------------
-            // {
-            //     "type": "Feature",
-            //     "properties": {
-            //         "title": "Hello World",
-            //         "message": "Te Henga Walkway",
-            //         "iconSize": [50, 50],
-            //
-            //     },
-            //     "geometry": {
-            //         "type": "Point",
-            //         "coordinates": [
-            //             174.452166,
-            //             -36.883217
-            //         ]
-            //     }
-            // },
 
 
 // -----------------------------------------------------------------------------

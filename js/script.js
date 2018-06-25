@@ -234,8 +234,8 @@
     var map = new mapboxgl.Map({
       container: 'map', // container id
       style: 'mapbox://styles/sumitram/cji3p2cwm0s6r2smz01nlidgc', // stylesheet location
-      center: [174.763222, -36.854191], // starting position [lng, lat]
-      zoom: 9 // starting zoom
+      center: [174.770934, -36.883059], // starting position [lng, lat]
+      zoom: 11 // starting zoom
     });
 
 
@@ -258,8 +258,8 @@
                 {
                   "type": "Feature",
                   "properties": {
-                    "description": "<strong>Te Henga Walkway</strong><p>Bethells Beach to Muriwai.</p>",
-                    "icon": "star"
+                    "description": "<strong>Te Henga Walkway</strong>",
+                    "icon": "park"
                   },
 
                   "geometry": {
@@ -269,17 +269,17 @@
                 },
 
 
-// Hunua Falls -----------------------------------------------------------------
+// Point to point Walk -----------------------------------------------------------------
                 {
                   "type": "Feature",
                   "properties": {
-                    "description": "<strong>Hunua Falls</strong><p>This is Hunua Falls.</p>",
-                    "icon": "star"
+                    "description": "<strong>Point England Walks</strong>",
+                    "icon": "park"
                   },
 
                   "geometry": {
                     "type": "Point",
-                    "coordinates": [175.089838, -37.068550]
+                    "coordinates": [174.871534, -36.882470]
                   }
                 },
 
@@ -288,8 +288,8 @@
                 {
                   "type": "Feature",
                   "properties": {
-                    "description": "<strong>Albert Park</strong><p>This is Hunua Falls.</p>",
-                    "icon": "star"
+                    "description": "<strong>Albert Park</strong>",
+                    "icon": "park"
                   },
 
                   "geometry": {
@@ -303,8 +303,8 @@
                 {
                   "type": "Feature",
                   "properties": {
-                    "description": "<strong>Auckland War Memorial Museum</strong><p>This is Hunua Falls.</p>",
-                    "icon": "star"
+                    "description": "<strong>Auckland War Memorial Museum</strong>",
+                    "icon": "museum"
                   },
                   "geometry": {
                     "type": "Point",
@@ -317,7 +317,7 @@
                 {
                   "type": "Feature",
                   "properties": {
-                    "description": "<strong>Sky Tower</strong><p>This is Hunua Falls.</p>",
+                    "description": "<strong>Sky Tower</strong>",
                     "icon": "star"
                   },
 
@@ -332,7 +332,7 @@
                 {
                   "type": "Feature",
                   "properties": {
-                    "description": "<strong>Queens Street</strong><p>This is Hunua Falls.</p>",
+                    "description": "<strong>Queens Street</strong>",
                     "icon": "star"
                   },
                   "geometry": {
@@ -342,12 +342,39 @@
                 },
 
 
+// Coley & Punch ---------------------------------------------------------------
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "description": "<strong>Coley & Punch</strong>",
+                    "icon": "alcohol-shop"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [174.764730, -36.841020]
+                    }
+                },
+
+// Kelly Tarlton's Sea Life Aquarium -------------------------------------------
+                {
+                  "type": "Feature",
+                  "properties": {
+                    "description": "<strong>Kelly Tarlton's Sea Life Aquarium</strong>",
+                    "icon": "aquarium"
+                  },
+                  "geometry": {
+                    "type": "Point",
+                    "coordinates": [174.817432, -36.846943]
+                    }
+                },
+
+
 // Stardome Observatory & Planetarium ------------------------------------------
                 {
                   "type": "Feature",
                   "properties": {
                     "description": "Stardome Observatory & Planetarium",
-                    "icon": "star",
+                    "icon": "star-stroked",
                     "text-field": "hello",
                     "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
                     "text-size": 11,
@@ -434,6 +461,18 @@
               }
             },
 
+            {
+              "type": "Feature",
+              "properties": {
+                "message": "<strong>Howick Luxury Large Home</strong>",
+                "iconSize": [40, 40]
+              },
+
+              "geometry": {
+                "type": "Point",
+                "coordinates": [174.932126, -36.913246]
+              }
+            },
 
 // Hotel  ----------------------------------------------------------------------
             {
@@ -449,6 +488,32 @@
               }
             },
 
+            {
+              "type": "Feature",
+              "properties": {
+                "message": "Best Western ellerslie",
+                "iconSize": [40, 40]
+              },
+
+              "geometry": {
+                "type": "Point",
+                "coordinates": [174.814842, -36.900858]
+              }
+            },
+
+            {
+              "type": "Feature",
+              "properties": {
+                "message": "Quality Hotel Lincoln Green",
+                "iconSize": [40, 40]
+              },
+
+              "geometry": {
+                "type": "Point",
+                "coordinates": [174.631023, -36.862974]
+              }
+            },
+
 
 // Motel -----------------------------------------------------------------------
             {
@@ -460,7 +525,20 @@
 
               "geometry": {
                 "type": "Point",
-                "coordinates": [174.942296, -37.077487]
+                "coordinates": [174.801883, -36.897228]
+              }
+            },
+
+            {
+              "type": "Feature",
+              "properties": {
+                "message": "Airport Harbour View Motel",
+                "iconSize": [40, 40]
+              },
+
+              "geometry": {
+                "type": "Point",
+                "coordinates": [174.784677, -36.931369]
               }
             },
 
@@ -478,6 +556,19 @@
                 "coordinates": [174.742576, -36.847083]
               }
             },
+
+            {
+              "type": "Feature",
+              "properties": {
+                "message": "Oaklands Lodge Backpackers",
+                "iconSize": [40, 40]
+              },
+
+              "geometry": {
+                "type": "Point",
+                "coordinates": [174.763164, -36.880751]
+              }
+            }
 
 
 // -----------------------------------------------------------------------------

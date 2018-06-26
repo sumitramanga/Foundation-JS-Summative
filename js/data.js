@@ -37,8 +37,7 @@ var accom = {
     nightsMax: 5,
 
     breakfastMeal: 30,
-    lunchMeal: 30,
-    fullMeal: 90,
+    dinnerMeal: 30,
     noMeal: 0
   },
 
@@ -48,8 +47,8 @@ var accom = {
     guestsMin: 1,
     guestsMax: 4,
 
-    NightsMin: 2,
-    NightsMax: 15,
+    nightsMin: 2,
+    nightsMax: 15,
 
     breakfastMeal: 30,
     lunchMeal: 30,

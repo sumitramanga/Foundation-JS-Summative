@@ -15,7 +15,8 @@
   var getSubBtn = document.getElementById('submitBtn');
   var errorMessage = document.createElement('div');
 
-  // The button which pushes the details entered into an array -----------------
+  // The button which pushes the details entered into an array located on the
+  // "All Set!" page --------------------------------------------------------------
   var browseBtn = document.getElementById('browseBtn');
 
   // Getting the results elements from the FIFTH section -----------------------
@@ -96,10 +97,6 @@
       dateErrorMsg();
 
     }
-
-    // if (isNaN(nightsSelected)) {
-    //   nightsSelected.textContent = '0';
-    // }
 
 
 // -----------------------------------------------------------------------------
@@ -463,70 +460,121 @@
 
 // Filtering accommodation to match users inputted details
 
+    // Grabbing data from data.js
+    var hostelMinGuests = accom.hostel.guestsMin;
     var hostelMaxGuests = accom.hostel.guestsMax;
+    var hostelMaxNights = accom.hostel.nightsMax;
+    var hostelMinNights = accom.hostel.nightsMin;
+
+    var hotelMinGuests = accom.hotel.guestsMin;
     var hotelMaxGuests = accom.hotel.guestsMax;
+    var hotelMinNights = accom.hotel.nightsMin;
+    var hotelMaxNights = accom.hotel.nightsMax;
+
+    var motelMinGuests = accom.motel.guestsMin;
     var motelMaxGuests = accom.motel.guestsMax;
+    var motelMinNights = accom.motel.nightsMin;
+    var motelMaxNights = accom.motel.nightsMax;
+
+    var houseMinGuests = accom.house.guestsMin;
     var houseMaxGuests = accom.house.guestsMax;
+    var houseMinNights = accom.house.nightsMin;
+    var houseMaxNights = accom.house.nightsMax;
 
-    var inputAmount = 1;
 
-      if (inputAmount <= accom.hostel.guestsMax && inputAmount >= accom.hostel.guestsMin) {
+    browseBtn.addEventListener('click', filterMarkers , false);
+
+    function filterMarkers() {
+      if (getGuests.value <= hostelMaxGuests && getGuests.value >= hostelMinGuests && daysDiff <= hostelMaxNights && daysDiff >= hostelMinNights) {
         console.log("you can stay at hostels");
       }
 
-      if (inputAmount <= accom.motel.guestsMax && inputAmount >= accom.motel.guestsMin) {
+      if (getGuests.value <= motelMaxGuests && getGuests.value >= motelMinGuests && daysDiff <= motelMaxNights && daysDiff >= motelMinNights) {
+        motels();
         console.log("you can stay at motels");
       }
 
-      // THIS WORKS FOR FILTERING
-
-      if (inputAmount <= accom.hotel.guestsMax && inputAmount >= accom.hotel.guestsMin) {
+      if (getGuests.value <= hotelMaxGuests && getGuests.value >= hotelMinGuests && daysDiff <= hotelMaxNights && daysDiff >= hotelMinNights) {
+        hotels();
         console.log("you can stay at hotels");
       }
 
-      if (inputAmount <= accom.house.guestsMax && inputAmount >= accom.house.guestsMin) {
+      if (getGuests.value <= houseMaxGuests && getGuests.value >= houseMinGuests && daysDiff <= houseMaxNights && daysDiff >= houseMinNights) {
+        houses();
         console.log("you can stay at houses");
       }
+    }
+
 
 // ------------------------------- ACCOMMODATION -------------------------------
 
-    var geojson = {
+
+// Houses -----------------------------------------------------------------------
+
+    function houses() {
+      var geojson = {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {
+              "message": "Contemporary inner city villa. Relax inside this beautiful contemporary inner city villa, filled with art, and tastefully decorated by Fran & Aaron, well known for creating some of Auckland's most popular eateries. Walking distance to Ponsonby and the City Centre & a stones throw to Sky City & Wynyard Quarter.",
+              "iconSize": [40, 40]
+            },
+
+            "geometry": {
+              "type": "Point",
+              "coordinates": [174.752126, -36.850371]
+            }
+          },
+
+          {
+            "type": "Feature",
+            "properties": {
+              "message": "Howick Luxury Large Home",
+              "iconSize": [40, 40]
+            },
+
+            "geometry": {
+              "type": "Point",
+              "coordinates": [174.932126, -36.913246]
+            }
+          },
+        ]
+      };
+      // Add markers to the map..
+      geojson.features.forEach(function(marker) {
+
+        // Create a DOM element for the marker
+        var el = document.createElement('div');
+        el.className = 'marker';
+        el.style.backgroundImage = 'url("img/pin.svg")';
+        el.style.backgroundSize = 'contain';
+        el.style.width = marker.properties.iconSize[0] + 'px';
+        el.style.height = marker.properties.iconSize[1] + 'px';
+
+        el.addEventListener('click', function() {
+          window.alert(marker.properties.message);
+        });
+
+        // Add marker to map
+        new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map);
+      });
+    } // houses function ends
+
+
+// Hotels  ----------------------------------------------------------------------
+    function hotels() {
+      var geojson = {
         "type": "FeatureCollection",
         "features": [
 
-
-// House -----------------------------------------------------------------------
             {
               "type": "Feature",
               "properties": {
-                "description": "Contemporary inner city villa. Relax inside this beautiful contemporary inner city villa, filled with art, and tastefully decorated by Fran & Aaron, well known for creating some of Auckland's most popular eateries. Walking distance to Ponsonby and the City Centre & a stones throw to Sky City & Wynyard Quarter.",
-                "iconSize": [40, 40]
-              },
-
-              "geometry": {
-                "type": "Point",
-                "coordinates": [174.752126, -36.850371]
-              }
-            },
-
-            {
-              "type": "Feature",
-              "properties": {
-                "description": "<strong>Howick Luxury Large Home</strong>",
-                "iconSize": [40, 40]
-              },
-
-              "geometry": {
-                "type": "Point",
-                "coordinates": [174.932126, -36.913246]
-              }
-            },
-
-// Hotel  ----------------------------------------------------------------------
-            {
-              "type": "Feature",
-              "properties": {
-                "description": "Grand Millennium Hotel",
+                "message": "Grand Millennium Hotel",
                 "iconSize": [40, 40]
               },
 
@@ -539,7 +587,7 @@
             {
               "type": "Feature",
               "properties": {
-                "description": "Best Western ellerslie",
+                "message": "Best Western ellerslie",
                 "iconSize": [40, 40]
               },
 
@@ -552,7 +600,7 @@
             {
               "type": "Feature",
               "properties": {
-                "description": "Quality Hotel Lincoln Green",
+                "message": "Quality Hotel Lincoln Green",
                 "iconSize": [40, 40]
               },
 
@@ -561,97 +609,150 @@
                 "coordinates": [174.631023, -36.862974]
               }
             },
+          ] // Feature ends
+      }; // geojson ends
+
+      // Add markers to the map..
+      geojson.features.forEach(function(marker) {
+
+        // Create a DOM element for the marker
+        var el = document.createElement('div');
+        el.className = 'marker';
+        el.style.backgroundImage = 'url("img/pin.svg")';
+        el.style.backgroundSize = 'contain';
+        el.style.width = marker.properties.iconSize[0] + 'px';
+        el.style.height = marker.properties.iconSize[1] + 'px';
+
+        el.addEventListener('click', function() {
+          window.alert(marker.properties.message);
+        });
+
+        // Add marker to map
+        new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map);
+      });
+    } // hotel function ends
 
 
-// Motel -----------------------------------------------------------------------
-            {
-              "type": "Feature",
-              "properties": {
-                "description": "Papakura Motor Lodge & Motel",
-                "iconSize": [40, 40]
-              },
+// Motels  ----------------------------------------------------------------------
+    function motels() {
+      var geojson = {
+        "type": "FeatureCollection",
+        "features": [
 
-              "geometry": {
-                "type": "Point",
-                "coordinates": [174.801883, -36.897228]
-              }
+          {
+            "type": "Feature",
+            "properties": {
+              "description": "Papakura Motor Lodge & Motel",
+              "iconSize": [40, 40]
             },
 
-            {
-              "type": "Feature",
-              "properties": {
-                "description": "Airport Harbour View Motel",
-                "iconSize": [40, 40]
-              },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [174.801883, -36.897228]
+            }
+          },
 
-              "geometry": {
-                "type": "Point",
-                "coordinates": [174.784677, -36.931369]
-              }
+          {
+            "type": "Feature",
+            "properties": {
+              "description": "Airport Harbour View Motel",
+              "iconSize": [40, 40]
             },
+
+            "geometry": {
+              "type": "Point",
+              "coordinates": [174.784677, -36.931369]
+            }
+          }
+        ] // Feature ends
+      }; // geojson ends
+
+      // Add markers to the map..
+      geojson.features.forEach(function(marker) {
+
+        // Create a DOM element for the marker
+        var el = document.createElement('div');
+        el.className = 'marker';
+        el.style.backgroundImage = 'url("img/pin.svg")';
+        el.style.backgroundSize = 'contain';
+        el.style.width = marker.properties.iconSize[0] + 'px';
+        el.style.height = marker.properties.iconSize[1] + 'px';
+
+        el.addEventListener('click', function() {
+          window.alert(marker.properties.message);
+        });
+
+        // Add marker to map
+        new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map);
+      });
+    } // motel function ends
 
 
 // Hostel ----------------------------------------------------------------------
-            {
-              "type": "Feature",
-              "properties": {
-                "description": "Brown Kiwi Travellers Hostel",
-                "iconSize": [40, 40]
-              },
+    function hostels() {
+      var geojson = {
+        "type": "FeatureCollection",
+        "features": [
 
-              "geometry": {
-                "type": "Point",
-                "coordinates": [174.742576, -36.847083]
-              }
+          {
+            "type": "Feature",
+            "properties": {
+              "description": "Brown Kiwi Travellers Hostel",
+              "iconSize": [40, 40]
             },
 
-            {
-              "type": "Feature",
-              "properties": {
-                "description": "Oaklands Lodge Backpackers",
-                "iconSize": [40, 40]
-              },
-
-              "geometry": {
-                "type": "Point",
-                "coordinates": [174.763164, -36.880751]
-              }
+            "geometry": {
+              "type": "Point",
+              "coordinates": [174.742576, -36.847083]
             }
+          },
 
+          {
+            "type": "Feature",
+            "properties": {
+              "description": "Oaklands Lodge Backpackers",
+              "iconSize": [40, 40]
+            },
 
-// -----------------------------------------------------------------------------
-
-
+            "geometry": {
+              "type": "Point",
+              "coordinates": [174.763164, -36.880751]
+            }
+          }
         ] // Feature ends
-    }; // geojson ends
+      }; // geojson ends
 
-    // Add markers to the map..
-    geojson.features.forEach(function(marker) {
+      // Add markers to the map..
+      geojson.features.forEach(function(marker) {
 
-      // Create a DOM element for the marker
-      var el = document.createElement('div');
-      el.className = 'marker';
-      el.style.backgroundImage = 'url("img/pin.svg")';
-      el.style.backgroundSize = 'contain';
-      el.style.width = marker.properties.iconSize[0] + 'px';
-      el.style.height = marker.properties.iconSize[1] + 'px';
+        // Create a DOM element for the marker
+        var el = document.createElement('div');
+        el.className = 'marker';
+        el.style.backgroundImage = 'url("img/pin.svg")';
+        el.style.backgroundSize = 'contain';
+        el.style.width = marker.properties.iconSize[0] + 'px';
+        el.style.height = marker.properties.iconSize[1] + 'px';
 
-      el.addEventListener('click', function() {
-        window.alert(marker.properties.message);
+        el.addEventListener('click', function() {
+          window.alert(marker.properties.message);
+        });
+
+        // Add marker to map
+        new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map);
       });
-
-      // Add marker to map
-      new mapboxgl.Marker(el)
-      .setLngLat(marker.geometry.coordinates)
-      .addTo(map);
-    });
-
+    } // Hostel ends
 
 // -----------------------------------------------------------------------------
 
     // Reference number on summary
 
-    function createRefNum() {
+    function createRefNum () {
       var randomNum = Math.floor((Math.random() * 1000000) + 1);
       refNum.innerText = '#' + randomNum;
     }

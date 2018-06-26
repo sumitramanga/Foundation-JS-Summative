@@ -3,7 +3,7 @@ var accom = {
 
   hostel: {
     cost: 30,
-    
+
     guestsMin: 1,
     guestsMax: 6,
 
@@ -59,8 +59,3 @@ var accom = {
   }
 
 };
-
-// var newArr = [];
-
-// How to access object properties
-console.dir(accom.hostel.guestsMax);

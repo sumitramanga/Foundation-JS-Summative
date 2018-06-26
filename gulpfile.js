@@ -26,7 +26,7 @@ gulp.task('styles', function() {
         .pipe(connect.reload());
 });
 
-//HTML Task
+//HTML Task..
 gulp.task('html', function() {
     gulp.src('./*.html')
     	.pipe(connect.reload());
@@ -34,7 +34,7 @@ gulp.task('html', function() {
 
 //JS Lint Task for correcting and monitoring your custom.js
 gulp.task('lint', function(){
-    gulp.src('js/*.js')
+    gulp.src('js/script.js')
     .pipe(jshint())
 	.pipe(jshint.reporter('default'))
 	.pipe(connect.reload());
@@ -50,4 +50,4 @@ gulp.task('watch', function(){
 
 
 // gulp.task('default', ['serve', 'styles', 'html', 'lint', 'watch']);
-gulp.task('default', ['serve', 'styles', 'html', 'watch']);
+gulp.task('default', ['serve', 'styles', 'html', 'watch', 'lint']);

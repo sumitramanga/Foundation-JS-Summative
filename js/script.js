@@ -234,8 +234,8 @@
     var map = new mapboxgl.Map({
       container: 'map', // container id
       style: 'mapbox://styles/sumitram/cji3p2cwm0s6r2smz01nlidgc', // stylesheet location
-      center: [174.770934, -36.883059], // starting position [lng, lat]
-      zoom: 11 // starting zoom
+      center: [174.780934, -36.883059], // starting position [lng, lat]
+      zoom: 10.7 // starting zoom
     });
 
 
@@ -463,21 +463,30 @@
 
 // Filtering accommodation to match users inputted details
 
-// console.log(accom.hostel.guestsMax);
-//
-// var dataTest = accom.hostel.guestsMax;
-//
-// var inputAmount = 10;
-//
-// // for(var i = 0; i < dataTest.length; i++){
-//   if (inputAmount < dataTest) {
-//     console.log("you can stay");
-//   } else {
-//     console.log("you cant use this");
-//   }
-//   console.log(dataTest[i]);
-// // }
+    var hostelMaxGuests = accom.hostel.guestsMax;
+    var hotelMaxGuests = accom.hotel.guestsMax;
+    var motelMaxGuests = accom.motel.guestsMax;
+    var houseMaxGuests = accom.house.guestsMax;
 
+    var inputAmount = 1;
+
+      if (inputAmount <= accom.hostel.guestsMax && inputAmount >= accom.hostel.guestsMin) {
+        console.log("you can stay at hostels");
+      }
+
+      if (inputAmount <= accom.motel.guestsMax && inputAmount >= accom.motel.guestsMin) {
+        console.log("you can stay at motels");
+      }
+
+      // THIS WORKS FOR FILTERING
+
+      if (inputAmount <= accom.hotel.guestsMax && inputAmount >= accom.hotel.guestsMin) {
+        console.log("you can stay at hotels");
+      }
+
+      if (inputAmount <= accom.house.guestsMax && inputAmount >= accom.house.guestsMin) {
+        console.log("you can stay at houses");
+      }
 
 // ------------------------------- ACCOMMODATION -------------------------------
 
@@ -490,7 +499,7 @@
             {
               "type": "Feature",
               "properties": {
-                "message": "Contemporary inner city villa. Relax inside this beautiful contemporary inner city villa, filled with art, and tastefully decorated by Fran & Aaron, well known for creating some of Auckland's most popular eateries. Walking distance to Ponsonby and the City Centre & a stones throw to Sky City & Wynyard Quarter.",
+                "description": "Contemporary inner city villa. Relax inside this beautiful contemporary inner city villa, filled with art, and tastefully decorated by Fran & Aaron, well known for creating some of Auckland's most popular eateries. Walking distance to Ponsonby and the City Centre & a stones throw to Sky City & Wynyard Quarter.",
                 "iconSize": [40, 40]
               },
 
@@ -503,7 +512,7 @@
             {
               "type": "Feature",
               "properties": {
-                "message": "<strong>Howick Luxury Large Home</strong>",
+                "description": "<strong>Howick Luxury Large Home</strong>",
                 "iconSize": [40, 40]
               },
 
@@ -517,7 +526,7 @@
             {
               "type": "Feature",
               "properties": {
-                "message": "Grand Millennium Hotel",
+                "description": "Grand Millennium Hotel",
                 "iconSize": [40, 40]
               },
 
@@ -530,7 +539,7 @@
             {
               "type": "Feature",
               "properties": {
-                "message": "Best Western ellerslie",
+                "description": "Best Western ellerslie",
                 "iconSize": [40, 40]
               },
 
@@ -543,7 +552,7 @@
             {
               "type": "Feature",
               "properties": {
-                "message": "Quality Hotel Lincoln Green",
+                "description": "Quality Hotel Lincoln Green",
                 "iconSize": [40, 40]
               },
 
@@ -558,7 +567,7 @@
             {
               "type": "Feature",
               "properties": {
-                "message": "Papakura Motor Lodge & Motel",
+                "description": "Papakura Motor Lodge & Motel",
                 "iconSize": [40, 40]
               },
 
@@ -571,7 +580,7 @@
             {
               "type": "Feature",
               "properties": {
-                "message": "Airport Harbour View Motel",
+                "description": "Airport Harbour View Motel",
                 "iconSize": [40, 40]
               },
 
@@ -586,7 +595,7 @@
             {
               "type": "Feature",
               "properties": {
-                "message": "Brown Kiwi Travellers Hostel",
+                "description": "Brown Kiwi Travellers Hostel",
                 "iconSize": [40, 40]
               },
 
@@ -599,7 +608,7 @@
             {
               "type": "Feature",
               "properties": {
-                "message": "Oaklands Lodge Backpackers",
+                "description": "Oaklands Lodge Backpackers",
                 "iconSize": [40, 40]
               },
 
@@ -616,7 +625,7 @@
         ] // Feature ends
     }; // geojson ends
 
-    // Add markers to the map
+    // Add markers to the map..
     geojson.features.forEach(function(marker) {
 
       // Create a DOM element for the marker

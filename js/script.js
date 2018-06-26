@@ -486,21 +486,22 @@
 
     function filterMarkers() {
       if (getGuests.value <= hostelMaxGuests && getGuests.value >= hostelMinGuests && daysDiff <= hostelMaxNights && daysDiff >= hostelMinNights) {
+        showHostels();
         console.log("you can stay at hostels");
       }
 
       if (getGuests.value <= motelMaxGuests && getGuests.value >= motelMinGuests && daysDiff <= motelMaxNights && daysDiff >= motelMinNights) {
-        motels();
+        showMotels();
         console.log("you can stay at motels");
       }
 
       if (getGuests.value <= hotelMaxGuests && getGuests.value >= hotelMinGuests && daysDiff <= hotelMaxNights && daysDiff >= hotelMinNights) {
-        hotels();
+        showHotels();
         console.log("you can stay at hotels");
       }
 
       if (getGuests.value <= houseMaxGuests && getGuests.value >= houseMinGuests && daysDiff <= houseMaxNights && daysDiff >= houseMinNights) {
-        houses();
+        showHouses();
         console.log("you can stay at houses");
       }
     }
@@ -511,7 +512,7 @@
 
 // Houses -----------------------------------------------------------------------
 
-    function houses() {
+    function showHouses() {
       var geojson = {
         "type": "FeatureCollection",
         "features": [
@@ -566,7 +567,7 @@
 
 
 // Hotels  ----------------------------------------------------------------------
-    function hotels() {
+    function showHotels() {
       var geojson = {
         "type": "FeatureCollection",
         "features": [
@@ -636,7 +637,7 @@
 
 
 // Motels  ----------------------------------------------------------------------
-    function motels() {
+    function showMotels() {
       var geojson = {
         "type": "FeatureCollection",
         "features": [
@@ -693,7 +694,7 @@
 
 
 // Hostel ----------------------------------------------------------------------
-    function hostels() {
+    function showHostels() {
       var geojson = {
         "type": "FeatureCollection",
         "features": [

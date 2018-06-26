@@ -539,7 +539,7 @@
               "type": "Point",
               "coordinates": [174.932126, -36.913246]
             }
-          },
+          }
         ]
       };
       // Add markers to the map..
@@ -608,7 +608,7 @@
                 "type": "Point",
                 "coordinates": [174.631023, -36.862974]
               }
-            },
+            }
           ] // Feature ends
       }; // geojson ends
 

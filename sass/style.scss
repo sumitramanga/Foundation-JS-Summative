@@ -204,10 +204,12 @@ $quaternaryColor: #EFC125;
 
 .fp-controlArrow.fp-prev {
   border-color: transparent $tertiaryColor transparent transparent;
+  // display: none;
 }
 
 .fp-controlArrow.fp-next {
   border-color: transparent transparent transparent $tertiaryColor;
+  // display: none;
 }
 
 #slide1, #slide3, #section3 {

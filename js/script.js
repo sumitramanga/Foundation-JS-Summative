@@ -16,7 +16,7 @@
   var errorMessage = document.createElement('div');
 
   // The button which pushes the details entered into an array located on the
-  // "All Set!" page --------------------------------------------------------------
+  // "All Set!" page -----------------------------------------------------------
   var browseBtn = document.getElementById('browseBtn');
 
   // Getting the results elements from the FIFTH section -----------------------
@@ -32,6 +32,27 @@
   var userAccomOption = [];
 
 
+// var firstValid = false;
+// var secondValid = false;
+// var thirdValid = false;
+// var currentSlide = "slide1";
+//
+// $("#getGuests").change(function(){
+//   console.log("value has changed");
+//   console.log($(this).val());
+//   firstValid = true;
+//   //show arrow
+// });
+// //
+// // if(select guest = true){
+// //   show arrow
+// //   firstValid = true
+// // }
+// //
+// // click arrow
+// // hide arrow
+
+
 // -----------------------------------------------------------------------------
 
 
@@ -42,6 +63,7 @@
 
 
 // -----------------------------------------------------------------------------
+
 
   $(document).ready(function() {
 
@@ -79,6 +101,26 @@
         calculateNights();
       }
     });
+
+    // $('.datepicker1').pickadate({
+    //   clear: '',
+    //   min: new Date(),
+    // });
+    //
+    // $('.datepicker1').change(function(){
+    //   var firstDate = $(this).val();
+    //   //enable the second date picker
+    //
+    //
+    //   $('.datepicker2').pickadate({
+    //     clear: '',
+    //     min: new Date(firstDate),
+    //     onClose: function () {
+    //       calculateNights();
+    //     }
+    //   });
+    //
+    // });
 
 
 // -----------------------------------------------------------------------------
@@ -519,6 +561,8 @@
           {
             "type": "Feature",
             "properties": {
+              // "propertyType": "house",
+              // "maxStay" : 6,
               "message": "Contemporary inner city villa. Relax inside this beautiful contemporary inner city villa, filled with art, and tastefully decorated by Fran & Aaron, well known for creating some of Auckland's most popular eateries. Walking distance to Ponsonby and the City Centre & a stones throw to Sky City & Wynyard Quarter.",
               "iconSize": [40, 40]
             },
@@ -553,9 +597,10 @@
         el.style.backgroundSize = 'contain';
         el.style.width = marker.properties.iconSize[0] + 'px';
         el.style.height = marker.properties.iconSize[1] + 'px';
-
+        // el.setAttribute('data-fruit', '7');
         el.addEventListener('click', function() {
-          window.alert(marker.properties.message);
+          // window.alert(marker.properties.message);
+          console.log(marker.properties.message);
         });
 
         // Add marker to map
@@ -645,7 +690,7 @@
           {
             "type": "Feature",
             "properties": {
-              "description": "Papakura Motor Lodge & Motel",
+              "message": "Papakura Motor Lodge & Motel",
               "iconSize": [40, 40]
             },
 
@@ -658,7 +703,7 @@
           {
             "type": "Feature",
             "properties": {
-              "description": "Airport Harbour View Motel",
+              "message": "Airport Harbour View Motel",
               "iconSize": [40, 40]
             },
 
@@ -702,7 +747,7 @@
           {
             "type": "Feature",
             "properties": {
-              "description": "Brown Kiwi Travellers Hostel",
+              "message": "Brown Kiwi Travellers Hostel",
               "iconSize": [40, 40]
             },
 
@@ -715,7 +760,7 @@
           {
             "type": "Feature",
             "properties": {
-              "description": "Oaklands Lodge Backpackers",
+              "message": "Oaklands Lodge Backpackers",
               "iconSize": [40, 40]
             },
 

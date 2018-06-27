@@ -315,8 +315,8 @@
   height: 302px;
   background-color: pink; }
 
-.subtitle {
-  font-size: 1em; }
+.subTitle {
+  display: inline; }
 
 #summary {
   text-align: left;

@@ -20,9 +20,9 @@
   var browseBtn = document.getElementById('browseBtn');
 
   // Getting the results elements from the FIFTH section -----------------------
-  var finalGuest = document.getElementById('guestsCount');
+  var finalGuests = document.getElementById('guestsCount');
   var finalMealsOption = document.getElementById('mealsOption');
-  var finalNights = document.getElementById('nightCount');
+  var finalNights = document.getElementById('nightsCount');
 
   var totalCost = document.getElementById('totalCost');
 
@@ -91,7 +91,7 @@
 
     $('.datepicker1').pickadate({
       clear: '',
-      min: new Date(),
+      min: new Date()
     });
 
     $('.datepicker2').pickadate({
@@ -133,7 +133,7 @@
       var endDate = Date.parse(getCheckOut.value);
       var timeDiff = endDate - startDate;
       daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-
+      console.dir(getCheckOutDate);
       // Push the date to view on the slide
       nightsSelected.innerText = daysDiff;
       dateErrorMsg();
@@ -144,13 +144,7 @@
 // -----------------------------------------------------------------------------
 
 
-    // Auto scroll on click the View Results button
-    $('#viewResultsBtn').click(function(e){
-      e.preventDefault();
-      $.fn.fullpage.setScrollingSpeed(1000);
-      $.fn.fullpage.moveSectionDown();
-      $.fn.fullpage.setAllowScrolling(false);
-    });
+
 
 
 //----------------------------------------------------------------------------
@@ -256,12 +250,11 @@
       var guestsStringToNum = parseInt(getGuests.value);
       var mealStringToNum = parseInt(getMeals.value);
 
-      userResults.push({guests: guestsStringToNum, nights: daysDiff, meals: mealStringToNum});
+      userResults.push({guests: guestsStringToNum, nights: daysDiff, mealName: getMealOption.selectedOptions["0"].textContent, mealCost: mealStringToNum});
       // push meal name too
-      console.log(userResults);
     }
 
-// -----------------------------------------------------------------------------
+
 // -----------------------------------------------------------------------------
 
     // SETTING UP MAP
@@ -796,7 +789,36 @@
 
 // -----------------------------------------------------------------------------
 
+    // Auto scroll on click the View Results button
+    $('#viewResultsBtn').click(function(e){
+      e.preventDefault();
+      $.fn.fullpage.setScrollingSpeed(1000);
+      $.fn.fullpage.moveSectionDown();
+      $.fn.fullpage.setAllowScrolling(false);
+      outputResults();
+      console.log(userResults);
+    });
+
     // Reference number on summary
+    function outputResults() {
+      finalGuests.textContent = userResults['0'].guests + ' guests';
+      finalMealsOption.textContent = userResults['0'].mealName;
+      finalNights.textContent = userResults['0'].nights + " nights (" + getCheckIn.value + " - " + getCheckOut.value + ")";
+    }
+
+// userResults.push({guests: guestsStringToNum, nights: daysDiff, mealName: getMealOption.selectedOptions["0"].textContent, mealCost: mealStringToNum});
+
+    function outputTotal() {
+      // push the accomCost to userResults array
+      // var nightCost = userResults['0'].nights * accomCost
+
+
+      // cost of hotel per night * by nights staying
+      // cost of meal + nights all together
+
+      // 
+      // totalCost.textContent =
+    }
 
     function createRefNum () {
       var randomNum = Math.floor((Math.random() * 1000000) + 1);

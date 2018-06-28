@@ -759,7 +759,7 @@
               "message": "Brown Kiwi Travellers Hostel",
               "cost": "30",
               "theId": "brownKiwi",
-              // "image": "url("paper.gif");",
+              "image": "https://images.unsplash.com/photo-1469796466635-455ede028aca?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3dd45924b64ebc480baf05650e3f0048&auto=format&fit=crop&w=1350&q=80",
               "iconSize": [40, 40]
             },
 
@@ -803,7 +803,7 @@
           console.log(marker.properties);
 
           // Push details to an array when clicking on "book now" button.
-          accomChoice.push({name: marker.properties.message, cost: marker.properties.cost});
+          accomChoice.push({name: marker.properties.message, cost: marker.properties.cost, image: marker.properties.image});
           console.log(accomChoice);
 
           return marker;
@@ -816,8 +816,8 @@
         .addTo(map);
       });
     } // Hostel ends
-    // console.dir(geojson.features["0"]);
 
+    // console.dir(geojson.features["0"]);
     // console.dir(geojson.features);
 
 
@@ -835,8 +835,9 @@
 
     // This function shows the users details of their options in the DOM
     function outputResults() {
-      console.dir(accomImg.style.backgroundImage = 'url("https://images.unsplash.com/photo-1469796466635-455ede028aca?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3dd45924b64ebc480baf05650e3f0048&auto=format&fit=crop&w=1350&q=80")');
+      accomImg.style.backgroundImage = 'url(' + accomChoice['0'].image + ')';
       console.dir(accomImg);
+      // console.dir(geojson);
 
       finalGuests.textContent = userResults['0'].guests + ' guests';
       finalMealsOption.textContent = userResults['0'].mealName;
@@ -868,7 +869,6 @@
     }
 
     createRefNum();
-
 
   }); // DOCUMENT READY ENDS
 }()); // IIFE ENDS

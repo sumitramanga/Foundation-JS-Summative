@@ -383,6 +383,9 @@ $quaternaryColor: #EFC125;
   background-position: center;
   background-size: cover;
   background-color: pink;
+  // box-shadow: -5px 13px 30px -8px black;
+  border: 3px solid white;
+  margin-bottom: 0px;
 }
 
 .subTitle {
@@ -391,8 +394,12 @@ $quaternaryColor: #EFC125;
 
 #summary {
   text-align: left;
-  width: 28em;
+  width: 28.6em;
   margin: 0 auto;
+
+  border: 4px solid white;
+  padding: 15px 27px 3px 34px;
+  background: white;
 }
 
 .resultsIcons {
@@ -412,6 +419,7 @@ $quaternaryColor: #EFC125;
   margin: 37px 0;
   display: inline;
   font-size: 1.75rem;
+  color: white;
 }
 
 .bookingInstructions {

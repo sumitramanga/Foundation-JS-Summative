@@ -313,6 +313,8 @@
   margin: 0.9em auto;
   width: 573px;
   height: 302px;
+  background-position: center;
+  background-size: cover;
   background-color: pink; }
 
 .subTitle {
@@ -335,7 +337,9 @@
   margin: 1em auto; }
 
 .total {
-  margin: 37px 0; }
+  margin: 37px 0;
+  display: inline;
+  font-size: 1.75rem; }
 
 .bookingInstructions {
   margin-top: 30px; }

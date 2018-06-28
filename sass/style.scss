@@ -149,6 +149,7 @@ $quaternaryColor: #EFC125;
   left: 0;
   top: 16%;
   overflow: hidden;
+
   /* Preventing video flicker on some browsers*/
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
@@ -204,12 +205,10 @@ $quaternaryColor: #EFC125;
 
 .fp-controlArrow.fp-prev {
   border-color: transparent $tertiaryColor transparent transparent;
-  // display: none;
 }
 
 .fp-controlArrow.fp-next {
   border-color: transparent transparent transparent $tertiaryColor;
-  // display: none;
 }
 
 #slide1, #slide3, #section3 {
@@ -294,7 +293,6 @@ $quaternaryColor: #EFC125;
   @include button;
   padding: 0.6em 1.3em;
   margin-top: 1.5em;
-  // position: relative;
   bottom: -3em;
   color: $quaternaryColor;
   border: 2px solid $quaternaryColor;
@@ -367,7 +365,7 @@ $quaternaryColor: #EFC125;
   float: right;
 
   position: relative;
-  right: 0.7em
+  right: 0.7em;
 }
 
 .restart {
@@ -382,14 +380,12 @@ $quaternaryColor: #EFC125;
   margin: 0.9em auto;
   width: 573px;
   height: 302px;
+  background-position: center;
+  background-size: cover;
   background-color: pink;
-  .acomImg {
-
-  }
 }
 
 .subTitle {
-  // font-size: 1em;
   display: inline;
 }
 
@@ -414,6 +410,8 @@ $quaternaryColor: #EFC125;
 
 .total {
   margin: 37px 0;
+  display: inline;
+  font-size: 1.75rem;
 }
 
 .bookingInstructions {

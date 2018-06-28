@@ -1,5 +1,6 @@
 (function() {
 
+  // Next and previous button for the slides.
   var controlArrows = document.getElementsByClassName('fp-controlArrow');
 
   // Getting the users options from the SECOND section -------------------------
@@ -20,6 +21,11 @@
   var browseBtn = document.getElementById('browseBtn');
 
   // Getting the results elements from the FIFTH section -----------------------
+  var accomName = document.getElementById('accomName');
+  var accomCost = document.getElementById('accomCost');
+
+  var accomImg = document.getElementById('accomImg');
+
   var finalGuests = document.getElementById('guestsCount');
   var finalMealsOption = document.getElementById('mealsOption');
   var finalNights = document.getElementById('nightsCount');
@@ -29,7 +35,7 @@
   var refNum = document.getElementById('refNum');
 
   var userResults = [];
-  var userAccomOption = [];
+  var accomChoice = [];
 
 
 // var firstValid = false;
@@ -133,7 +139,7 @@
       var endDate = Date.parse(getCheckOut.value);
       var timeDiff = endDate - startDate;
       daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-      console.dir(getCheckOutDate);
+      // console.dir(getCheckOutDate);
       // Push the date to view on the slide
       nightsSelected.innerText = daysDiff;
       dateErrorMsg();
@@ -141,13 +147,7 @@
     }
 
 
-// -----------------------------------------------------------------------------
-
-
-
-
-
-//----------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 
 
     // FORM VALIDATION
@@ -177,11 +177,11 @@
       });
     }, false);
 
-
     // Form doesn't refresh the page
     $("form").submit(function() {
        return false;
     });
+
 
 // -----------------------------------------------------------------------------
 
@@ -221,7 +221,6 @@
       // If there is a value in the inputs the page and the nights staying is 1-15
       // the page will auto scroll
       if (getGuests.validity.valueMissing === false && getMeals.validity.valueMissing === false && nightsSelected.textContent >= 1 && nightsSelected.textContent <= 15) {
-
         $.fn.fullpage.setScrollingSpeed(1000);
         $.fn.fullpage.moveSectionDown();
         $.fn.fullpage.setAllowScrolling(false);
@@ -243,15 +242,15 @@
       pushResults();
     });
 
-    // Pushing all results to an array
+    // Pushing all results/details to an array
     function pushResults() {
 
-      // Turn guests input from string to number
+      // Turn guests and meal cost input from string to number
       var guestsStringToNum = parseInt(getGuests.value);
       var mealStringToNum = parseInt(getMeals.value);
 
       userResults.push({guests: guestsStringToNum, nights: daysDiff, mealName: getMealOption.selectedOptions["0"].textContent, mealCost: mealStringToNum});
-      // push meal name too
+
     }
 
 
@@ -259,7 +258,7 @@
 
     // SETTING UP MAP
 
-    var token = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9.4K0zZ6PO_bnYu76JJUOmoQ';
+    // var token = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9.4K0zZ6PO_bnYu76JJUOmoQ';
 
     mapboxgl.accessToken = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9.4K0zZ6PO_bnYu76JJUOmoQ';
 
@@ -431,7 +430,7 @@
                 {
                   "type": "Feature",
                   "properties": {
-                    "description": "Stardome Observatory & Planetarium",
+                    "description": "<strong>Stardome Observatory & Planetarium</strong>",
                     "icon": "star-stroked",
                   },
 
@@ -520,6 +519,7 @@
     browseBtn.addEventListener('click', filterMarkers , false);
 
     function filterMarkers() {
+
       if (getGuests.value <= hostelMaxGuests && getGuests.value >= hostelMinGuests && daysDiff <= hostelMaxNights && daysDiff >= hostelMinNights) {
         showHostels();
         console.log("you can stay at hostels");
@@ -554,9 +554,10 @@
           {
             "type": "Feature",
             "properties": {
-              // "propertyType": "house",
-              // "maxStay" : 6,
-              "message": "Contemporary inner city villa. Relax inside this beautiful contemporary inner city villa, filled with art, and tastefully decorated by Fran & Aaron, well known for creating some of Auckland's most popular eateries. Walking distance to Ponsonby and the City Centre & a stones throw to Sky City & Wynyard Quarter.",
+              "accomType": "house",
+              "message": "Contemporary inner city villa by Fran & Aaron",
+              "cost": "240",
+              "theId": "villa",
               "iconSize": [40, 40]
             },
 
@@ -569,7 +570,10 @@
           {
             "type": "Feature",
             "properties": {
+              "accomType": "house",
               "message": "Howick Luxury Large Home",
+              "cost": "240",
+              "theId": "howick",
               "iconSize": [40, 40]
             },
 
@@ -577,7 +581,7 @@
               "type": "Point",
               "coordinates": [174.932126, -36.913246]
             }
-          }
+          },
         ]
       };
       // Add markers to the map..
@@ -590,10 +594,9 @@
         el.style.backgroundSize = 'contain';
         el.style.width = marker.properties.iconSize[0] + 'px';
         el.style.height = marker.properties.iconSize[1] + 'px';
-        // el.setAttribute('data-fruit', '7');
         el.addEventListener('click', function() {
           // window.alert(marker.properties.message);
-          console.log(marker.properties.message);
+          console.log(marker.properties);
         });
 
         // Add marker to map
@@ -602,9 +605,9 @@
         .addTo(map);
       });
     } // houses function ends
-
-
-// Hotels  ----------------------------------------------------------------------
+//
+//
+// // Hotels  ----------------------------------------------------------------------
     function showHotels() {
       var geojson = {
         "type": "FeatureCollection",
@@ -614,6 +617,8 @@
               "type": "Feature",
               "properties": {
                 "message": "Grand Millennium Hotel",
+                "cost": "157",
+                "theId": "grandMillennium",
                 "iconSize": [40, 40]
               },
 
@@ -626,7 +631,9 @@
             {
               "type": "Feature",
               "properties": {
-                "message": "Best Western ellerslie",
+                "message": "Best Western Ellerslie",
+                "cost": "157",
+                "theId": "bestWestern",
                 "iconSize": [40, 40]
               },
 
@@ -640,6 +647,8 @@
               "type": "Feature",
               "properties": {
                 "message": "Quality Hotel Lincoln Green",
+                "cost": "157",
+                "theId": "quailtyHotel",
                 "iconSize": [40, 40]
               },
 
@@ -647,8 +656,8 @@
                 "type": "Point",
                 "coordinates": [174.631023, -36.862974]
               }
-            }
-          ] // Feature ends
+            },
+          ] // Features ends
       }; // geojson ends
 
       // Add markers to the map..
@@ -663,7 +672,8 @@
         el.style.height = marker.properties.iconSize[1] + 'px';
 
         el.addEventListener('click', function() {
-          window.alert(marker.properties.message);
+          // window.alert(marker.properties.message);
+          console.log(marker.properties);
         });
 
         // Add marker to map
@@ -684,6 +694,8 @@
             "type": "Feature",
             "properties": {
               "message": "Papakura Motor Lodge & Motel",
+              "cost": "90",
+              "theId": "parakura",
               "iconSize": [40, 40]
             },
 
@@ -697,6 +709,8 @@
             "type": "Feature",
             "properties": {
               "message": "Airport Harbour View Motel",
+              "cost": "90",
+              "theId": "airportHarbour",
               "iconSize": [40, 40]
             },
 
@@ -704,7 +718,7 @@
               "type": "Point",
               "coordinates": [174.784677, -36.931369]
             }
-          }
+          },
         ] // Feature ends
       }; // geojson ends
 
@@ -720,7 +734,9 @@
         el.style.height = marker.properties.iconSize[1] + 'px';
 
         el.addEventListener('click', function() {
-          window.alert(marker.properties.message);
+          // window.alert(marker.properties.message);
+          console.log(marker.properties);
+
         });
 
         // Add marker to map
@@ -741,6 +757,9 @@
             "type": "Feature",
             "properties": {
               "message": "Brown Kiwi Travellers Hostel",
+              "cost": "30",
+              "theId": "brownKiwi",
+              // "image": "url("paper.gif");",
               "iconSize": [40, 40]
             },
 
@@ -754,6 +773,9 @@
             "type": "Feature",
             "properties": {
               "message": "Oaklands Lodge Backpackers",
+              "cost": "30",
+                // "image": "url("paper.gif")",
+              "theId": "oaklands",
               "iconSize": [40, 40]
             },
 
@@ -777,7 +799,15 @@
         el.style.height = marker.properties.iconSize[1] + 'px';
 
         el.addEventListener('click', function() {
-          window.alert(marker.properties.message);
+          // window.alert(marker.properties.message);
+          console.log(marker.properties);
+
+          // Push details to an array when clicking on "book now" button.
+          accomChoice.push({name: marker.properties.message, cost: marker.properties.cost});
+          console.log(accomChoice);
+
+          return marker;
+
         });
 
         // Add marker to map
@@ -786,6 +816,10 @@
         .addTo(map);
       });
     } // Hostel ends
+    // console.dir(geojson.features["0"]);
+
+    // console.dir(geojson.features);
+
 
 // -----------------------------------------------------------------------------
 
@@ -796,33 +830,41 @@
       $.fn.fullpage.moveSectionDown();
       $.fn.fullpage.setAllowScrolling(false);
       outputResults();
-      console.log(userResults);
+      outputTotal();
     });
 
-    // Reference number on summary
+    // This function shows the users details of their options in the DOM
     function outputResults() {
+      console.dir(accomImg.style.backgroundImage = 'url("https://images.unsplash.com/photo-1469796466635-455ede028aca?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3dd45924b64ebc480baf05650e3f0048&auto=format&fit=crop&w=1350&q=80")');
+      console.dir(accomImg);
+
       finalGuests.textContent = userResults['0'].guests + ' guests';
       finalMealsOption.textContent = userResults['0'].mealName;
-      finalNights.textContent = userResults['0'].nights + " nights (" + getCheckIn.value + " - " + getCheckOut.value + ")";
+      finalNights.textContent = userResults['0'].nights + ' nights (' + getCheckIn.value + " - " + getCheckOut.value + ')';
+
+      // Users chosen accommodation. Show their option in the DOM
+      accomName.textContent = accomChoice['0'].name + ' -';
+      accomCost.textContent = '$' + accomChoice['0'].cost + ' per night';
     }
 
-// userResults.push({guests: guestsStringToNum, nights: daysDiff, mealName: getMealOption.selectedOptions["0"].textContent, mealCost: mealStringToNum});
 
+    // Calculations for adding the cost
     function outputTotal() {
-      // push the accomCost to userResults array
-      // var nightCost = userResults['0'].nights * accomCost
 
+      // Mulitplying the amount of nights the user has selected by the cost of acccommdation per night
+      var totalNightsCost = accomChoice['0'].cost * userResults['0'].nights;
 
-      // cost of hotel per night * by nights staying
-      // cost of meal + nights all together
+      // Total accommodation cost plus the cost of chosen meal
+      var totalCal = totalNightsCost + userResults['0'].mealCost;
 
-      // 
-      // totalCost.textContent =
+      // Writing the total in the DOM
+      totalCost.textContent = '$' + totalCal + 'NZD';
     }
 
+    // Generate random number for reference number and insert into the HTML
     function createRefNum () {
       var randomNum = Math.floor((Math.random() * 1000000) + 1);
-      refNum.innerText = '#' + randomNum;
+      refNum.textContent = '#' + randomNum;
     }
 
     createRefNum();

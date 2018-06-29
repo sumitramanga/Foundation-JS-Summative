@@ -25,9 +25,11 @@
 
 
   // Map section ---------------------------------------------------------------
+  var closeAccomBtn = document.getElementById('accomClose');
   var mapModalTitle = document.getElementById('modalTitle');
   var mapModalImg = document.getElementById('modalImg');
   var mapModalDetails = document.getElementById('modalAccomDetails');
+  var bookRoomBtn = document.getElementById('bookRoomBtn');
 
 
   // Getting the results elements from the FIFTH section -----------------------
@@ -766,10 +768,11 @@
           {
             "type": "Feature",
             "properties": {
-              "message": "Brown Kiwi Travellers Hostel",
+              "title": "Brown Kiwi Travellers Hostel",
               "cost": "30",
+              "description": "This is about the Brown Kiwi Travellers Hostel. We invite you to join usin this wonderful culture.",
               "theId": "brownKiwi",
-              "image": "https://images.unsplash.com/photo-1469796466635-455ede028aca?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3dd45924b64ebc480baf05650e3f0048&auto=format&fit=crop&w=1350&q=80",
+              "image": "../img/brownKiwiTravellers.jpg",
               "iconSize": [40, 40]
             },
 
@@ -782,9 +785,11 @@
           {
             "type": "Feature",
             "properties": {
-              "message": "Oaklands Lodge Backpackers",
+              "title": "Oaklands Lodge Backpackers",
+              "description": " This is about Oaklands Lodge Backpackers",
               "cost": "30",
               "theId": "oaklands",
+              "image": "../img/oaklandsLodge.jpg",
               "iconSize": [40, 40]
             },
 
@@ -810,20 +815,24 @@
         // Adding modal attributes to make it appear on click
         el.setAttribute("data-toggle", "modal");
         el.setAttribute("data-target", "#accomModal");
-        console.dir(el);
 
+        // Adding the content within the modal depending on what marker is selected
         el.addEventListener('click', function() {
-          console.log(marker.properties);
-          console.dir(marker);
-          console.dir(el);
-          // Push details to an array when clicking on "book now" button.
-          accomChoice.push({name: marker.properties.message, cost: marker.properties.cost, image: marker.properties.image});
-          console.log(accomChoice);
-
-          return marker;
-
+          // return marker;
+          mapModalTitle.textContent = marker.properties.title;
+          mapModalImg.style.backgroundImage = 'url(' + marker.properties.image + ')';
+          mapModalDetails.textContent = marker.properties.description;
         });
 
+        bookRoomBtn.addEventListener('click', function() {
+          // Push details to an array when clicking on "book now" button.
+          accomChoice.push({name: mapModalTitle.textContent, cost: marker.properties.cost, image: mapModalImg.style.backgroundImage});
+          // Create a pareseInt for cost
+          console.log(accomChoice);
+        });
+
+        // WORKING FROM HERE. ARRAY LENGTH TO BE IGNORED.
+        //REDUCE GEOJSON CODING TO BE WORKED ON  
         // Add marker to map
         new mapboxgl.Marker(el)
         .setLngLat(marker.geometry.coordinates)
@@ -832,14 +841,12 @@
       });
     // } // Hostel ends
 
-    // console.dir(geojson.features["0"]);
-    // console.dir(geojson.features);
-
 
 // -----------------------------------------------------------------------------
 
-    // Auto scroll on click the View Results button
-    $('#viewResultsBtn').click(function(e){
+
+    // Auto scroll on click the View Results button (was #viewResultsBtn)
+    $('#bookRoomBtn').click(function(e){
       e.preventDefault();
       $.fn.fullpage.setScrollingSpeed(1000);
       $.fn.fullpage.moveSectionDown();
@@ -851,16 +858,13 @@
     // This function shows the users details of their options in the DOM
     function outputResults() {
 
-      // Add image from json
-      accomImg.style.backgroundImage = 'url(' + accomChoice['0'].image + ')';
-      console.dir(accomImg);
-      // console.dir(geojson);
-
+      // Adding all geojson elements to the results page
+      accomImg.style.backgroundImage = accomChoice['0'].image;
       finalGuests.textContent = userResults['0'].guests + ' guests';
       finalMealsOption.textContent = userResults['0'].mealName;
       finalNights.textContent = userResults['0'].nights + ' nights (' + getCheckIn.value + " - " + getCheckOut.value + ')';
 
-      // Users chosen accommodation. Show their option in the DOM
+      // Show users chosen accommodation option in the DOM.
       accomName.textContent = accomChoice['0'].name + ' -';
       accomCost.textContent = '$' + accomChoice['0'].cost + ' per night';
     }

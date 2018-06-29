@@ -350,6 +350,47 @@ $quaternaryColor: #EFC125;
  height: 50vh;
 }
 
+// ACCOMMODATION MODAL ---------------------------------------------------------
+
+.accomModal {
+
+  .accomClose {
+    padding: 0.5em 0.6em 0 0;
+  }
+
+  .modal-body {
+    padding-bottom: 0;
+
+    .modal-title {
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .accomImg {
+      width: 100%;
+    }
+    
+    .modalAccomDetails{
+      margin-top: 1em;
+      margin-bottom: 0;
+    }
+  }
+
+  .modal-footer {
+    padding: 2em;
+    border: none;
+    .bookNowBtn {
+      @include button;
+      font-size: 1em;
+      padding: 0.5em 3.3em;
+      margin: 0 auto;
+      color: $quaternaryColor;
+      border: 2px solid $quaternaryColor;
+    }
+  }
+
+}
+
 // SECTION 4 - RESULTS ---------------------------------------------------------
 
 .row {
@@ -376,7 +417,7 @@ $quaternaryColor: #EFC125;
   border: 2px solid $quaternaryColor;
 }
 
-.acomImgWrapper {
+.accomImg {
   margin: 0.9em auto;
   width: 573px;
   height: 302px;
@@ -400,6 +441,8 @@ $quaternaryColor: #EFC125;
   border: 4px solid white;
   padding: 15px 27px 3px 34px;
   background: white;
+
+  box-shadow: 9px 7px 72px -16px black;
 }
 
 .resultsIcons {

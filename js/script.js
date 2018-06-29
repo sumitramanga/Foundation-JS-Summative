@@ -2,6 +2,8 @@
 
   // Next and previous button for the slides.
   var controlArrows = document.getElementsByClassName('fp-controlArrow');
+  //NEED TO GRAB INDIVIDUAL ELEMENTS AND ADD THE SCROLL ENABLE SETTINGS LIKE ON BUTTONS
+
 
   // Getting the users options from the SECOND section -------------------------
   var getGuests = document.getElementById('getGuests');
@@ -16,9 +18,17 @@
   var getSubBtn = document.getElementById('submitBtn');
   var errorMessage = document.createElement('div');
 
+
   // The button which pushes the details entered into an array located on the
   // "All Set!" page -----------------------------------------------------------
   var browseBtn = document.getElementById('browseBtn');
+
+
+  // Map section ---------------------------------------------------------------
+  var mapModalTitle = document.getElementById('modalTitle');
+  var mapModalImg = document.getElementById('modalImg');
+  var mapModalDetails = document.getElementById('modalAccomDetails');
+
 
   // Getting the results elements from the FIFTH section -----------------------
   var accomName = document.getElementById('accomName');
@@ -748,7 +758,7 @@
 
 
 // Hostel ----------------------------------------------------------------------
-    function showHostels() {
+    // function showHostels() {
       var geojson = {
         "type": "FeatureCollection",
         "features": [
@@ -774,7 +784,6 @@
             "properties": {
               "message": "Oaklands Lodge Backpackers",
               "cost": "30",
-                // "image": "url("paper.gif")",
               "theId": "oaklands",
               "iconSize": [40, 40]
             },
@@ -798,10 +807,15 @@
         el.style.width = marker.properties.iconSize[0] + 'px';
         el.style.height = marker.properties.iconSize[1] + 'px';
 
-        el.addEventListener('click', function() {
-          // window.alert(marker.properties.message);
-          console.log(marker.properties);
+        // Adding modal attributes to make it appear on click
+        el.setAttribute("data-toggle", "modal");
+        el.setAttribute("data-target", "#accomModal");
+        console.dir(el);
 
+        el.addEventListener('click', function() {
+          console.log(marker.properties);
+          console.dir(marker);
+          console.dir(el);
           // Push details to an array when clicking on "book now" button.
           accomChoice.push({name: marker.properties.message, cost: marker.properties.cost, image: marker.properties.image});
           console.log(accomChoice);
@@ -813,9 +827,10 @@
         // Add marker to map
         new mapboxgl.Marker(el)
         .setLngLat(marker.geometry.coordinates)
+        // .setPopup(popup)
         .addTo(map);
       });
-    } // Hostel ends
+    // } // Hostel ends
 
     // console.dir(geojson.features["0"]);
     // console.dir(geojson.features);
@@ -835,6 +850,8 @@
 
     // This function shows the users details of their options in the DOM
     function outputResults() {
+
+      // Add image from json
       accomImg.style.backgroundImage = 'url(' + accomChoice['0'].image + ')';
       console.dir(accomImg);
       // console.dir(geojson);
@@ -862,8 +879,10 @@
       totalCost.textContent = '$' + totalCal + 'NZD';
     }
 
+
     // Generate random number for reference number and insert into the HTML
     function createRefNum () {
+
       var randomNum = Math.floor((Math.random() * 1000000) + 1);
       refNum.textContent = '#' + randomNum;
     }

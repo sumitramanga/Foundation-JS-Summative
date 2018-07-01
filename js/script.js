@@ -1,8 +1,30 @@
 (function() {
 
-  // Next and previous button for the slides.
-  var controlArrows = document.getElementsByClassName('fp-controlArrow');
-  //NEED TO GRAB INDIVIDUAL ELEMENTS AND ADD THE SCROLL ENABLE SETTINGS LIKE ON BUTTONS
+  // Grabbing data from data.js ------------------------------------------------
+  var hostelMinGuests = accom.hostel.guestsMin;
+  var hostelMaxGuests = accom.hostel.guestsMax;
+  var hostelMaxNights = accom.hostel.nightsMax;
+  var hostelMinNights = accom.hostel.nightsMin;
+
+  var hotelMinGuests = accom.hotel.guestsMin;
+  var hotelMaxGuests = accom.hotel.guestsMax;
+  var hotelMinNights = accom.hotel.nightsMin;
+  var hotelMaxNights = accom.hotel.nightsMax;
+
+  var motelMinGuests = accom.motel.guestsMin;
+  var motelMaxGuests = accom.motel.guestsMax;
+  var motelMinNights = accom.motel.nightsMin;
+  var motelMaxNights = accom.motel.nightsMax;
+
+  var houseMinGuests = accom.house.guestsMin;
+  var houseMaxGuests = accom.house.guestsMax;
+  var houseMinNights = accom.house.nightsMin;
+  var houseMaxNights = accom.house.nightsMax;
+
+
+  // Next and previous button for the slides -----------------------------------
+  var nextBtn = document.getElementsByClassName('fp-previous');
+  var nextBtn = document.getElementsByClassName('fp-next');
 
 
   // Getting the users options from the SECOND section -------------------------
@@ -152,7 +174,7 @@
       var endDate = Date.parse(getCheckOut.value);
       var timeDiff = endDate - startDate;
       daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-      // console.dir(getCheckOutDate);
+
       // Push the date to view on the slide
       nightsSelected.innerText = daysDiff;
       dateErrorMsg();
@@ -163,7 +185,7 @@
 //------------------------------------------------------------------------------
 
 
-    // FORM VALIDATION
+    // Form Validation
     window.addEventListener('load',
     function formValidation() {
 
@@ -270,8 +292,6 @@
 // -----------------------------------------------------------------------------
 
     // SETTING UP MAP
-
-    // var token = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9.4K0zZ6PO_bnYu76JJUOmoQ';
 
     mapboxgl.accessToken = 'pk.eyJ1Ijoic3VtaXRyYW0iLCJhIjoiY2ppbDA5ajh5MmpuMTNwb250MXR0ZWI1ayJ9.4K0zZ6PO_bnYu76JJUOmoQ';
 
@@ -412,7 +432,7 @@
                 }
             },
 
-// MT Roskill Summit -------------------------------------------
+// MT Roskill Summit -----------------------------------------------------------
             {
               "type": "Feature",
               "properties": {
@@ -425,7 +445,7 @@
                 }
             },
 
-// Alberton - 1860s mansion with original furnishings & other artifacts, plus a garden. ------
+// Alberton --------------------------------------------------------------------
             {
               "type": "Feature",
               "properties": {
@@ -504,10 +524,10 @@
     });
 
 
-/// ------------------------------- ACCOMMODATION -------------------------------
+// --------------------------- ACCOMMODATION ----------------------------------
 
 
-// Houses -----------------------------------------------------------------------
+// Houses ----------------------------------------------------------------------
   var geojson = {
     "type": "FeatureCollection",
     "features": [
@@ -672,8 +692,6 @@
   // Add markers to the map..
   geojson.features.forEach(function(marker) {
 
-
-    console.log(marker.properties.title);
     // Create a DOM element for the marker
     var el = document.createElement('div');
     el.className = 'marker hideMarkers';
@@ -711,28 +729,6 @@
 
 
   // Filtering accommodation to match users inputted details
-
-      // Grabbing data from data.js
-      var hostelMinGuests = accom.hostel.guestsMin;
-      var hostelMaxGuests = accom.hostel.guestsMax;
-      var hostelMaxNights = accom.hostel.nightsMax;
-      var hostelMinNights = accom.hostel.nightsMin;
-
-      var hotelMinGuests = accom.hotel.guestsMin;
-      var hotelMaxGuests = accom.hotel.guestsMax;
-      var hotelMinNights = accom.hotel.nightsMin;
-      var hotelMaxNights = accom.hotel.nightsMax;
-
-      var motelMinGuests = accom.motel.guestsMin;
-      var motelMaxGuests = accom.motel.guestsMax;
-      var motelMinNights = accom.motel.nightsMin;
-      var motelMaxNights = accom.motel.nightsMax;
-
-      var houseMinGuests = accom.house.guestsMin;
-      var houseMaxGuests = accom.house.guestsMax;
-      var houseMinNights = accom.house.nightsMin;
-      var houseMaxNights = accom.house.nightsMax;
-
 
       browseBtn.addEventListener('click', filterMarkers , false);
 

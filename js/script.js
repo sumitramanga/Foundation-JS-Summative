@@ -23,7 +23,7 @@
 
 
   // Next and previous button for the slides -----------------------------------
-  var nextBtn = document.getElementsByClassName('fp-previous');
+  var previousBtn = document.getElementsByClassName('fp-previous');
   var nextBtn = document.getElementsByClassName('fp-next');
 
 

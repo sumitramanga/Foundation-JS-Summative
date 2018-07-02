@@ -24,15 +24,15 @@
 <body class="body">
 
 	<div class="loader">
-			<i class="fas fa-spinner fa-spin fa-7x"></i>
+		<i class="fas fa-spinner fa-spin fa-7x"></i>
 	</div>
 
 	<div id="fullpage">
 		<div class="section " id="section0">
 			<div class="wrapper">
 
-				<video id="myVideo" loop muted data-autoplay>
-					<source src="media/Runner.mp4" type="video/mp4">
+				<video id="myVideo" loop muted data-autoplay >
+					<source src="media/Runner.mp4" type="video/mp4" >
 				</video>
 
 					<div class="layer" id="helpLayer">
@@ -117,7 +117,7 @@
 							<option value="30">Lunch - $30</option>
 							<option value="30">Dinner - $30</option>
 							<option value="90">All meals - $90</option>
-							<option value="0">none</option>
+							<option value="0">No meals</option>
 						</select>
 						<div class="invalid-feedback">
 							Please select your meal option.
@@ -152,10 +152,6 @@
 
 				<div class="mapWrapper">
 					<div class="map" id="map"></div>
-				</div>
-
-				<div class="btnWrapper">
-					<button type="button" name="button" class="viewResultsBtn" id="viewResultsBtn">View Results</button>
 				</div>
 
 			</div>
@@ -219,12 +215,12 @@
 
 
 	<!-- Help Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal helpModal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<p class="modal-title travelCompanionLogoModal" id="exampleModalLabel">Travel<br>Companion</p>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button type="button" class="close helpModalCloseBtn" data-dismiss="modal" aria-label="Close">
 						<i class="fas fa-times"></i>
 					</button>
 				</div>
@@ -253,20 +249,25 @@
 	    <div class="modal-content">
 
 	      <div class="modal-header">
-					<h5></h5>
-          <button type="button" class="accomClose close" id="accomClose" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-	        </button>
+					<button type="button" class="close accomClose" id="accomClose" data-dismiss="modal" aria-label="Close">
+						<i class="fas fa-times"></i>
+					</button>
 	      </div>
 
-	      <div class="modal-body">
-					<h4 class="modal-title subTitle" id="modalTitle">Grand Millennium Hotel</h4>
-					<span class="subTitle">- $</span>
-					<span class="subTitle" id="modalAccomCost">199</span>
-					<span class="subTitle">per night</span>
+	      <div class="modal-body accomModalBody">
+
+					<div class="accomModalTitle">
+						<h4 class="accomModalName subTitle" id="modalTitle">Grand Millennium Hotel</h4>
+						<span class="subTitle">- $</span>
+						<span class="subTitle" id="modalAccomCost">199</span>
+						<span class="subTitle">per night</span>
+					</div>
+
 					<div class="accomImg" id="modalImg"></div>
+
 					<p class="modalAccomDetails" id="modalAccomDetails"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae officia odit totam illum, obcaecati, distinctio ducimus. Delectus laboriosam veritatis quo nam excepturi, exercitationem fugit eos, culpa dolorum nulla in debitis! </p>
-	      </div>
+
+				</div>
 
 	      <div class="modal-footer">
 	        <button type="button" class="btn bookNowBtn" id="bookRoomBtn" data-dismiss="modal">Book a room</button>

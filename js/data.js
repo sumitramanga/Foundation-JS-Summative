@@ -10,8 +10,7 @@ var accom = {
     nightsMin: 1,
     nightsMax: 10,
 
-    breakfastMeal: 30,
-    noMeal: 0
+    meal: 30
   },
 
   motel: {
@@ -23,8 +22,7 @@ var accom = {
     nightsMin: 3,
     nightsMax: 10,
 
-    lunchMeal: 30,
-    noMeal: 0
+    meal: 30,
   },
 
   hotel: {
@@ -36,9 +34,7 @@ var accom = {
     nightsMin: 1,
     nightsMax: 5,
 
-    breakfastMeal: 30,
-    dinnerMeal: 30,
-    noMeal: 0
+    meal: 90
   },
 
   house: {
@@ -50,11 +46,7 @@ var accom = {
     nightsMin: 2,
     nightsMax: 15,
 
-    breakfastMeal: 30,
-    lunchMeal: 30,
-    dinnerMeal: 30,
-    fullMeal: 90,
-    noMeal: 0
+    meal: 90
   }
 
 };

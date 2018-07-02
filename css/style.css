@@ -62,15 +62,16 @@
 
 .exploreBtn {
   margin-bottom: 0.1em;
-  font-size: 1.2em;
   font-weight: 600;
   text-align: center;
   text-decoration: none;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 2.1em;
   cursor: pointer;
-  padding: 0.7em 1.4em;
+  padding: 0.78888em 3.4em;
   margin: 0.4em;
+  font-size: 1em;
+  text-transform: uppercase;
   color: white;
   border: 1px solid white;
   -webkit-transform: perspective(1px) translateZ(0);
@@ -151,12 +152,14 @@
 
 .modal-header {
   border: none; }
-  .modal-header .close {
-    padding: 0.5em 0.6em 0.5em 0;
-    margin: 0;
-    font-size: 2em;
-    color: #384059;
-    opacity: 1; }
+  .modal-header .helpModalCloseBtn {
+    padding: 0.8em 0.8em 0.5em 0; }
+
+.close {
+  margin: 0;
+  font-size: 2em;
+  color: #384059;
+  opacity: 1; }
 
 .fp-controlArrow.fp-prev {
   border-color: transparent #384059 transparent transparent; }
@@ -220,7 +223,7 @@
 .daySelectedTitle {
   margin-top: 1.5em; }
 
-.nightsErrorMsg {
+.nightsErrorMsg, .fiveGuestsMatchError, .sixGuestsMatchError {
   color: #DC1C0C;
   font-weight: 400; }
 
@@ -229,15 +232,15 @@
 
 .submitBtn, .viewResultsBtn {
   margin-bottom: 0.1em;
-  font-size: 1.2em;
   font-weight: 600;
   text-align: center;
   text-decoration: none;
   background-color: rgba(0, 0, 0, 0);
   border-radius: 2.1em;
   cursor: pointer;
-  padding: 0.6em 1.3em;
+  padding: 0.5em 2.2em;
   margin-top: 1.5em;
+  font-size: 1.2em;
   bottom: -3em;
   color: #EFC125;
   border: 2px solid #EFC125;
@@ -248,6 +251,11 @@
   transition-duration: 0.3s;
   -webkit-transition-property: transform;
   transition-property: transform; }
+
+.submitBtn:hover, .viewResultsBtn:hover, .bookNowbtn:hover, .restart:hover {
+  color: white;
+  border-color: #EBD426;
+  background-color: #EFC125; }
 
 .invalid-feedback {
   margin-top: 1em;
@@ -267,8 +275,7 @@
 
 .mapWrapper {
   margin: 1.9em auto;
-  width: 100%;
-  height: 50vh; }
+  width: 100%; }
 
 .btnWrapper {
   text-align: center; }
@@ -276,35 +283,39 @@
 .map {
   margin: 0 auto;
   width: 100%;
-  height: 50vh; }
+  height: 53vh;
+  box-shadow: 0 0.1em 1.8em 0 grey; }
 
 .accomModal .accomClose {
-  padding: 0.5em 0.6em 0 0; }
-.accomModal .modal-body {
+  padding: 0;
+  margin: 0.4em 0em 0em 12.5em; }
+.accomModal .accomModalBody {
   padding-bottom: 0; }
-  .accomModal .modal-body .modal-title {
+  .accomModal .accomModalBody .accomModalTitle {
+    text-align: center; }
+  .accomModal .accomModalBody .accomModalName {
     text-align: center;
     font-weight: 600; }
-  .accomModal .modal-body .accomImg {
+  .accomModal .accomModalBody .accomImg {
     width: 100%; }
-  .accomModal .modal-body .modalAccomDetails {
+  .accomModal .accomModalBody .modalAccomDetails {
     margin-top: 1em;
     margin-bottom: 0; }
-.accomModal .modal-footer {
+
+.modal-footer {
   padding: 2em;
   border: none; }
-  .accomModal .modal-footer .bookNowBtn {
+  .modal-footer .bookNowBtn {
     margin-bottom: 0.1em;
-    font-size: 1.2em;
     font-weight: 600;
     text-align: center;
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0);
     border-radius: 2.1em;
     cursor: pointer;
-    font-size: 1em;
     padding: 0.5em 3.3em;
     margin: 0 auto;
+    font-size: 1em;
     color: #EFC125;
     border: 2px solid #EFC125; }
 
@@ -327,7 +338,6 @@
 
 .restart {
   margin-bottom: 0.1em;
-  font-size: 1.2em;
   font-weight: 600;
   text-align: center;
   text-decoration: none;

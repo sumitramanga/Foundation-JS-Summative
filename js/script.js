@@ -38,7 +38,7 @@
   var getMeals = document.getElementById('getMealOption');
 
   var getSubBtn = document.getElementById('submitBtn');
-  var errorMessage = document.createElement('div');
+
 
 
   // The button which pushes the details entered into an array located on the
@@ -199,6 +199,7 @@
             event.stopPropagation();
 
             // Show an error message which is created here along with fadeOut and removes from code.
+            var errorMessage = document.createElement('p');
             errorMessage.className = 'errorMessage';
             errorMessage.innerText = "Hold up! Look like something's missing. Please check to see if you've entered your details correctly.";
             getSubBtn.after(errorMessage);
@@ -221,10 +222,12 @@
 // -----------------------------------------------------------------------------
 
 
-    // Add a message when too less or too many nights have been selected
-    // remove the message and uncolor the inputs when the task the nights are correct
-
     function dateErrorMsg() {
+
+      // String to number to compare amount of guests with the amount of nights
+      var compareGuests = parseInt(getGuests.value);
+
+      // Add a message when too less or too many nights have been selected
       if (nightsSelected.textContent > 15 || nightsSelected.textContent < 1) {
 
         var nightsErrorMsg = document.createElement('p');
@@ -232,17 +235,50 @@
         getCheckOutDate.style.border = '1px solid #DC1C0C';
         nightsErrorMsg.className = 'nightsErrorMsg';
         nightsErrorMsg.style.margin = '1em';
-        nightsErrorMsg.textContent = 'You have selected an incorrect amount of days. Please try again.';
+        nightsErrorMsg.textContent = 'You have selected an incorrect amount of nights. Please try again.';
         nightsText.after(nightsErrorMsg);
 
+    // Remove message and uncolor the inputs when the task the nights are correct
       } else {
         $('.nightsErrorMsg').remove();
         getCheckInDate.style.borderColor = '';
         getCheckOutDate.style.borderColor = '';
       }
 
-    }
 
+      // Add a message when nights and guests don't match data
+      if (compareGuests === 5 && nightsSelected.textContent > 10) {
+        var fiveGuestsMatchError = document.createElement('p');
+        getCheckInDate.style.border = '1px solid #DC1C0C';
+        getCheckOutDate.style.border = '1px solid #DC1C0C';
+        fiveGuestsMatchError.className = 'fiveGuestsMatchError';
+        fiveGuestsMatchError.style.margin = '0.5em';
+        fiveGuestsMatchError.textContent = '5 guests is invalid with this amount of nights. Please try again.';
+        nightsText.after(fiveGuestsMatchError);
+
+      } else if (compareGuests === 6 && nightsSelected.textContent >= 10){
+        var sixGuestsMatchError = document.createElement('p');
+        getCheckInDate.style.border = '1px solid #DC1C0C';
+        getCheckOutDate.style.border = '1px solid #DC1C0C';
+        sixGuestsMatchError.className = 'sixGuestsMatchError';
+        sixGuestsMatchError.style.margin = '0.5em';
+        sixGuestsMatchError.textContent = '6 guests is invalid with this amount of nights. Please try again.';
+        nightsText.after(sixGuestsMatchError);
+
+        // Remove validation message when correct
+      } else {
+        $('.fiveGuestsMatchError').remove();
+        $('.sixGuestsMatchError').remove();
+        getCheckInDate.style.borderColor = '';
+        getCheckOutDate.style.borderColor = '';
+      }
+
+      // return guestsStringToNum;
+
+
+    } // dateErrorMsg Function ends
+
+// console.log(guestsStringToNum);
 
 // -----------------------------------------------------------------------------
 
@@ -280,10 +316,9 @@
     // Pushing all results/details to an array
     function pushResults() {
 
-      // Turn guests and meal cost input from string to number
-      var guestsStringToNum = parseInt(getGuests.value);
+      // Turn meal cost input from string to number
       var mealStringToNum = parseInt(getMeals.value);
-
+      var guestsStringToNum = parseInt(getGuests.value);
       userResults.push({guests: guestsStringToNum, nights: daysDiff, mealName: getMealOption.selectedOptions["0"].textContent, mealCost: mealStringToNum});
 
     }
@@ -750,8 +785,8 @@
 
         // Show hotel markers
         if (getGuests.value <= hotelMaxGuests && getGuests.value >= hotelMinGuests && daysDiff <= hotelMaxNights && daysDiff >= hotelMinNights) {
-        $('#grandMillennium').show();
-        $('#bestWestern').show();
+          $('#grandMillennium').show();
+          $('#bestWestern').show();
         }
 
         // Show house markers

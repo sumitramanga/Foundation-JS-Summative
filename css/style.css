@@ -49,14 +49,14 @@
   line-height: 80%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  padding: 19px 0 71px 0px;
+  padding: 0.12em 0 0.5em 0;
   font-size: 7em; }
 
 .subText {
   margin-top: 0.6em;
   margin-bottom: 1.5em;
   font-family: 'Raleway', sans-serif;
-  font-size: 30px;
+  font-size: 1.5em;
   font-weight: 300;
   color: white; }
 
@@ -135,7 +135,7 @@
 
 .modal-body {
   padding: 0em 2.5em 2.5em;
-  font-size: 20px;
+  font-size: 1em;
   color: #384059; }
 
 .travelCompanionLogoModal {
@@ -185,7 +185,8 @@
   line-height: 80%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  padding: 19px 0 71px 0px;
+  padding: 0.2em 0 0.5em 0;
+  margin-bottom: 1.5em;
   font-size: 2.5em; }
 
 .mainTitle {
@@ -193,17 +194,21 @@
   font-size: 2.250em; }
 
 .dropDownOption {
-  border: 1px solid #384059;
   margin: 4em auto 0 auto;
+  border: 1px solid #384059;
   width: 50%;
   color: #384059; }
 
 .checkInOut {
+  margin-top: 2.5em;
   display: flex;
-  justify-content: center;
-  margin-top: 2.5em; }
+  justify-content: center; }
 
-.dropDownOption, .checkIn, .checkOut {
+.checkIn, .checkOut {
+  box-shadow: rgba(0, 0, 0, 0.2) -6px 7px 2px 0px; }
+
+.dropDownOption {
+  margin-top: 2.5em;
   box-shadow: rgba(0, 0, 0, 0.2) -6px 7px 2px 0px; }
 
 .form-control[readonly] {
@@ -293,6 +298,8 @@
   padding-bottom: 0; }
   .accomModal .accomModalBody .accomModalTitle {
     text-align: center; }
+    .accomModal .accomModalBody .accomModalTitle .modalAccomDetails {
+      font-size: 0.8em; }
   .accomModal .accomModalBody .accomModalName {
     text-align: center;
     font-weight: 600; }
@@ -330,13 +337,13 @@
   line-height: 80%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  padding: 10px 0px 34px 0px;
+  padding: 0.2em 0 0.5em 0;
   font-size: 2em;
   float: right;
   position: relative;
   right: 0.7em; }
 
-.restart {
+.restartBtn {
   margin-bottom: 0.1em;
   font-weight: 600;
   text-align: center;
@@ -351,8 +358,8 @@
 
 .accomImg {
   margin: 0.9em auto;
-  width: 573px;
-  height: 302px;
+  width: 28.6em;
+  height: 18.9rem;
   background-position: center;
   background-size: cover;
   background-color: pink;

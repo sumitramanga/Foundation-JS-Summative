@@ -82,7 +82,7 @@ $quaternaryColor: #EFC125;
 // APP LOGO --------------------------------------------------------------------
 .travelCompanionLogo {
   @include logo;
-  padding: 19px 0 71px 0px;
+  padding: 0.12em 0 0.5em 0;
   font-size: 7em;
 
 }
@@ -91,7 +91,7 @@ $quaternaryColor: #EFC125;
   margin-top: 0.6em;
   margin-bottom: 1.5em;
   font-family: 'Raleway', sans-serif;
-  font-size: 30px;
+  font-size: 1.5em;
   font-weight: 300;
   color: $secondaryColor;
 }
@@ -179,7 +179,7 @@ $quaternaryColor: #EFC125;
 }
 .modal-body {
   padding: 0em 2.5em 2.5em;
-  font-size: 20px;
+  font-size: 1em;
   color: $tertiaryColor;
 }
 
@@ -233,7 +233,8 @@ $quaternaryColor: #EFC125;
 
 .smallLogo {
   @include logo;
-  padding: 19px 0 71px 0px;
+  padding: 0.2em 0 0.5em 0;
+  margin-bottom: 1.5em;
   font-size: 2.5em;
 }
 
@@ -243,8 +244,8 @@ $quaternaryColor: #EFC125;
 }
 
 .dropDownOption {
-  border: 1px solid $tertiaryColor;
   margin: 4em auto 0 auto;
+  border: 1px solid $tertiaryColor;
   width: 50%;
   color: $tertiaryColor;
 }
@@ -252,12 +253,17 @@ $quaternaryColor: #EFC125;
 // CHECK IN AND OUT SLIDE ------------------------------------------------------
 
 .checkInOut {
+  margin-top: 2.5em;
   display: flex;
   justify-content: center;
-  margin-top: 2.5em;
 }
 
-.dropDownOption, .checkIn, .checkOut {
+.checkIn, .checkOut {
+  box-shadow: rgba(0, 0, 0, 0.2) -6px 7px 2px 0px;
+}
+
+.dropDownOption {
+  margin-top: 2.5em;
   box-shadow: rgba(0, 0, 0, 0.2) -6px 7px 2px 0px;
 }
 
@@ -378,6 +384,10 @@ $quaternaryColor: #EFC125;
 
     .accomModalTitle {
       text-align: center;
+
+      .modalAccomDetails {
+        font-size: 0.8em;
+      }
     }
 
     .accomModalName {
@@ -418,15 +428,14 @@ $quaternaryColor: #EFC125;
 
 .smallLogoResults {
   @include logo;
-  padding: 10px 0px 34px 0px;
+  padding: 0.2em 0 0.5em 0;
   font-size: 2em;
   float: right;
-
   position: relative;
   right: 0.7em;
 }
 
-.restart {
+.restartBtn {
   @include button;
   font-size: 0.6em;
   padding: 0.6em 1.3em;
@@ -436,8 +445,8 @@ $quaternaryColor: #EFC125;
 
 .accomImg {
   margin: 0.9em auto;
-  width: 573px;
-  height: 302px;
+  width: 28.6em;
+  height: 18.9rem;
   background-position: center;
   background-size: cover;
   background-color: pink;
@@ -453,11 +462,9 @@ $quaternaryColor: #EFC125;
   text-align: left;
   width: 28.6em;
   margin: 0 auto;
-
   border: 4px solid white;
   padding: 15px 27px 3px 34px;
   background: white;
-
   box-shadow: 9px 7px 72px -16px black;
 }
 
@@ -471,7 +478,7 @@ $quaternaryColor: #EFC125;
   border-top: 0.1em solid $secondaryColor;
   opacity: 0.7;
   width: 74%;
-  margin:1em auto;
+  margin: 1em auto;
 }
 
 .total {

@@ -25,6 +25,16 @@ $quaternaryColor: #EFC125;
   cursor: pointer;
 }
 
+@mixin btnAnimation {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -99,21 +109,13 @@ $quaternaryColor: #EFC125;
 // SPALASH PAGE BUTTON ---------------------------------------------------------
 .exploreBtn {
   @include button;
+  @include btnAnimation;
   padding: 0.78888em 3.4em;
   margin: 0.4em;
   font-size: 1em;
   text-transform: uppercase;
   color: $secondaryColor;
   border: 1px solid $secondaryColor;
-
-   // Transition effect
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
 }
 
 .exploreBtn:hover, .exploreBtn:focus, .submitBtn:hover, .submitBtn:focus, .viewResultsBtn:hover, .viewResultsBtn:focus {
@@ -302,20 +304,13 @@ $quaternaryColor: #EFC125;
 // MEAL OPTIONS ---------------------------------------------------------------
 .submitBtn, .viewResultsBtn {
   @include button;
+  @include btnAnimation;
   padding: 0.5em 2.2em;
   margin-top: 1.5em;
   font-size: 1.2em;
   bottom: -3em;
   color: $quaternaryColor;
   border: 2px solid $quaternaryColor;
-
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
 }
 
 .submitBtn:hover, .viewResultsBtn:hover, .bookNowbtn:hover, .restart:hover {
@@ -430,9 +425,6 @@ $quaternaryColor: #EFC125;
   @include logo;
   padding: 0.2em 0 0.5em 0;
   font-size: 2em;
-  float: right;
-  position: relative;
-  right: 0.7em;
 }
 
 .restartBtn {
@@ -441,6 +433,26 @@ $quaternaryColor: #EFC125;
   padding: 0.6em 1.3em;
   color: $quaternaryColor;
   border: 2px solid $quaternaryColor;
+  position: absolute;
+  right: 10%;
+  top: 8%;
+}
+
+.restartBtn:visited {
+  color: $quaternaryColor;
+  border: 2px solid $quaternaryColor;
+}
+
+.restartBtn:hover {
+  text-decoration: none;
+  color: $secondaryColor;
+  border-color: #EBD426;
+  background-color: $quaternaryColor;
+}
+
+.restartBtn:active {
+  background-color: transparent;
+  color: white;
 }
 
 .accomImg {
@@ -515,11 +527,6 @@ $quaternaryColor: #EFC125;
 
   .layer {
 	  top: 13%;
-  }
-
-  .smallLogoResults {
-    position: relative;
-    right: 2.7em;
   }
 
 }

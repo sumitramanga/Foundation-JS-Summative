@@ -3,22 +3,22 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
-	<title>Travel Companion - Auckland Accommodation finder</title>
+
+	<title>Travel Companion - Auckland Accommodation Finder</title>
 
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 
-	<link href="https://fonts.googleapis.com/css?family=Pacifico|Raleway:300,400,700,800" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico%7cRaleway:300,400,700,800" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
-	<!-- Mapbox -->
 	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet'>
 
+	<!-- Pickadate CSS -->
 	<link rel="stylesheet" type="text/css" href="css/classic.css">
 	<link rel="stylesheet" type="text/css" href="css/classic.date.css">
 
-	<!-- Page Piling css -->
+	<!-- Page Piling CSS -->
 	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
 
 	<!-- Custom CSS -->
@@ -85,7 +85,7 @@
 
 						<div class="checkInOut">
 							<div class="col-md-4 mb-3 labelAlign">
-								<label for="validationCustom01">Check in*</label>
+								<label for="getCheckIn">Check in*</label>
 					      <input type="text" class="form-control checkIn datepicker1" id="getCheckIn" required>
 					      <div class="invalid-feedback">
 					        Please enter a date.
@@ -93,7 +93,7 @@
 							</div>
 
 							<div class="col-md-4 mb-3 labelAlign">
-								<label for="validationCustom01">Check out*</label>
+								<label for="getCheckOut">Check out*</label>
 								<input type="text" class="form-control checkOut datepicker2" id="getCheckOut" required>
 								<div class="invalid-feedback">
 									Please enter a date.
@@ -165,14 +165,9 @@
 		<div class="section" id="section4">
 			<div class="wrapper">
 
-				<!-- <div class="row"> -->
-					<!-- <div class="col-8"> -->
-						<p class="smallLogoResults" id="travelCompanionLogo3rd">Travel<br>Companion</p>
-					<!-- </div> -->
-					<!-- <div class="col-4"> -->
-						<a href="index.html#firstPage" class="restartBtn">Start Over</a>
-					<!-- </div> -->
-				<!-- </div> -->
+				<p class="smallLogoResults" id="travelCompanionLogo3rd">Travel<br>Companion</p>
+
+				<a href="index.html#firstPage" class="restartBtn">Start Over</a>
 
 				<h2 class="mainTitle">Your Results</h2>
 				<h3 class="subTitle" id="accomName"></h3>
@@ -267,7 +262,7 @@
 
 					<div class="accomImg" id="modalImg"></div>
 
-					<p class="modalAccomDetails" id="modalAccomDetails"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae officia odit totam illum, obcaecati, distinctio ducimus. Delectus laboriosam veritatis quo nam excepturi, exercitationem fugit eos, culpa dolorum nulla in debitis! </p>
+					<p class="modalAccomDetails" id="modalAccomDetails">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae officia odit totam illum, obcaecati, distinctio ducimus. Delectus laboriosam veritatis quo nam excepturi, exercitationem fugit eos, culpa dolorum nulla in debitis! </p>
 
 				</div>
 
@@ -280,9 +275,8 @@
 
 
 
-	<!-- jQuery Scripts -->
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	<!-- jQuery Script -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 	<!-- Bootstrap Script -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

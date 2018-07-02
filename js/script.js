@@ -1,4 +1,4 @@
-(function() {
+(function() { //IIFE Begins
 
   // Grabbing data from data.js ------------------------------------------------
   var hostelMinGuests = accom.hostel.guestsMin;
@@ -130,38 +130,38 @@
 
     // DATE PICKER PLUGIN
 
-    $('.datepicker1').pickadate({
-      clear: '',
-      min: new Date()
-    });
-
-    $('.datepicker2').pickadate({
-      clear: '',
-      min: new Date(),
-      onClose: function () {
-        calculateNights();
-      }
-    });
-
     // $('.datepicker1').pickadate({
     //   clear: '',
+    //   min: new Date()
+    // });
+    //
+    // $('.datepicker2').pickadate({
+    //   clear: '',
     //   min: new Date(),
+    //   onClose: function () {
+    //     calculateNights();
+    //   }
     // });
-    //
-    // $('.datepicker1').change(function(){
-    //   var firstDate = $(this).val();
-    //   //enable the second date picker
-    //
-    //
-    //   $('.datepicker2').pickadate({
-    //     clear: '',
-    //     min: new Date(firstDate),
-    //     onClose: function () {
-    //       calculateNights();
-    //     }
-    //   });
-    //
-    // });
+
+    $('.datepicker1').pickadate({
+      clear: '',
+      min: new Date(),
+    });
+
+    $('.datepicker1').change(function(){
+
+      var firstDate = $('#getCheckIn').val();
+
+      //Enable the second date picker with the min date of the check in date
+      $('.datepicker2').pickadate({
+        clear: '',
+        min: new Date(firstDate),
+        onClose: function () {
+          calculateNights();
+        }
+      });
+
+    });
 
 
 // -----------------------------------------------------------------------------
@@ -238,7 +238,7 @@
         nightsErrorMsg.textContent = 'You have selected an incorrect amount of nights. Please try again.';
         nightsText.after(nightsErrorMsg);
 
-    // Remove message and uncolor the inputs when the task the nights are correct
+      // Remove message and uncolor the inputs when the task the nights are correct
       } else {
         $('.nightsErrorMsg').remove();
         getCheckInDate.style.borderColor = '';
@@ -253,7 +253,7 @@
         getCheckOutDate.style.border = '1px solid #DC1C0C';
         fiveGuestsMatchError.className = 'fiveGuestsMatchError';
         fiveGuestsMatchError.style.margin = '0.5em';
-        fiveGuestsMatchError.textContent = '5 guests is invalid with this amount of nights. Please try again.';
+        fiveGuestsMatchError.textContent = 'This amount of nights is invalid with 5 guests. Please try again.';
         nightsText.after(fiveGuestsMatchError);
 
       } else if (compareGuests === 6 && nightsSelected.textContent >= 10){
@@ -262,10 +262,10 @@
         getCheckOutDate.style.border = '1px solid #DC1C0C';
         sixGuestsMatchError.className = 'sixGuestsMatchError';
         sixGuestsMatchError.style.margin = '0.5em';
-        sixGuestsMatchError.textContent = '6 guests is invalid with this amount of nights. Please try again.';
+        sixGuestsMatchError.textContent = 'This amount of nights is invalid with 6 guests. Please try again.';
         nightsText.after(sixGuestsMatchError);
 
-        // Remove validation message when correct
+      // Remove validation message when correct
       } else {
         $('.fiveGuestsMatchError').remove();
         $('.sixGuestsMatchError').remove();
@@ -273,12 +273,8 @@
         getCheckOutDate.style.borderColor = '';
       }
 
-      // return guestsStringToNum;
-
-
     } // dateErrorMsg Function ends
 
-// console.log(guestsStringToNum);
 
 // -----------------------------------------------------------------------------
 

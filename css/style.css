@@ -53,8 +53,7 @@
   font-size: 7em; }
 
 .subText {
-  margin-top: 0.6em;
-  margin-bottom: 1.5em;
+  margin: 0.6em 1.7em 1.5em;
   font-family: 'Raleway', sans-serif;
   font-size: 1.5em;
   font-weight: 300;
@@ -110,7 +109,7 @@
   z-index: 4;
   width: 100%;
   left: 0;
-  top: 16%;
+  top: 16vh;
   overflow: hidden;
   /* Preventing video flicker on some browsers*/
   -webkit-transform: translate3d(0, 0, 0);
@@ -427,6 +426,9 @@
     width: 5%; }
 
   .layer {
-    top: 13%; } }
+    top: 13%; }
+
+  .resultsHR {
+    width: 50%; } }
 
 /*# sourceMappingURL=style.css.map */

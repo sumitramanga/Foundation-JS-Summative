@@ -40,9 +40,8 @@
   var getSubBtn = document.getElementById('submitBtn');
 
 
-
   // The button which pushes the details entered into an array located on the
-  // "All Set!" page -----------------------------------------------------------
+  // 'All Set!' page -----------------------------------------------------------
   var browseBtn = document.getElementById('browseBtn');
 
 
@@ -76,10 +75,10 @@
 // var firstValid = false;
 // var secondValid = false;
 // var thirdValid = false;
-// var currentSlide = "slide1";
+// var currentSlide = 'slide1';
 //
-// $("#getGuests").change(function(){
-//   console.log("value has changed");
+// $('#getGuests').change(function(){
+//   console.log('value has changed');
 //   console.log($(this).val());
 //   firstValid = true;
 //   //show arrow
@@ -201,7 +200,7 @@
             // Show an error message which is created here along with fadeOut and removes from code.
             var errorMessage = document.createElement('p');
             errorMessage.className = 'errorMessage';
-            errorMessage.innerText = "Hold up! Look like something's missing. Please check to see if you've entered your details correctly.";
+            errorMessage.innerText = 'Hold up! Look like something\'s missing. Please check to see if you\'ve entered your details correctly.';
             getSubBtn.after(errorMessage);
 
             $('.errorMessage').fadeOut(6000, function(){
@@ -214,7 +213,7 @@
     }, false);
 
     // Form doesn't refresh the page
-    $("form").submit(function() {
+    $('form').submit(function() {
        return false;
     });
 
@@ -315,7 +314,7 @@
       // Turn meal cost input from string to number
       var mealStringToNum = parseInt(getMeals.value);
       var guestsStringToNum = parseInt(getGuests.value);
-      userResults.push({guests: guestsStringToNum, nights: daysDiff, mealName: getMealOption.selectedOptions["0"].textContent, mealCost: mealStringToNum});
+      userResults.push({guests: guestsStringToNum, nights: daysDiff, mealName: getMealOption.selectedOptions['0'].textContent, mealCost: mealStringToNum});
 
     }
 
@@ -339,168 +338,168 @@
     map.on('load', function() {
     // Add a layer showing the places.
     map.addLayer({
-      "id": "places",
-      "type": "symbol",
-      "source": {
-        "type": "geojson",
-        "data": {
-          "type": "FeatureCollection",
-          "features": [
+      'id': 'places',
+      'type': 'symbol',
+      'source': {
+        'type': 'geojson',
+        'data': {
+          'type': 'FeatureCollection',
+          'features': [
 
 
 // Te Henga Walkway. Bethells Beach to Muriwai ---------------------------------
 
             {
-              "type": "Feature",
-              "properties": {
-                "description": "<strong>Te Henga Walkway</strong>",
-                "icon": "park"
+              'type': 'Feature',
+              'properties': {
+                'description': '<strong>Te Henga Walkway</strong>',
+                'icon': 'park'
               },
 
-              "geometry": {
-                "type": "Point",
-                "coordinates": [174.452166, -36.883217]
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [174.452166, -36.883217]
               }
             },
 
 
 // Point to point Walk -----------------------------------------------------------------
             {
-              "type": "Feature",
-              "properties": {
-                "description": "<strong>Point England Walks</strong>",
-                "icon": "park"
+              'type': 'Feature',
+              'properties': {
+                'description': '<strong>Point England Walks</strong>',
+                'icon': 'park'
               },
 
-              "geometry": {
-                "type": "Point",
-                "coordinates": [174.871534, -36.882470]
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [174.871534, -36.882470]
               }
             },
 
 
 // Albert Park -----------------------------------------------------------------
             {
-              "type": "Feature",
-              "properties": {
-                "description": "<strong>Albert Park</strong>",
-                "icon": "park"
+              'type': 'Feature',
+              'properties': {
+                'description': '<strong>Albert Park</strong>',
+                'icon': 'park'
               },
 
-              "geometry": {
-                "type": "Point",
-                "coordinates": [174.767883, -36.850609]
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [174.767883, -36.850609]
               }
             },
 
 
 // Auckland War Memorial Museum ------------------------------------------------
             {
-              "type": "Feature",
-              "properties": {
-                "description": "<strong>Auckland War Memorial Museum</strong>",
-                "icon": "museum"
+              'type': 'Feature',
+              'properties': {
+                'description': '<strong>Auckland War Memorial Museum</strong>',
+                'icon': 'museum'
               },
-              "geometry": {
-                "type": "Point",
-                "coordinates": [174.777791, -36.860364]
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [174.777791, -36.860364]
               }
             },
 
 
 // Sky Tower -------------------------------------------------------------------
             {
-              "type": "Feature",
-              "properties": {
-                "description": "<strong>Sky Tower</strong>",
-                "icon": "star"
+              'type': 'Feature',
+              'properties': {
+                'description': '<strong>Sky Tower</strong>',
+                'icon': 'star'
               },
 
-              "geometry": {
-                "type": "Point",
-                "coordinates": [174.762191, -36.848414]
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [174.762191, -36.848414]
               }
             },
 
 
 // Queens Street ---------------------------------------------------------------
             {
-              "type": "Feature",
-              "properties": {
-                "description": "<strong>Queens Street</strong>",
-                "icon": "star"
+              'type': 'Feature',
+              'properties': {
+                'description': '<strong>Queens Street</strong>',
+                'icon': 'star'
               },
-              "geometry": {
-                "type": "Point",
-                "coordinates": [174.764615, -36.850473]
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [174.764615, -36.850473]
                 }
             },
 
 
 // Coley & Punch ---------------------------------------------------------------
             {
-              "type": "Feature",
-              "properties": {
-                "description": "<strong>Coley & Punch</strong>",
-                "icon": "alcohol-shop"
+              'type': 'Feature',
+              'properties': {
+                'description': '<strong>Coley & Punch</strong>',
+                'icon': 'alcohol-shop'
               },
-              "geometry": {
-                "type": "Point",
-                "coordinates": [174.764730, -36.841020]
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [174.764730, -36.841020]
                 }
             },
 
 // Kelly Tarlton's Sea Life Aquarium -------------------------------------------
             {
-              "type": "Feature",
-              "properties": {
-                "description": "<strong>Kelly Tarlton's Sea Life Aquarium</strong>",
-                "icon": "aquarium"
+              'type': 'Feature',
+              'properties': {
+                'description': '<strong>Kelly Tarlton\'s Sea Life Aquarium</strong>',
+                'icon': 'aquarium'
               },
-              "geometry": {
-                "type": "Point",
-                "coordinates": [174.817432, -36.846943]
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [174.817432, -36.846943]
                 }
             },
 
 // MT Roskill Summit -----------------------------------------------------------
             {
-              "type": "Feature",
-              "properties": {
-                "description": "<strong>MT Roskill Summit</strong>",
-                "icon": "park"
+              'type': 'Feature',
+              'properties': {
+                'description': '<strong>MT Roskill Summit</strong>',
+                'icon': 'park'
               },
-              "geometry": {
-                "type": "Point",
-                "coordinates": [174.737258, -36.912590]
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [174.737258, -36.912590]
                 }
             },
 
 // Alberton --------------------------------------------------------------------
             {
-              "type": "Feature",
-              "properties": {
-                "description": "<strong>Alberton</strong>",
-                "icon": "museum"
+              'type': 'Feature',
+              'properties': {
+                'description': '<strong>Alberton</strong>',
+                'icon': 'museum'
               },
-              "geometry": {
-                "type": "Point",
-                "coordinates": [174.724686, -36.889934]
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [174.724686, -36.889934]
                 }
             },
 
 
 // Stardome Observatory & Planetarium ------------------------------------------
             {
-              "type": "Feature",
-              "properties": {
-                "description": "<strong>Stardome Observatory & Planetarium</strong>",
-                "icon": "star-stroked",
+              'type': 'Feature',
+              'properties': {
+                'description': '<strong>Stardome Observatory & Planetarium</strong>',
+                'icon': 'star-stroked',
               },
 
-              "geometry": {
-                "type": "Point",
-                "coordinates": [174.776985, -36.905937]
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [174.776985, -36.905937]
               }
             }
 
@@ -510,10 +509,10 @@
         }
       },
 
-      "layout": {
-        "icon-image": "{icon}-15",
-        "icon-allow-overlap": true,
-        "icon-size": 1
+      'layout': {
+        'icon-image': '{icon}-15',
+        'icon-allow-overlap': true,
+        'icon-size': 1
       }
     });
 
@@ -560,41 +559,41 @@
 
 // Houses ----------------------------------------------------------------------
   var geojson = {
-    "type": "FeatureCollection",
-    "features": [
+    'type': 'FeatureCollection',
+    'features': [
       {
-        "type": "Feature",
-        "properties": {
-          "accomType": "house",
-          "theId": "contemVilla",
-          "title": "Contemporary inner city villa by Fran & Aaron",
-          "cost": "240",
-          "description": "Have the best Auckland stay at this beautiful city house hosted by trustworthy owners Francesca and Aaron.",
-          "image": "img/contemVilla.jpg",
-          "iconSize": [40, 40]
+        'type': 'Feature',
+        'properties': {
+          'accomType': 'house',
+          'theId': 'contemVilla',
+          'title': 'Contemporary inner city villa by Fran & Aaron',
+          'cost': '240',
+          'description': 'Have the best Auckland stay at this beautiful city house hosted by trustworthy owners Francesca and Aaron.',
+          'image': 'img/contemVilla.jpg',
+          'iconSize': [40, 40]
         },
 
-        "geometry": {
-          "type": "Point",
-          "coordinates": [174.752126, -36.850371]
+        'geometry': {
+          'type': 'Point',
+          'coordinates': [174.752126, -36.850371]
         }
       },
 
       {
-        "type": "Feature",
-        "properties": {
-          "accomType": "house",
-          "theId": "howickHome",
-          "title": "Howick Luxury Large Home",
-          "cost": "240",
-          "description": "Enjoy your stay at this lovely luxury home which includes free wifi and complimentory bath esstensials.",
-          "image": "img/howickHome.jpg",
-          "iconSize": [40, 40]
+        'type': 'Feature',
+        'properties': {
+          'accomType': 'house',
+          'theId': 'howickHome',
+          'title': 'Howick Luxury Large Home',
+          'cost': '240',
+          'description': 'Enjoy your stay at this lovely luxury home which includes free wifi and complimentory bath esstensials.',
+          'image': 'img/howickHome.jpg',
+          'iconSize': [40, 40]
         },
 
-        "geometry": {
-          "type": "Point",
-          "coordinates": [174.932126, -36.913246]
+        'geometry': {
+          'type': 'Point',
+          'coordinates': [174.932126, -36.913246]
         }
       },
 
@@ -604,39 +603,39 @@
 
 
         {
-          "type": "Feature",
-          "properties": {
-            "accomType": "hotel",
-            "theId": "grandMillennium",
-            "title": "Grand Millennium Hotel",
-            "cost": "157",
-            "description": "This city centre hotel will cater to your accommodation if you are wanting to stay within popular attractions and be catered a luxurious stay.",
-            "image": "img/grandMillennium.jpg",
-            "iconSize": [40, 40]
+          'type': 'Feature',
+          'properties': {
+            'accomType': 'hotel',
+            'theId': 'grandMillennium',
+            'title': 'Grand Millennium Hotel',
+            'cost': '157',
+            'description': 'This city centre hotel will cater to your accommodation if you are wanting to stay within popular attractions and be catered a luxurious stay.',
+            'image': 'img/grandMillennium.jpg',
+            'iconSize': [40, 40]
           },
 
-          "geometry": {
-            "type": "Point",
-            "coordinates": [174.760582, -36.852772 ]
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [174.760582, -36.852772 ]
           }
         },
 
 
         {
-          "type": "Feature",
-          "properties": {
-            "accomType": "hotel",
-            "theId": "bestWestern",
-            "title": "Best Western Ellerslie",
-            "cost": "157",
-            "description": "This hotel offers WiFi Internet, outdoor heated pool, on site in-house car rental, restaurant and bar, and conference facilities. Perfect for business travellers",
-            "image": "img/bestWestern.jpg",
-            "iconSize": [40, 40]
+          'type': 'Feature',
+          'properties': {
+            'accomType': 'hotel',
+            'theId': 'bestWestern',
+            'title': 'Best Western Ellerslie',
+            'cost': '157',
+            'description': 'This hotel offers WiFi Internet, outdoor heated pool, on site in-house car rental, restaurant and bar, and conference facilities. Perfect for business travellers',
+            'image': 'img/bestWestern.jpg',
+            'iconSize': [40, 40]
           },
 
-          "geometry": {
-            "type": "Point",
-            "coordinates": [174.814842, -36.900858]
+          'geometry': {
+            'type': 'Point',
+            'coordinates': [174.814842, -36.900858]
           }
         },
 
@@ -645,76 +644,76 @@
 
 
       {
-        "type": "Feature",
-        "properties": {
-          "accomType": "motel",
-          "theId": "greenlaneManor",
-          "title": "Greenlane Manor Motels",
-          "cost": "90",
-          "description": "Relax at Greenlane Manors with comfy beds, hot showers and big fluffy towels. Close by local cuisines and local attractions.",
-          "image": "img/greenlaneManor.jpg",
-          "iconSize": [40, 40]
+        'type': 'Feature',
+        'properties': {
+          'accomType': 'motel',
+          'theId': 'greenlaneManor',
+          'title': 'Greenlane Manor Motels',
+          'cost': '90',
+          'description': 'Relax at Greenlane Manors with comfy beds, hot showers and big fluffy towels. Close by local cuisines and local attractions.',
+          'image': 'img/greenlaneManor.jpg',
+          'iconSize': [40, 40]
         },
 
-        "geometry": {
-          "type": "Point",
-          "coordinates": [174.801883, -36.897228]
+        'geometry': {
+          'type': 'Point',
+          'coordinates': [174.801883, -36.897228]
         }
       },
 
       {
-        "type": "Feature",
-        "properties": {
-          "accomType": "motel",
-          "theId": "airportMotel",
-          "title": "Airport Harbour View Motel",
-          "cost": "90",
-          "description": "A 11 mintue walk from the beach and 8 minutes to the Auckland International airport. This 4-star rated motel is simply luxurious and affordable.",
-          "image": "img/airportMotel.jpg",
-          "iconSize": [40, 40]
+        'type': 'Feature',
+        'properties': {
+          'accomType': 'motel',
+          'theId': 'airportMotel',
+          'title': 'Airport Harbour View Motel',
+          'cost': '90',
+          'description': 'A 11 mintue walk from the beach and 8 minutes to the Auckland International airport. This 4-star rated motel is simply luxurious and affordable.',
+          'image': 'img/airportMotel.jpg',
+          'iconSize': [40, 40]
         },
 
-        "geometry": {
-          "type": "Point",
-          "coordinates": [174.784677, -36.931369]
+        'geometry': {
+          'type': 'Point',
+          'coordinates': [174.784677, -36.931369]
         }
       },
 
 // Hostels  ----------------------------------------------------------------------
 
       {
-        "type": "Feature",
-        "properties": {
-          "accomType": "hostel",
-          "theId": "brownKiwi",
-          "title": "Brown Kiwi Travellers Hostel",
-          "cost": "30",
-          "description": "This is about the Brown Kiwi Travellers Hostel. We invite you to join usin this wonderful culture.",
-          "image": "img/brownKiwiTravellers.jpg",
-          "iconSize": [40, 40]
+        'type': 'Feature',
+        'properties': {
+          'accomType': 'hostel',
+          'theId': 'brownKiwi',
+          'title': 'Brown Kiwi Travellers Hostel',
+          'cost': '30',
+          'description': 'This is about the Brown Kiwi Travellers Hostel. We invite you to join usin this wonderful culture.',
+          'image': 'img/brownKiwiTravellers.jpg',
+          'iconSize': [40, 40]
         },
 
-        "geometry": {
-          "type": "Point",
-          "coordinates": [174.742576, -36.847083]
+        'geometry': {
+          'type': 'Point',
+          'coordinates': [174.742576, -36.847083]
         }
       },
 
       {
-        "type": "Feature",
-        "properties": {
-          "accomType": "hostel",
-          "theId": "oaklandsLodge",
-          "title": "Oaklands Lodge Backpackers",
-          "cost": "30",
-          "description": "This is about Oaklands Lodge Backpackers",
-          "image": "img/oaklandsLodge.jpg",
-          "iconSize": [40, 40]
+        'type': 'Feature',
+        'properties': {
+          'accomType': 'hostel',
+          'theId': 'oaklandsLodge',
+          'title': 'Oaklands Lodge Backpackers',
+          'cost': '30',
+          'description': 'This is about Oaklands Lodge Backpackers',
+          'image': 'img/oaklandsLodge.jpg',
+          'iconSize': [40, 40]
         },
 
-        "geometry": {
-          "type": "Point",
-          "coordinates": [174.763164, -36.880751]
+        'geometry': {
+          'type': 'Point',
+          'coordinates': [174.763164, -36.880751]
         }
       }
     ] // Feature ends
@@ -727,14 +726,14 @@
     var el = document.createElement('div');
     el.className = 'marker hideMarkers';
     el.id = marker.properties.theId;
-    el.style.backgroundImage = 'url("img/pin.svg")';
+    el.style.backgroundImage = 'url(\'img/pin.svg\')';
     el.style.backgroundSize = 'contain';
     el.style.width = marker.properties.iconSize[0] + 'px';
     el.style.height = marker.properties.iconSize[1] + 'px';
 
     // Adding modal attributes to make modals appear on click
-    el.setAttribute("data-toggle", "modal");
-    el.setAttribute("data-target", "#accomModal");
+    el.setAttribute('data-toggle', 'modal');
+    el.setAttribute('data-target', '#accomModal');
 
     // Adding the content within the modal depending on what marker is selected
     el.addEventListener('click', function() {
@@ -745,7 +744,7 @@
     });
 
     bookRoomBtn.addEventListener('click', function() {
-      // Push details to an array when clicking on "book now" button.
+      // Push details to an array when clicking on 'book now' button.
       accomChoice.push({name: mapModalTitle.textContent, cost: mapModalCost.textContent, image: mapModalImg.style.backgroundImage});
     });
 
@@ -813,7 +812,7 @@
       accomImg.style.backgroundImage = accomChoice['0'].image;
       finalGuests.textContent = userResults['0'].guests + ' guests';
       finalMealsOption.textContent = userResults['0'].mealName;
-      finalNights.textContent = userResults['0'].nights + ' nights (' + getCheckIn.value + " - " + getCheckOut.value + ')';
+      finalNights.textContent = userResults['0'].nights + ' nights (' + getCheckIn.value + ' - ' + getCheckOut.value + ')';
 
       // Show users chosen accommodation option in the DOM.
       accomName.textContent = accomChoice['0'].name + ' -';

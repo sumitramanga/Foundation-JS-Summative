@@ -586,7 +586,7 @@
           'theId': 'howickHome',
           'title': 'Howick Luxury Large Home',
           'cost': '240',
-          'description': 'Enjoy your stay at this lovely luxury home which includes free wifi and complimentory bath esstensials.',
+          'description': 'Enjoy your stay at this lovely luxury home which includes free wifi and complimentory bath essentials.',
           'image': 'img/howickHome.jpg',
           'iconSize': [40, 40]
         },
@@ -628,7 +628,7 @@
             'theId': 'bestWestern',
             'title': 'Best Western Ellerslie',
             'cost': '157',
-            'description': 'This hotel offers WiFi Internet, outdoor heated pool, on site in-house car rental, restaurant and bar, and conference facilities. Perfect for business travellers',
+            'description': 'This hotel offers WiFi Internet, outdoor heated pool, on site in-house car rental, restaurant and bar, and conference facilities. Perfect for business travellers.',
             'image': 'img/bestWestern.jpg',
             'iconSize': [40, 40]
           },
@@ -688,7 +688,7 @@
           'theId': 'brownKiwi',
           'title': 'Brown Kiwi Travellers Hostel',
           'cost': '30',
-          'description': 'This is about the Brown Kiwi Travellers Hostel. We invite you to join usin this wonderful culture.',
+          'description': 'Brown Kiwi Travellers is one of the most friendly hostels to relax at during your travels. Brown Kiwi is neighbours with SKYCITY Sky Tower and the city centre.',
           'image': 'img/brownKiwiTravellers.jpg',
           'iconSize': [40, 40]
         },
@@ -706,7 +706,7 @@
           'theId': 'oaklandsLodge',
           'title': 'Oaklands Lodge Backpackers',
           'cost': '30',
-          'description': 'This is about Oaklands Lodge Backpackers',
+          'description': 'Located in Mt Edan, Oaklands Lodge for Backpackers is the your home away from home. Enjoy Netflix and Wii along with a free herb garden and complimentary Wi-Fi.',
           'image': 'img/oaklandsLodge.jpg',
           'iconSize': [40, 40]
         },

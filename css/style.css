@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box; }
 
-/* ----------------------------- MAIN PAGE ---------------------------------  */
+/* ---------------------------- SPLASH PAGE --------------------------------  */
 .body {
   font-family: "Raleway", sans-serif;
   font-size: 1.250em; }
@@ -424,6 +424,7 @@
   .fa-spinner {
     left: 45%; }
 
+  /* ---------------------------- SPLASH PAGE --------------------------------  */
   .tourismNzLogo {
     margin-bottom: 1%;
     width: 5%; }
@@ -433,5 +434,35 @@
 
   .resultsHR {
     width: 50%; } }
+@media only screen and (max-height: 919px) {
+  /* ---------------------------- SPLASH PAGE --------------------------------  */
+  .layer {
+    top: 5vh; }
+
+  .tourismNzLogo {
+    width: 9%; }
+
+  .accomImg {
+    height: 12em; }
+
+  .resultsIcons {
+    margin-bottom: 0.575em;
+    font-size: 1.2em; }
+
+  .resultsTitle {
+    font-size: 1.9em; }
+
+  .resultsAccomName {
+    font-size: 1.2em; }
+
+  .resultsCardText {
+    font-size: 0.8em; }
+
+  .resultsHR {
+    margin: 0.77em auto; }
+
+  .bookingInstructions {
+    margin-top: 0.3em;
+    font-size: 0.8em; } }
 
 /*# sourceMappingURL=style.css.map */

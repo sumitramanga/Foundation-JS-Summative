@@ -42,7 +42,7 @@ $quaternaryColor: #EFC125;
 }
 
 
-/* ----------------------------- MAIN PAGE ---------------------------------  */
+/* ---------------------------- SPLASH PAGE --------------------------------  */
 
 .body {
   font-family: $mainFont-Family;
@@ -226,7 +226,7 @@ $quaternaryColor: #EFC125;
   color: $secondaryColor;
 }
 
-// GUESTS SLIDE--------------------------------------------------
+// GUESTS SLIDE ----------------------------------------------------------------
 
 .slideContainer {
   margin-bottom: 8em;
@@ -516,22 +516,73 @@ $quaternaryColor: #EFC125;
   text-align: center;
 }
 
+
+
 @media only screen and (min-width: 1281px) {
 
+
+// Loading icon
   .fa-spinner {
     left: 45%;
   }
 
+/* ---------------------------- SPLASH PAGE --------------------------------  */
   .tourismNzLogo {
     margin-bottom: 1%;
-    width:5%;
+    width: 5%;
   }
 
   .layer {
 	  top: 13%;
   }
 
+// SECTION 4 - RESULTS ---------------------------------------------------------
   .resultsHR {
     width: 50%;
+  }
+}
+
+
+@media only screen and (max-height: 919px) {
+
+/* ---------------------------- SPLASH PAGE --------------------------------  */
+.layer {
+  top: 5vh;
+}
+
+.tourismNzLogo {
+  width: 9%;
+}
+
+
+// SECTION 4 - RESULTS ---------------------------------------------------------
+  .accomImg {
+    height: 12em;
+  }
+
+  .resultsIcons {
+    margin-bottom: 0.575em;
+    font-size: 1.2em;
+  }
+
+  .resultsTitle {
+    font-size: 1.9em;
+  }
+
+  .resultsAccomName {
+    font-size: 1.2em;
+  }
+
+  .resultsCardText {
+    font-size: 0.8em;
+  }
+
+  .resultsHR {
+    margin: 0.77em auto;
+  }
+
+  .bookingInstructions {
+    margin-top: 0.3em;
+    font-size: 0.8em;
   }
 }

@@ -287,13 +287,17 @@ $quaternaryColor: #EFC125;
   display: inline;
 }
 
+.datesSectionMsg {
+  color: $tertiaryColor;
+}
+
 .daySelectedTitle {
   margin-top: 1.5em;
 }
 
 .nightsErrorMsg, .fiveGuestsMatchError, .sixGuestsMatchError {
-  color: #DC1C0C;
-  font-weight: 400;
+  color: #FF0E00;
+  font-weight: 700;
 }
 
 .note {

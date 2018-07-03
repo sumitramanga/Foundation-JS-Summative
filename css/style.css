@@ -224,12 +224,15 @@
 .howManyDays {
   display: inline; }
 
+.datesSectionMsg {
+  color: #384059; }
+
 .daySelectedTitle {
   margin-top: 1.5em; }
 
 .nightsErrorMsg, .fiveGuestsMatchError, .sixGuestsMatchError {
-  color: #DC1C0C;
-  font-weight: 400; }
+  color: #FF0E00;
+  font-weight: 700; }
 
 .note {
   margin-top: 2.5em; }

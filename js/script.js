@@ -21,10 +21,12 @@
   var houseMinNights = accom.house.nightsMin;
   var houseMaxNights = accom.house.nightsMax;
 
+var bodyClass = document.getElementById('body');
 
   // Next and previous button for the slides -----------------------------------
   var previousBtn = document.getElementsByClassName('fp-previous');
   var nextBtn = document.getElementsByClassName('fp-next');
+  var slideArrows = document.getElementsByClassName('fp-controlArrow');
 
 
   // Getting the users options from the SECOND section -------------------------
@@ -113,8 +115,11 @@
       anchors: ['firstPage', 'secondPage', '3rdPage', 'fourthPage', 'fifthPage'],
       sectionsColor: ['white', '#D66761', '#D66761', 'transparent', '#D66761'],
       bgSize: ['cover', 'cover', 'cover', 'cover', 'cover'],
-      slidesNavigation: true,
+      slidesNavigation: true
     });
+
+	$.fn.fullpage.setAllowScrolling(false);
+	 $('.fp-prev').hide();
 
     // Splash screen button
     $('#exploreBtn').click(function(e){
@@ -123,6 +128,35 @@
       $.fn.fullpage.moveSectionDown();
     });
 
+	$('.fp-prev').click(function(){
+		$.fn.fullpage.setAllowScrolling(true);
+    	$.fn.fullpage.moveSlideLeft();
+		$.fn.fullpage.setAllowScrolling(false);
+	});
+
+	$('.fp-next').click(function(){
+		$.fn.fullpage.setAllowScrolling(true);
+	    $.fn.fullpage.moveSlideRight();
+		$.fn.fullpage.setAllowScrolling(false);
+	});
+
+
+	function showNextPrevBtns() {
+		if(bodyClass.classList[1] == 'fp-viewing-secondPage-slide1'){
+			$('.fp-next').show();
+			$('.fp-prev').hide();
+		} else if (bodyClass.classList[1] == 'fp-viewing-secondPage-slide2') {
+			$('.fp-next').show();
+			$('.fp-prev').show();
+		} else if (bodyClass.classList[1] == 'fp-viewing-secondPage-slide3') {
+			$('.fp-next').hide();
+			$('.fp-prev').show();
+		}
+	}
+
+	$(slideArrows).click(function(){
+		showNextPrevBtns();
+	});
 
 // -----------------------------------------------------------------------------
 

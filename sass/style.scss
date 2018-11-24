@@ -93,14 +93,14 @@ $quaternaryColor: #EFC125;
 .travelCompanionLogo {
   @include logo;
   padding: 0.12em 0 0.5em 0;
-  font-size: 7em;
+  font-size: 6.2em;
 
 }
 
 .subText {
   margin: 0.6em 1.7em 1.5em;
   font-family: 'Raleway', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 300;
   color: $secondaryColor;
 }
@@ -155,6 +155,10 @@ $quaternaryColor: #EFC125;
   -webkit-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
+}
+
+.layerMain {
+	height: 100%;
 }
 
 #section0 {
@@ -529,11 +533,15 @@ $quaternaryColor: #EFC125;
 /* ---------------------------- SPLASH PAGE --------------------------------  */
   .tourismNzLogo {
     margin-bottom: 1%;
-    width: 5%;
+    width: 7%;
   }
 
   .layer {
 	  top: 13%;
+  }
+
+  .layerMain {
+	  top: 20%
   }
 
 // SECTION 4 - RESULTS ---------------------------------------------------------
@@ -542,16 +550,23 @@ $quaternaryColor: #EFC125;
   }
 }
 
+@media only screen and (min-width: 1900px) {
+	.travelCompanionLogo {
+		font-size: 7.2em;
+	}
+
+	.subText {
+		font-size: 1.4em
+	}
+}
+
 
 @media only screen and (max-height: 919px) {
 
 /* ---------------------------- SPLASH PAGE --------------------------------  */
-.layer {
-  top: 5vh;
-}
-
-.tourismNzLogo {
-  width: 9%;
+.layerMain {
+	top: 13vh;
+  	bottom: 12vh;
 }
 
 

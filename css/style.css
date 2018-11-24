@@ -50,12 +50,12 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 0.12em 0 0.5em 0;
-  font-size: 7em; }
+  font-size: 6.2em; }
 
 .subText {
   margin: 0.6em 1.7em 1.5em;
   font-family: 'Raleway', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 300;
   color: white; }
 
@@ -115,6 +115,9 @@
   -webkit-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
+
+.layerMain {
+  height: 100%; }
 
 #section0 {
   overflow: hidden; }
@@ -256,13 +259,13 @@
   margin-top: 1.5em;
   font-size: 1.2em;
   bottom: -3em;
-  color: #EFC125;
-  border: 2px solid #EFC125; }
+  color: #efc125;
+  border: 2px solid #efc125; }
 
 .submitBtn:hover, .viewResultsBtn:hover, .bookNowbtn:hover, .restart:hover {
   color: white;
   border-color: #EBD426;
-  background-color: #EFC125; }
+  background-color: #efc125; }
 
 .invalid-feedback {
   margin-top: 1em;
@@ -325,8 +328,8 @@
     padding: 0.5em 3.3em;
     margin: 0 auto;
     font-size: 1em;
-    color: #EFC125;
-    border: 2px solid #EFC125; }
+    color: #efc125;
+    border: 2px solid #efc125; }
 
 .row {
   margin-top: 2.3em; }
@@ -352,21 +355,21 @@
   cursor: pointer;
   font-size: 0.6em;
   padding: 0.6em 1.3em;
-  color: #EFC125;
-  border: 2px solid #EFC125;
+  color: #efc125;
+  border: 2px solid #efc125;
   position: absolute;
   right: 10%;
   top: 8%; }
 
 .restartBtn:visited {
-  color: #EFC125;
-  border: 2px solid #EFC125; }
+  color: #efc125;
+  border: 2px solid #efc125; }
 
 .restartBtn:hover {
   text-decoration: none;
   color: white;
   border-color: #EBD426;
-  background-color: #EFC125; }
+  background-color: #efc125; }
 
 .restartBtn:active {
   background-color: transparent;
@@ -427,20 +430,27 @@
   /* ---------------------------- SPLASH PAGE --------------------------------  */
   .tourismNzLogo {
     margin-bottom: 1%;
-    width: 5%; }
+    width: 7%; }
 
   .layer {
     top: 13%; }
 
+  .layerMain {
+    top: 20%; }
+
   .resultsHR {
     width: 50%; } }
+@media only screen and (min-width: 1900px) {
+  .travelCompanionLogo {
+    font-size: 7.2em; }
+
+  .subText {
+    font-size: 1.4em; } }
 @media only screen and (max-height: 919px) {
   /* ---------------------------- SPLASH PAGE --------------------------------  */
-  .layer {
-    top: 5vh; }
-
-  .tourismNzLogo {
-    width: 9%; }
+  .layerMain {
+    top: 13vh;
+    bottom: 12vh; }
 
   .accomImg {
     height: 12em; }
@@ -464,5 +474,3 @@
   .bookingInstructions {
     margin-top: 0.3em;
     font-size: 0.8em; } }
-
-/*# sourceMappingURL=style.css.map */

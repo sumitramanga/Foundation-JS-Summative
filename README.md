@@ -1,2 +1,2 @@
 # Travel-Companion
-An Auckland, NZ accommodation booking app
+Travel Companion is a all in one app that will help users in finding the best accommodation which suits their needs. Users will first need to input valid information in order for Travel Companion to give them a filter map which gives them reconmmdations on what accommdation best suits them. A summary is then displayed upon completion of finding the right accommodation which will need to be confirmed via phone call using the provided reference number.
